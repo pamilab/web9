@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results & Accuracy - FMCW-GPR Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold tracking-wider text-blue-400">FMCW-GPR</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                    <a href="problem-approach.html" class="hover:text-blue-400 transition">Approach</a>
+                    <a href="development.html" class="hover:text-blue-400 transition">Development</a>
+                    <a href="results.html" class="text-blue-400 font-semibold">Results</a>
+                    <a href="applications.html" class="hover:text-blue-400 transition">Applications</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="index.html" class="block py-2 hover:text-blue-400">Home</a>
+                <a href="problem-approach.html" class="block py-2 hover:text-blue-400">Approach</a>
+                <a href="development.html" class="block py-2 hover:text-blue-400">Development</a>
+                <a href="results.html" class="block py-2 text-blue-400">Results</a>
+                <a href="applications.html" class="block py-2 hover:text-blue-400">Applications</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-slate-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-3xl font-bold mb-2">Experimental Results</h1>
+            <p class="text-slate-400">Validation data, accuracy metrics, and radargram visualizations.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+        
+        <!-- Accuracy Section -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-green-500 pl-4">Accuracy Performance</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-700 mb-6">Measurement Error Rates</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Mean Error at 29 cm</span>
+                                <span class="font-mono font-bold text-green-600">1.433%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 1.433%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Mean Error at 72 cm</span>
+                                <span class="font-mono font-bold text-green-600">0.863%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 0.863%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-4 bg-green-50 rounded-lg border border-green-100">
+                        <p class="text-green-800 text-sm">
+                            <strong>Conclusion:</strong> The results confirm strong agreement between FMCW-GPR measurements and physical reference data.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-center bg-slate-50 p-8 rounded-xl border border-slate-200">
+                    <div class="text-center">
+                        <div class="text-5xl mb-4">🎯</div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">High Precision</h4>
+                        <p class="text-slate-600">Reliable detection of metallic targets at variable depths with minimal deviation from actual values.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Radargrams Section -->
+        <div>
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-blue-500 pl-4">Radargram Visualization</h2>
+            <p class="text-slate-600 mb-10 max-w-3xl leading-relaxed">
+                Processed data are displayed as waterfall and heatmap-style radargrams, enabling intuitive interpretation of subsurface features. These visual outputs clearly indicate object presence, depth variation, and lateral continuity during scanning.
+            </p>
+
+            <div class="bg-black rounded-xl overflow-hidden shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="relative group">
+                        <img src="images/radargram.jpg" alt="Radargram Output" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                            <p class="text-white font-mono text-sm">FIG 1.0: Processed Heatmap Visualization</p>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-center bg-slate-900 text-slate-300">
+                        <h3 class="text-xl font-bold text-white mb-4">Visual Interpretation</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-red-500 rounded-full mr-3"></span>
+                                <span>High intensity reflection indicates object presence</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                                <span>Y-Axis correlates directly to depth</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
+                                <span>X-Axis represents lateral scan position</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <p class="text-white font-semibold mb-2">Developed by: Omicropade</p>
+                <p>BS Electronics Engineering</p>
+                <p>Rizal Technological University</p>
+            </div>
+            <p class="text-sm opacity-75">© 2025 FMCW-GPR Research Project. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

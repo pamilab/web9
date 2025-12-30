@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMCW-GPR Radar System - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold tracking-wider text-blue-400">FMCW-GPR</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-blue-400 font-semibold">Home</a>
+                    <a href="problem-approach.html" class="hover:text-blue-400 transition">Approach</a>
+                    <a href="development.html" class="hover:text-blue-400 transition">Development</a>
+                    <a href="results.html" class="hover:text-blue-400 transition">Results</a>
+                    <a href="applications.html" class="hover:text-blue-400 transition">Applications</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="index.html" class="block py-2 text-blue-400">Home</a>
+                <a href="problem-approach.html" class="block py-2 hover:text-blue-400">Approach</a>
+                <a href="development.html" class="block py-2 hover:text-blue-400">Development</a>
+                <a href="results.html" class="block py-2 hover:text-blue-400">Results</a>
+                <a href="applications.html" class="block py-2 hover:text-blue-400">Applications</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-slate-900 text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="images/hero-radar.jpg" alt="Radar Technology" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl">
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6 uppercase tracking-tight">
+                    Development of 2.4 GHz ISM Band Unsynchronized STFT Frequency Modulated Continuous Wave-Ground Penetrating Radar System
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-200 font-light mb-8 max-w-3xl">
+                    An advanced 2.4 GHz FMCW radar system for reliable subsurface object detection via instantaneous signal processing and self-directed scanning.
+                </p>
+                <a href="#system-overview" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-8 rounded-lg transition shadow-lg">
+                    Explore the System
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Why This Radar Matters -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Why This Radar Matters</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Reliable Subsurface Detection</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Produces clear radar data to pinpoint buried objects and measure depth reliably — without bulky hardware or huge cost.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Portable & Easy to Deploy</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Compact design built for field tests, academic research, infrastructure inspection, and disaster response.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Validated Results</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Tested on controlled targets, with measurement errors under 2% — giving confidence in accuracy across different depths.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Overview -->
+    <section id="system-overview" class="py-16 bg-slate-50 border-y border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">About The System</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Ground-penetrating-radar systems are widely used in civil engineering, subsurface utility mapping, archaeology, and safety inspections to locate subsurface objects without digging. However, many commercial GPR devices are expensive, bulky, and consume more power, limiting their use in academia, small entities, and research applications.
+                    </p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        To mitigate these constraints, the present work describes the development of a low-cost portable FMCW GPR prototype assembled from commercial off-the-shelf RF modules, open software tools, and a motorized scanning platform. The system operates within the 2.4 GHz ISM band for reasons of component availability and suitability for shallow subsurface detection.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        This system adopts FMCW technology that allows for stable signal transmission and increased noise tolerance compared to impulse-based radar architecture. Reflected signals will be processed using STFT techniques along with SDR digitization to clearly visualize subsurface objects and estimate depth.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="images/system-prototype.jpg" alt="System Prototype" class="rounded-lg shadow-xl w-full object-cover h-96">
+                    <p class="mt-3 text-sm text-slate-500 italic text-center">FMCW-GPR System Prototype Concept</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-blue-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="relative">
+                    <div class="absolute -left-4 -top-4 w-12 h-12 border-t-4 border-l-4 border-blue-400 opacity-50"></div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300 uppercase tracking-widest">Mission</h3>
+                    <p class="text-xl italic font-light leading-relaxed">
+                        “To democratize subsurface detection by delivering a reliable, cost-effective, and portable FMCW radar system that supports research, engineering, and safety applications.”
+                    </p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-4 -top-4 w-12 h-12 border-t-4 border-l-4 border-blue-400 opacity-50"></div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300 uppercase tracking-widest">Vision</h3>
+                    <p class="text-xl italic font-light leading-relaxed">
+                        “To become a benchmark solution for accessible radar sensing — empowering universities, agencies, and industries with practical ground-penetrating technology.”
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section with Database Integration -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-2">Project Inquiries</h2>
+                    <p class="text-slate-600">Interested in our research data or collaboration? Send us a message.</p>
+                </div>
+                
+                <form id="contactForm" class="space-y-6 bg-slate-50 p-8 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+                            <input type="text" name="name" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" name="email" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Organization / Institution</label>
+                        <input type="text" name="organization" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                        <textarea name="message" rows="4" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-200">
+                        Submit Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <p class="text-white font-semibold mb-2">Developed by: Omicropade</p>
+                <p>BS Electronics Engineering</p>
+                <p>Rizal Technological University</p>
+            </div>
+            <p class="text-sm opacity-75">© 2025 FMCW-GPR Research Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
