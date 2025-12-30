@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Development Process - FMCW-GPR Research</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .panel { will-change: max-height; }
+    </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
 
-<!-- Navigation -->
+<!-- NAVIGATION -->
 <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
@@ -24,299 +30,254 @@
     </div>
 </nav>
 
-<!-- Header with Image Overlay -->
-<header class="relative h-72 flex items-center justify-center text-center">
-    <img src="images/hardw.jpg
-         class="absolute inset-0 w-full h-full object-cover">
+<!-- HEADER WITH IMAGE OVERLAY -->
+<header class="relative h-72 flex items-center justify-center text-center text-white">
+    <img src="images/development-bg.jpg"
+         class="absolute inset-0 w-full h-full object-cover"
+         alt="Development Background">
+
     <div class="absolute inset-0 bg-slate-900/70"></div>
+
     <div class="relative z-10 px-6">
-        <h1 class="text-4xl font-bold text-white mb-2">Building the Prototype</h1>
+        <h1 class="text-4xl font-bold mb-2">Building the Prototype</h1>
         <p class="text-slate-300 max-w-2xl mx-auto">
-            From system conceptualization and simulation to hardware integration,
+            From concept definition and system modeling to hardware integration,
             signal processing, and experimental validation.
         </p>
     </div>
 </header>
 
-<main class="container mx-auto px-6 py-16 space-y-16">
+<!-- MAIN CONTENT -->
+<main class="container mx-auto px-6 py-16 space-y-10">
 
-<!-- ================= STEP TEMPLATE ================= -->
-<!-- STEP 1 -->
+<!-- ================= STEP 1 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-    <img src="images/conceptplanning.jpg" class="absolute inset-0 w-full h-full object-cover">
+    <img src="images/concept-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
-    <div class="relative z-10 p-10 text-white">
+    <div class="relative z-10 p-8 text-white">
         <div class="flex justify-between items-center">
-            <h2 class="text-2xl font-bold">1. Concept & Planning</h2>
-            <button onclick="toggle('step1')" class="text-white text-2xl">➜</button>
+            <h2 class="text-2xl font-bold">1. Concept and Planning</h2>
+            <button onclick="togglePanel('step1', this)" class="transition-transform duration-300 text-xl">▼</button>
         </div>
+        <p class="text-slate-300 mt-2">
+            Definition of system objectives, operational constraints, and high-level architecture.
+        </p>
 
-        <div id="step1" class="hidden mt-8 bg-white text-slate-800 p-6 rounded-xl">
-            <div class="grid md:grid-cols-2 gap-6">
+        <!-- PANEL -->
+        <div id="step1"
+             class="panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out
+                    bg-white text-slate-800 rounded-lg p-6 mt-6">
 
-                <!-- Image 1 -->
+            <!-- Images -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
                 <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/blockdiag.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
-                        <p class="font-semibold">System Architecture Definition</p>
-                        <p class="text-sm text-slate-600">
-                            Initial block diagram outlining the FMCW-GPR architecture,
-                            including transmitter, receiver, mixer, and digital processing stages.
+                    <img src="images/block-diagram.jpg" class="w-full h-40 object-cover">
+                    <div class="p-3 text-sm">
+                        <p class="font-semibold">System Block Diagram</p>
+                        <p class="text-slate-600">
+                            Overall FMCW-GPR architecture showing the transmitter, receiver,
+                            mixer, digitization stage, and signal processing chain.
                         </p>
                     </div>
                 </div>
 
-                <!-- Image 2 -->
                 <div class="bg-slate-100 rounded-lg overflow-hidden">
-                   <div class="overflow-x-auto">
-    <table class="w-full border border-slate-300 text-sm">
-        <thead class="bg-slate-800 text-white">
-            <tr>
-                <th class="px-4 py-2 text-left">Parameter</th>
-                <th class="px-4 py-2 text-left">Specification</th>
-                <th class="px-4 py-2 text-left">Design Rationale</th>
-            </tr>
-        </thead>
-        <tbody class="bg-white">
-            <tr class="border-t">
-                <td class="px-4 py-2 font-semibold">Radar Type</td>
-                <td class="px-4 py-2">FMCW (Frequency-Modulated Continuous Wave)</td>
-                <td class="px-4 py-2">
-                    Enables high range resolution with lower peak power compared
-                    to pulsed GPR systems.
-                </td>
-            </tr>
-
-            <tr class="border-t bg-slate-50">
-                <td class="px-4 py-2 font-semibold">Operating Frequency</td>
-                <td class="px-4 py-2">2.4 GHz (ISM Band)</td>
-                <td class="px-4 py-2">
-                    Selected to balance penetration depth and resolution while
-                    ensuring regulatory compliance and component availability.
-                </td>
-            </tr>
-
-            <tr class="border-t">
-                <td class="px-4 py-2 font-semibold">Bandwidth</td>
-                <td class="px-4 py-2">Hundreds of MHz (chirp-dependent)</td>
-                <td class="px-4 py-2">
-                    Larger bandwidth improves depth resolution in subsurface
-                    target detection.
-                </td>
-            </tr>
-
-            <tr class="border-t bg-slate-50">
-                <td class="px-4 py-2 font-semibold">Target Depth Range</td>
-                <td class="px-4 py-2">Up to ~1 meter (controlled environment)</td>
-                <td class="px-4 py-2">
-                    Suitable for laboratory-scale validation and shallow subsurface
-                    inspection applications.
-                </td>
-            </tr>
-
-            <tr class="border-t">
-                <td class="px-4 py-2 font-semibold">Digitization Platform</td>
-                <td class="px-4 py-2">Software-Defined Radio (SDR)</td>
-                <td class="px-4 py-2">
-                    Provides flexibility in signal acquisition, processing, and
-                    rapid prototyping.
-                </td>
-            </tr>
-
-            <tr class="border-t bg-slate-50">
-                <td class="px-4 py-2 font-semibold">Signal Processing</td>
-                <td class="px-4 py-2">STFT-based analysis</td>
-                <td class="px-4 py-2">
-                    Enables time-frequency representation for depth estimation
-                    and radargram visualization.
-                </td>
-            </tr>
-
-            <tr class="border-t">
-                <td class="px-4 py-2 font-semibold">Cost Objective</td>
-                <td class="px-4 py-2">Low-cost research prototype</td>
-                <td class="px-4 py-2">
-                    Designed to be accessible for academic and institutional use
-                    compared to commercial GPR systems.
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-                        <p class="font-semibold">Design Constraints & Requirements</p>
-                        <p class="text-sm text-slate-600">
-                            Identification of operational frequency, penetration depth,
-                            system cost constraints, and ISM band compliance.
+                    <img src="images/requirements.jpg" class="w-full h-40 object-cover">
+                    <div class="p-3 text-sm">
+                        <p class="font-semibold">Design Objectives</p>
+                        <p class="text-slate-600">
+                            Initial requirements defining operating frequency,
+                            depth range, resolution, and cost constraints.
                         </p>
                     </div>
                 </div>
+            </div>
 
+            <!-- TABLE -->
+            <h3 class="text-lg font-bold mb-4">Concept and System Requirements</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full border border-slate-300 text-sm">
+                    <thead class="bg-slate-800 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Parameter</th>
+                            <th class="px-4 py-2 text-left">Specification</th>
+                            <th class="px-4 py-2 text-left">Design Rationale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t">
+                            <td class="px-4 py-2 font-semibold">Radar Type</td>
+                            <td class="px-4 py-2">FMCW Radar</td>
+                            <td class="px-4 py-2">High resolution with low peak power</td>
+                        </tr>
+                        <tr class="border-t bg-slate-50">
+                            <td class="px-4 py-2 font-semibold">Operating Frequency</td>
+                            <td class="px-4 py-2">2.4 GHz ISM Band</td>
+                            <td class="px-4 py-2">Balanced penetration and resolution</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="px-4 py-2 font-semibold">Signal Processing</td>
+                            <td class="px-4 py-2">STFT-based</td>
+                            <td class="px-4 py-2">Time-frequency depth estimation</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </section>
 
-<!-- STEP 2 -->
+<!-- ================= STEP 2 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
     <img src="images/simulation-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
-    <div class="relative z-10 p-10 text-white">
+    <div class="relative z-10 p-8 text-white">
         <div class="flex justify-between items-center">
-            <h2 class="text-2xl font-bold">2. Design & Simulation</h2>
-            <button onclick="toggle('step2')" class="text-white text-2xl">➜</button>
+            <h2 class="text-2xl font-bold">2. Design and Simulation</h2>
+            <button onclick="togglePanel('step2', this)" class="transition-transform duration-300 text-xl">▼</button>
         </div>
+        <p class="text-slate-300 mt-2">
+            Mathematical modeling and simulation of FMCW radar behavior.
+        </p>
 
-        <div id="step2" class="hidden mt-8 bg-white text-slate-800 p-6 rounded-xl">
-            <div class="grid md:grid-cols-2 gap-6">
+        <div id="step2"
+             class="panel max-h-0 overflow-hidden transition-all duration-500
+                    bg-white text-slate-800 rounded-lg p-6 mt-6 grid md:grid-cols-2 gap-6">
 
-                <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/chirp-sim.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
-                        <p class="font-semibold">FMCW Chirp Modeling</p>
-                        <p class="text-sm text-slate-600">
-                            Simulation of linear frequency-modulated chirp signals
-                            to establish the relationship between beat frequency and target depth.
-                        </p>
-                    </div>
+            <div class="bg-slate-100 rounded-lg overflow-hidden">
+                <img src="images/chirp.jpg" class="w-full h-40 object-cover">
+                <div class="p-3 text-sm">
+                    <p class="font-semibold">FMCW Chirp Signal</p>
+                    <p class="text-slate-600">
+                        Simulated frequency-swept waveform used to estimate target range.
+                    </p>
                 </div>
+            </div>
 
-                <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/depth-equation.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
-                        <p class="font-semibold">Depth Estimation Analysis</p>
-                        <p class="text-sm text-slate-600">
-                            Analytical validation of FMCW radar equations used to
-                            convert beat frequency into depth measurements.
-                        </p>
-                    </div>
+            <div class="bg-slate-100 rounded-lg overflow-hidden">
+                <img src="images/equation.jpg" class="w-full h-40 object-cover">
+                <div class="p-3 text-sm">
+                    <p class="font-semibold">Range Equation</p>
+                    <p class="text-slate-600">
+                        Mathematical relationship between beat frequency and target depth.
+                    </p>
                 </div>
-
             </div>
         </div>
     </div>
 </section>
 
-<!-- STEP 3 -->
+<!-- ================= STEP 3 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
     <img src="images/hardware-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
-    <div class="relative z-10 p-10 text-white">
+    <div class="relative z-10 p-8 text-white">
         <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">3. Hardware Integration</h2>
-            <button onclick="toggle('step3')" class="text-white text-2xl">➜</button>
+            <button onclick="togglePanel('step3', this)" class="transition-transform duration-300 text-xl">▼</button>
         </div>
 
-        <div id="step3" class="hidden mt-8 bg-white text-slate-800 p-6 rounded-xl">
-            <div class="grid md:grid-cols-2 gap-6">
+        <div id="step3"
+             class="panel max-h-0 overflow-hidden transition-all duration-500
+                    bg-white text-slate-800 rounded-lg p-6 mt-6 grid md:grid-cols-2 gap-6">
 
-                <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/rf-front-end.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
-                        <p class="font-semibold">RF Front-End Assembly</p>
-                        <p class="text-sm text-slate-600">
-                            Integration of transmitter, receiver, and mixer modules
-                            to form the FMCW radar front-end.
-                        </p>
-                    </div>
+            <div class="bg-slate-100 rounded-lg overflow-hidden">
+                <img src="images/rf-front-end.jpg" class="w-full h-40 object-cover">
+                <div class="p-3 text-sm">
+                    <p class="font-semibold">RF Front-End Assembly</p>
+                    <p class="text-slate-600">
+                        Integration of antennas, mixer, and RF components into a unified system.
+                    </p>
                 </div>
+            </div>
 
-                <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/sdr.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
-                        <p class="font-semibold">SDR Digitization</p>
-                        <p class="text-sm text-slate-600">
-                            Use of a software-defined radio platform for
-                            digitizing the FMCW beat signal.
-                        </p>
-                    </div>
+            <div class="bg-slate-100 rounded-lg overflow-hidden">
+                <img src="images/sdr.jpg" class="w-full h-40 object-cover">
+                <div class="p-3 text-sm">
+                    <p class="font-semibold">SDR Digitization</p>
+                    <p class="text-slate-600">
+                        Beat signal acquisition using a software-defined radio platform.
+                    </p>
                 </div>
-
             </div>
         </div>
     </div>
 </section>
 
-<!-- STEP 4 -->
+<!-- ================= STEP 4 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
     <img src="images/software-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
-    <div class="relative z-10 p-10 text-white">
+    <div class="relative z-10 p-8 text-white">
         <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">4. Software & Signal Processing</h2>
-            <button onclick="toggle('step4')" class="text-white text-2xl">➜</button>
+            <button onclick="togglePanel('step4', this)" class="transition-transform duration-300 text-xl">▼</button>
         </div>
 
-        <div id="step4" class="hidden mt-8 bg-white text-slate-800 p-6 rounded-xl">
-            <div class="grid md:grid-cols-2 gap-6">
+        <div id="step4"
+             class="panel max-h-0 overflow-hidden transition-all duration-500
+                    bg-white text-slate-800 rounded-lg p-6 mt-6 grid md:grid-cols-2 gap-6">
 
-                <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/stft.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
-                        <p class="font-semibold">STFT Processing</p>
-                        <p class="text-sm text-slate-600">
-                            Short-Time Fourier Transform used to extract
-                            depth-dependent frequency components.
-                        </p>
-                    </div>
+            <div class="bg-slate-100 rounded-lg overflow-hidden">
+                <img src="images/stft.png" class="w-full h-40 object-cover">
+                <div class="p-3 text-sm">
+                    <p class="font-semibold">STFT Processing</p>
+                    <p class="text-slate-600">
+                        Time-frequency analysis used to extract depth-related information.
+                    </p>
                 </div>
+            </div>
 
-                <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/radargram.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
-                        <p class="font-semibold">Radargram Visualization</p>
-                        <p class="text-sm text-slate-600">
-                            Processed data displayed as a radargram showing
-                            target depth versus lateral position.
-                        </p>
-                    </div>
+            <div class="bg-slate-100 rounded-lg overflow-hidden">
+                <img src="images/radargram.jpg" class="w-full h-40 object-cover">
+                <div class="p-3 text-sm">
+                    <p class="font-semibold">Radargram Visualization</p>
+                    <p class="text-slate-600">
+                        Depth versus lateral position representation of subsurface targets.
+                    </p>
                 </div>
-
             </div>
         </div>
     </div>
 </section>
 
-<!-- STEP 5 -->
+<!-- ================= STEP 5 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
     <img src="images/testing-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
-    <div class="relative z-10 p-10 text-white">
+    <div class="relative z-10 p-8 text-white">
         <div class="flex justify-between items-center">
-            <h2 class="text-2xl font-bold">5. Testing & Validation</h2>
-            <button onclick="toggle('step5')" class="text-white text-2xl">➜</button>
+            <h2 class="text-2xl font-bold">5. Testing and Validation</h2>
+            <button onclick="togglePanel('step5', this)" class="transition-transform duration-300 text-xl">▼</button>
         </div>
 
-        <div id="step5" class="hidden mt-8 bg-white text-slate-800 p-6 rounded-xl">
-            <div class="grid md:grid-cols-2 gap-6">
+        <div id="step5"
+             class="panel max-h-0 overflow-hidden transition-all duration-500
+                    bg-white text-slate-800 rounded-lg p-6 mt-6 grid md:grid-cols-2 gap-6">
 
-                <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/test-setup.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
-                        <p class="font-semibold">Controlled Test Environment</p>
-                        <p class="text-sm text-slate-600">
-                            Experimental setup with metallic targets embedded
-                            at known depths for system validation.
-                        </p>
-                    </div>
+            <div class="bg-slate-100 rounded-lg overflow-hidden">
+                <img src="images/test-setup.jpg" class="w-full h-40 object-cover">
+                <div class="p-3 text-sm">
+                    <p class="font-semibold">Experimental Setup</p>
+                    <p class="text-slate-600">
+                        Controlled test environment with embedded metallic targets at known depths.
+                    </p>
                 </div>
+            </div>
 
-                <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/results.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
-                        <p class="font-semibold">Measured Results</p>
-                        <p class="text-sm text-slate-600">
-                            Comparison of estimated target depths with
-                            ground-truth measurements to evaluate accuracy.
-                        </p>
-                    </div>
+            <div class="bg-slate-100 rounded-lg overflow-hidden">
+                <img src="images/results.jpg" class="w-full h-40 object-cover">
+                <div class="p-3 text-sm">
+                    <p class="font-semibold">Validation Results</p>
+                    <p class="text-slate-600">
+                        Comparison between estimated depths and actual measured values.
+                    </p>
                 </div>
-
             </div>
         </div>
     </div>
@@ -324,14 +285,30 @@
 
 </main>
 
-<footer class="bg-slate-900 text-slate-400 py-10 text-center">
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-slate-400 py-10 text-center mt-auto">
     <p class="text-white font-semibold">Developed by: Omicropade</p>
     <p>© 2025 FMCW-GPR Research Project</p>
 </footer>
 
+<!-- SCRIPT -->
 <script>
-function toggle(id) {
-    document.getElementById(id).classList.toggle('hidden');
+function togglePanel(id, btn) {
+    const panels = document.querySelectorAll('.panel');
+    const buttons = document.querySelectorAll('button');
+
+    panels.forEach(panel => {
+        if (panel.id === id) {
+            panel.classList.toggle('max-h-0');
+            panel.classList.toggle('max-h-[800px]');
+        } else {
+            panel.classList.add('max-h-0');
+            panel.classList.remove('max-h-[800px]');
+        }
+    });
+
+    buttons.forEach(b => b.classList.remove('rotate-180'));
+    btn.classList.toggle('rotate-180');
 }
 </script>
 
