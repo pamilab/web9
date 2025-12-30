@@ -6,6 +6,12 @@
     <title>Development Process - FMCW-GPR Research</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+.panel {
+    will-change: max-height;
+}
+</style>
+
 </head>
 
 <body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
@@ -57,7 +63,10 @@
     </div>
 
     <!-- PANEL -->
-    <div id="step1" class="hidden mt-6 border-t pt-6 grid md:grid-cols-2 gap-6">
+    <div id="step1"
+     class="panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-6
+            bg-white text-slate-800 rounded-lg p-6 grid md:grid-cols-2 gap-6">
+
         <img src="images/concept-detail.jpg" class="rounded-lg object-cover h-56 w-full">
         <p class="text-slate-600 leading-relaxed">
             During this phase, system constraints such as cost, operating frequency,
@@ -82,7 +91,10 @@
         <img src="images/simulation.jpg" class="md:w-1/3 h-44 object-cover rounded-lg">
     </div>
 
-    <div id="step2" class="hidden mt-6 border-t pt-6 grid md:grid-cols-2 gap-6">
+    <div id="step2"
+     class="panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-6
+            bg-white text-slate-800 rounded-lg p-6 grid md:grid-cols-2 gap-6">
+
         <img src="images/simulation-detail.jpg" class="rounded-lg object-cover h-56 w-full">
         <p class="text-slate-600">
             MATLAB and Python simulations were used to validate beat frequency
@@ -106,7 +118,10 @@
         <img src="images/hardware.jpg" class="md:w-1/3 h-44 object-cover rounded-lg">
     </div>
 
-    <div id="step3" class="hidden mt-6 border-t pt-6 grid md:grid-cols-2 gap-6">
+    <div id="step3"
+     class="panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-6
+            bg-white text-slate-800 rounded-lg p-6 grid md:grid-cols-2 gap-6">
+
         <img src="images/hardware-detail.jpg" class="rounded-lg object-cover h-56 w-full">
         <p class="text-slate-600">
             HackRF SDR, antennas, mixers, and power modules were integrated into a
@@ -130,7 +145,10 @@
         <img src="images/software.jpg" class="md:w-1/3 h-44 object-cover rounded-lg">
     </div>
 
-    <div id="step4" class="hidden mt-6 border-t pt-6 grid md:grid-cols-2 gap-6">
+    <div id="step4"
+     class="panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-6
+            bg-white text-slate-800 rounded-lg p-6 grid md:grid-cols-2 gap-6">
+
         <img src="images/software-detail.jpg" class="rounded-lg object-cover h-56 w-full">
         <p class="text-slate-600">
             GNU Radio flowgraphs and Python scripts handled real-time digitization,
@@ -154,7 +172,10 @@
         <img src="images/testing.jpg" class="md:w-1/3 h-44 object-cover rounded-lg">
     </div>
 
-    <div id="step5" class="hidden mt-6 border-t pt-6 grid md:grid-cols-2 gap-6">
+    <div id="step5"
+     class="panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-6
+            bg-white text-slate-800 rounded-lg p-6 grid md:grid-cols-2 gap-6">
+
         <img src="images/testing-detail.jpg" class="rounded-lg object-cover h-56 w-full">
         <p class="text-slate-600">
             Metallic targets were embedded at known depths (29 cm and 72 cm) to validate
@@ -173,9 +194,22 @@
 
 <!-- SIMPLE JS -->
 <script>
-function togglePanel(id) {
-    const panel = document.getElementById(id);
-    panel.classList.toggle('hidden');
+function togglePanel(id, btn) {
+    const panels = document.querySelectorAll('.panel');
+    const buttons = document.querySelectorAll('button');
+
+    panels.forEach(panel => {
+        if (panel.id === id) {
+            panel.classList.toggle('max-h-0');
+            panel.classList.toggle('max-h-[600px]');
+        } else {
+            panel.classList.add('max-h-0');
+            panel.classList.remove('max-h-[600px]');
+        }
+    });
+
+    buttons.forEach(b => b.classList.remove('rotate-180'));
+    btn.classList.toggle('rotate-180');
 }
 </script>
 
