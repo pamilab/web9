@@ -209,13 +209,16 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-x
 <div class="bg-slate-50 p-4 rounded-lg shadow">
 <img src="images/rf.jpg" class="w-full object-contain mb-4 rounded-md">
 <h4 class="font-semibold">RF Front-End</h4>
-<p class="text-sm text-slate-600">Antenna, mixer, RF chain assembly.</p>
+<p class="text-sm text-slate-600">In the initial phase, the RF components were carefully interconnected to establish the complete signal path of the radar system. Every high-frequency connection uses standard SMA connectors using 50-ohm impedance-matched devices.</p>
 </div>
 
 <div class="bg-slate-50 p-4 rounded-lg shadow">
 <img src="images/hackrf.jpg" class="w-full object-contain mb-4 rounded-md">
 <h4 class="font-semibold">SDR Digitization</h4>
-<p class="text-sm text-slate-600">Beat signal acquisition using SDR.</p>
+<p class="text-sm text-slate-600">The ADC on this SDR is used to digitize the beat frequency only and other functions will not be used. The sampling rate will be maximized and the Nyquist limit will be reached at maximum modulating frequency since it is using sampling.
+The USB will carry 1.28Gbps at 20MSPS sampling rate using complex64 data type which contains 32 bits each of I and Q samples.
+This was chosen because it is the cheapest available digitizer with very high sampling rate, increasing the bandwidth limits, hence range resolution. 
+</p>
 </div>
 
 </div>
@@ -243,9 +246,16 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-x
 </div>
 
 <div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/rimages/hamming.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Hamming Window</h4>
+<p class="text-sm text-slate-600">The Hamming window is a mathematical function used in FMCW-GPR System. It is applied to the beat signal before performing the 
+    Fourier Transform to reduce spectral leakage, which can distort the frequency analysis of the signal.</p>
+</div>
+    
+<div class="bg-slate-50 p-4 rounded-lg shadow">
 <img src="images/radargram.jpg" class="w-full object-contain mb-4 rounded-md">
 <h4 class="font-semibold">Radargram</h4>
-<p class="text-sm text-slate-600">Frequency vs Time .</p>
+<p class="text-sm text-slate-600">Frequency vs Time</p>
 </div>
 
 </div>
