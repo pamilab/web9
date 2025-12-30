@@ -26,7 +26,7 @@
 
 <!-- Header with Image Overlay -->
 <header class="relative h-72 flex items-center justify-center text-center">
-    <img src="images/dev-header.jpg"
+    <img src="images/hardw.jpg
          class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/70"></div>
     <div class="relative z-10 px-6">
@@ -43,7 +43,7 @@
 <!-- ================= STEP TEMPLATE ================= -->
 <!-- STEP 1 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-    <img src="images/concept-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+    <img src="images/conceptplanning.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
     <div class="relative z-10 p-10 text-white">
@@ -57,7 +57,7 @@
 
                 <!-- Image 1 -->
                 <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/concept-diagram.jpg" class="w-full h-40 object-cover">
+                    <img src="images/blockdiag.jpg" class="w-full h-40 object-cover">
                     <div class="p-3">
                         <p class="font-semibold">System Architecture Definition</p>
                         <p class="text-sm text-slate-600">
@@ -69,8 +69,82 @@
 
                 <!-- Image 2 -->
                 <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/concept-requirements.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3">
+                   <div class="overflow-x-auto">
+    <table class="w-full border border-slate-300 text-sm">
+        <thead class="bg-slate-800 text-white">
+            <tr>
+                <th class="px-4 py-2 text-left">Parameter</th>
+                <th class="px-4 py-2 text-left">Specification</th>
+                <th class="px-4 py-2 text-left">Design Rationale</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white">
+            <tr class="border-t">
+                <td class="px-4 py-2 font-semibold">Radar Type</td>
+                <td class="px-4 py-2">FMCW (Frequency-Modulated Continuous Wave)</td>
+                <td class="px-4 py-2">
+                    Enables high range resolution with lower peak power compared
+                    to pulsed GPR systems.
+                </td>
+            </tr>
+
+            <tr class="border-t bg-slate-50">
+                <td class="px-4 py-2 font-semibold">Operating Frequency</td>
+                <td class="px-4 py-2">2.4 GHz (ISM Band)</td>
+                <td class="px-4 py-2">
+                    Selected to balance penetration depth and resolution while
+                    ensuring regulatory compliance and component availability.
+                </td>
+            </tr>
+
+            <tr class="border-t">
+                <td class="px-4 py-2 font-semibold">Bandwidth</td>
+                <td class="px-4 py-2">Hundreds of MHz (chirp-dependent)</td>
+                <td class="px-4 py-2">
+                    Larger bandwidth improves depth resolution in subsurface
+                    target detection.
+                </td>
+            </tr>
+
+            <tr class="border-t bg-slate-50">
+                <td class="px-4 py-2 font-semibold">Target Depth Range</td>
+                <td class="px-4 py-2">Up to ~1 meter (controlled environment)</td>
+                <td class="px-4 py-2">
+                    Suitable for laboratory-scale validation and shallow subsurface
+                    inspection applications.
+                </td>
+            </tr>
+
+            <tr class="border-t">
+                <td class="px-4 py-2 font-semibold">Digitization Platform</td>
+                <td class="px-4 py-2">Software-Defined Radio (SDR)</td>
+                <td class="px-4 py-2">
+                    Provides flexibility in signal acquisition, processing, and
+                    rapid prototyping.
+                </td>
+            </tr>
+
+            <tr class="border-t bg-slate-50">
+                <td class="px-4 py-2 font-semibold">Signal Processing</td>
+                <td class="px-4 py-2">STFT-based analysis</td>
+                <td class="px-4 py-2">
+                    Enables time-frequency representation for depth estimation
+                    and radargram visualization.
+                </td>
+            </tr>
+
+            <tr class="border-t">
+                <td class="px-4 py-2 font-semibold">Cost Objective</td>
+                <td class="px-4 py-2">Low-cost research prototype</td>
+                <td class="px-4 py-2">
+                    Designed to be accessible for academic and institutional use
+                    compared to commercial GPR systems.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
                         <p class="font-semibold">Design Constraints & Requirements</p>
                         <p class="text-sm text-slate-600">
                             Identification of operational frequency, penetration depth,
