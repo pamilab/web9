@@ -10,10 +10,7 @@
 
 <style>
 body { font-family: 'Inter', sans-serif; }
-
 .panel { will-change: max-height; }
-
-/* GLASS EFFECT */
 .glass {
     backdrop-filter: blur(12px);
     background: linear-gradient(
@@ -21,37 +18,6 @@ body { font-family: 'Inter', sans-serif; }
         rgba(255,255,255,0.85),
         rgba(255,255,255,0.65)
     );
-}
-
-/* TOGGLE BUTTON */
-.toggle-btn {
-    width: 38px;
-    height: 38px;
-    border-radius: 9999px;
-    border: 2px solid rgba(255,255,255,0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    font-weight: 600;
-    transition: all 0.25s ease;
-}
-
-.toggle-btn:hover {
-    background: rgba(255,255,255,0.2);
-    transform: scale(1.08);
-}
-
-.toggle-btn.active {
-    transform: rotate(45deg);
-    background: rgba(255,255,255,0.25);
-}
-
-/* IMAGE SIZE (NO CROP, NOT TOO BIG) */
-.panel img {
-    max-height: 220px;
-    width: 100%;
-    object-fit: contain;
 }
 </style>
 </head>
@@ -61,7 +27,7 @@ body { font-family: 'Inter', sans-serif; }
 <!-- NAV -->
 <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-<a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
+    <a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
 </div>
 </nav>
 
@@ -70,10 +36,10 @@ body { font-family: 'Inter', sans-serif; }
 <img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
 <div class="absolute inset-0 bg-slate-900/70"></div>
 <div class="relative z-10 px-6">
-<h1 class="text-4xl font-bold mb-2">Building the Prototype</h1>
-<p class="text-slate-300 max-w-2xl mx-auto">
-Concept, design, simulation, hardware, and signal processing workflow.
-</p>
+    <h1 class="text-4xl font-bold mb-2">Building the Prototype</h1>
+    <p class="text-slate-300 max-w-2xl mx-auto">
+        Concept, design, simulation, hardware, and signal processing workflow.
+    </p>
 </div>
 </header>
 
@@ -87,8 +53,8 @@ Concept, design, simulation, hardware, and signal processing workflow.
 
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">1. Concept and Planning</h2>
-<button class="toggle-btn" onclick="togglePanel('step1', this)">+</button>
+    <h2 class="text-2xl font-bold">1. Concept and Planning</h2>
+    <button onclick="togglePanel('step1', this)" class="text-xl transition-transform">▼</button>
 </div>
 
 <div id="step1"
@@ -97,11 +63,11 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slat
 <div class="grid lg:grid-cols-3 gap-6">
 
 <div class="bg-slate-50 rounded-lg p-4 shadow">
-<img src="images/blockdiag.jpg" class="mb-4 rounded-md">
-<h4 class="font-semibold">System Block Diagram</h4>
-<p class="text-sm text-slate-600">
-Overall FMCW-GPR architecture and signal flow.
-</p>
+    <img src="images/blockdiag.jpg" class="w-full object-contain mb-4 rounded-md">
+    <h4 class="font-semibold">System Block Diagram</h4>
+    <p class="text-sm text-slate-600">
+        Overall FMCW-GPR architecture and signal flow.
+    </p>
 </div>
 
 <div class="lg:col-span-2 overflow-x-auto">
@@ -117,7 +83,7 @@ Overall FMCW-GPR architecture and signal flow.
 <tr class="border-t">
 <td class="px-4 py-2 font-semibold">Radar Type</td>
 <td class="px-4 py-2">FMCW</td>
-<td class="px-4 py-2">High resolution, low peak power</td>
+<td class="px-4 py-2">High tion, low peak power</td>
 </tr>
 <tr class="border-t bg-slate-50">
 <td class="px-4 py-2 font-semibold">Frequency</td>
@@ -139,28 +105,31 @@ Overall FMCW-GPR architecture and signal flow.
 </section>
 
 <!-- STEP 2 -->
+<!-- STEP 2 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
 <img src="images/desimulatin.jpg" class="absolute inset-0 w-full h-full object-cover">
 <div class="absolute inset-0 bg-slate-900/75"></div>
 
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">2. Design and Simulation</h2>
-<button class="toggle-btn" onclick="togglePanel('step2', this)">+</button>
+    <h2 class="text-2xl font-bold">2. Design and Simulation</h2>
+    <button onclick="togglePanel('step2', this)" class="text-xl transition-transform">▼</button>
 </div>
 
 <div id="step2"
 class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid lg:grid-cols-2 gap-6 text-slate-800">
 
+<!-- LEFT: SIGNAL VISUAL -->
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/swept.png" class="mb-4 rounded-md">
-<h4 class="font-semibold">FMCW Chirp Signal</h4>
-<p class="text-sm text-slate-600">
-Linear frequency-modulated continuous wave used to encode target depth
-information into beat frequency.
-</p>
+    <img src="images/swept.png" class="w-full object-contain mb-4 rounded-md">
+    <h4 class="font-semibold">FMCW Chirp Signal</h4>
+    <p class="text-sm text-slate-600">
+        Linear frequency-modulated continuous wave used to encode target depth
+        information into beat frequency.
+    </p>
 </div>
 
+<!-- RIGHT: EQUATIONS TABLE -->
 <div class="overflow-x-auto">
 <table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
 <thead class="bg-slate-800 text-white">
@@ -170,20 +139,25 @@ information into beat frequency.
 <th class="px-4 py-2">Description</th>
 </tr>
 </thead>
+
 <tbody>
+
 <tr class="border-t">
 <td class="px-4 py-2 font-semibold">STFT</td>
 <td class="px-4 py-2 font-mono">
-S(f, t) = ∑τ x(τ) · w(t − τ) · e<sup>−j2πfτ</sup>
+S(f, t) = ∑<sub>τ=0</sub><sup>N−1</sup> x(τ) · w(t − τ) · e<sup>−j2πfτ</sup>
 </td>
 <td class="px-4 py-2">
-Short-Time Fourier Transform used to extract time–frequency information.
+Short-Time Fourier Transform used to extract time–frequency
+information from the beat signal.
 </td>
 </tr>
 
 <tr class="border-t bg-slate-50">
 <td class="px-4 py-2 font-semibold">Beat Frequency</td>
-<td class="px-4 py-2 font-mono">f<sub>b</sub> = f<sub>2</sub> − f<sub>1</sub></td>
+<td class="px-4 py-2 font-mono">
+f<sub>b</sub> = f<sub>2</sub> − f<sub>1</sub>
+</td>
 <td class="px-4 py-2">
 Difference between transmitted and received frequencies after mixing.
 </td>
@@ -195,17 +169,21 @@ Difference between transmitted and received frequencies after mixing.
 R = (c · T · f<sub>b</sub>) / (2B)
 </td>
 <td class="px-4 py-2">
-Depth calculation using beat frequency.
+Depth calculation using beat frequency, where c is propagation velocity,
+T is chirp duration, and B is bandwidth.
 </td>
 </tr>
 
 <tr class="border-t bg-slate-50">
 <td class="px-4 py-2 font-semibold">Range Resolution</td>
-<td class="px-4 py-2 font-mono">ΔR = c / (2B)</td>
+<td class="px-4 py-2 font-mono">
+ΔR = c / (2B)
+</td>
 <td class="px-4 py-2">
-Minimum resolvable depth separation.
+Minimum resolvable depth separation determined by FMCW bandwidth.
 </td>
 </tr>
+
 </tbody>
 </table>
 </div>
@@ -222,25 +200,27 @@ Minimum resolvable depth separation.
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
 <h2 class="text-2xl font-bold">3. Hardware Integration</h2>
-<button class="toggle-btn" onclick="togglePanel('step3', this)">+</button>
+<button onclick="togglePanel('step3', this)" class="text-xl transition-transform">▼</button>
 </div>
 
-<div id="step3" class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+<div id="step3"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/rf.jpg" class="w-full mb-4 rounded-md">
+<img src="images/rf.jpg" class="w-full object-contain mb-4 rounded-md">
 <h4 class="font-semibold">RF Front-End</h4>
-<p class="text-sm text-slate-600">
-In the initial phase, the RF components were carefully interconnected...
-</p>
+<p class="text-sm text-slate-600">In the initial phase, the RF components were carefully interconnected to establish the complete signal path of the radar system. Every high-frequency connection uses standard SMA connectors using 50-ohm impedance-matched devices.</p>
 </div>
 
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/hackrf.jpg" class="w-full mb-4 rounded-md">
+<img src="images/hackrf.jpg" class="w-full object-contain mb-4 rounded-md">
 <h4 class="font-semibold">SDR Digitization</h4>
-<p class="text-sm text-slate-600">
-The ADC on this SDR is used to digitize the beat frequency only...
+<p class="text-sm text-slate-600">The ADC on this SDR is used to digitize the beat frequency only and other functions will not be used. The sampling rate will be maximized and the Nyquist limit will be reached at maximum modulating frequency since it is using sampling.
+The USB will carry 1.28Gbps at 20MSPS sampling rate using complex64 data type which contains 32 bits each of I and Q samples.
+This was chosen because it is the cheapest available digitizer with very high sampling rate, increasing the bandwidth limits, hence range resolution. 
 </p>
 </div>
+
 </div>
 </div>
 </section>
@@ -253,15 +233,31 @@ The ADC on this SDR is used to digitize the beat frequency only...
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
 <h2 class="text-2xl font-bold">4. Software & Signal Processing</h2>
-<button class="toggle-btn" onclick="togglePanel('step4', this)">+</button>
+<button onclick="togglePanel('step4', this)" class="text-xl transition-transform">▼</button>
 </div>
 
-<div id="step4" class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+<div id="step4"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/sttft.jpg" class="w-full mb-4 rounded-md">
+<img src="images/sttft.jpg" class="w-full object-contain mb-4 rounded-md">
 <h4 class="font-semibold">STFT Analysis</h4>
 <p class="text-sm text-slate-600">Time–frequency depth extraction.</p>
 </div>
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/hamming.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Hamming Window</h4>
+<p class="text-sm text-slate-600">The Hamming window is a mathematical function used in FMCW-GPR System. It is applied to the beat signal before performing the 
+    Fourier Transform to reduce spectral leakage, which can distort the frequency analysis of the signal.</p>
+</div>
+    
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/radargram.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Radargram</h4>
+<p class="text-sm text-slate-600">Frequency vs Time</p>
+</div>
+
 </div>
 </div>
 </section>
@@ -274,17 +270,28 @@ The ADC on this SDR is used to digitize the beat frequency only...
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
 <h2 class="text-2xl font-bold">5. Testing and Validation</h2>
-<button class="toggle-btn" onclick="togglePanel('step5', this)">+</button>
+<button onclick="togglePanel('step5', this)" class="text-xl transition-transform">▼</button>
 </div>
 
-<div id="step5" class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+<div id="step5"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/testi.jpg" class="w-full mb-4 rounded-md">
+<img src="images/testi.jpg" class="w-full object-contain mb-4 rounded-md">
 <h4 class="font-semibold">Lateral Position</h4>
 <p class="text-sm text-slate-600">
 Controlled test environment with embedded metallic object.
 </p>
 </div>
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/combi.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Depth Detection Accuracy (Static)</h4>
+<p class="text-sm text-slate-600">
+Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FMCW-GPR System.
+</p>
+</div>
+
 </div>
 </div>
 </section>
@@ -301,7 +308,7 @@ Controlled test environment with embedded metallic object.
 <script>
 function togglePanel(id, btn) {
     const panels = document.querySelectorAll('.panel');
-    const buttons = document.querySelectorAll('.toggle-btn');
+    const buttons = document.querySelectorAll('button');
 
     panels.forEach(p => {
         if (p.id === id) {
@@ -313,8 +320,8 @@ function togglePanel(id, btn) {
         }
     });
 
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.toggle('active');
+    buttons.forEach(b => b.classList.remove('rotate-180'));
+    btn.classList.toggle('rotate-180');
 }
 </script>
 
