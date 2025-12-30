@@ -83,7 +83,7 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slat
 <tr class="border-t">
 <td class="px-4 py-2 font-semibold">Radar Type</td>
 <td class="px-4 py-2">FMCW</td>
-<td class="px-4 py-2">High resolution, low peak power</td>
+<td class="px-4 py-2">High tion, low peak power</td>
 </tr>
 <tr class="border-t bg-slate-50">
 <td class="px-4 py-2 font-semibold">Frequency</td>
@@ -105,6 +105,7 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slat
 </section>
 
 <!-- STEP 2 -->
+<!-- STEP 2 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
 <img src="images/desimulatin.jpg" class="absolute inset-0 w-full h-full object-cover">
 <div class="absolute inset-0 bg-slate-900/75"></div>
@@ -118,14 +119,17 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slat
 <div id="step2"
 class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid lg:grid-cols-2 gap-6 text-slate-800">
 
+<!-- LEFT: SIGNAL VISUAL -->
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/swept.png" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">FMCW Chirp Signal</h4>
-<p class="text-sm text-slate-600">
-Linear frequency sweep used for range estimation.
-</p>
+    <img src="images/swept.png" class="w-full object-contain mb-4 rounded-md">
+    <h4 class="font-semibold">FMCW Chirp Signal</h4>
+    <p class="text-sm text-slate-600">
+        Linear frequency-modulated continuous wave used to encode target depth
+        information into beat frequency.
+    </p>
 </div>
 
+<!-- RIGHT: EQUATIONS TABLE -->
 <div class="overflow-x-auto">
 <table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
 <thead class="bg-slate-800 text-white">
@@ -135,42 +139,51 @@ Linear frequency sweep used for range estimation.
 <th class="px-4 py-2">Description</th>
 </tr>
 </thead>
+
 <tbody>
+
 <tr class="border-t">
-<td class="px-4 py-2 font-semibold">Chirp Signal</td>
+<td class="px-4 py-2 font-semibold">STFT</td>
 <td class="px-4 py-2 font-mono">
-s(t) = A cos(2π(f₀t + ½St²))
+S(f, t) = ∑<sub>τ=0</sub><sup>N−1</sup> x(τ) · w(t − τ) · e<sup>−j2πfτ</sup>
 </td>
-<td class="px-4 py-2">Transmitted FMCW waveform</td>
+<td class="px-4 py-2">
+Short-Time Fourier Transform used to extract time–frequency
+information from the beat signal.
+</td>
 </tr>
+
 <tr class="border-t bg-slate-50">
 <td class="px-4 py-2 font-semibold">Beat Frequency</td>
 <td class="px-4 py-2 font-mono">
-f<sub>b</sub> = S · τ
+f<sub>b</sub> = f<sub>2</sub> − f<sub>1</sub>
 </td>
-<td class="px-4 py-2">Frequency difference due to delay</td>
+<td class="px-4 py-2">
+Difference between transmitted and received frequencies after mixing.
+</td>
 </tr>
+
 <tr class="border-t">
-<td class="px-4 py-2 font-semibold">Propagation Delay</td>
+<td class="px-4 py-2 font-semibold">Range Estimation</td>
 <td class="px-4 py-2 font-mono">
-τ = 2R / v
+R = (c · T · f<sub>b</sub>) / (2B)
 </td>
-<td class="px-4 py-2">Two-way travel time</td>
+<td class="px-4 py-2">
+Depth calculation using beat frequency, where c is propagation velocity,
+T is chirp duration, and B is bandwidth.
+</td>
 </tr>
+
 <tr class="border-t bg-slate-50">
-<td class="px-4 py-2 font-semibold">Depth Estimation</td>
-<td class="px-4 py-2 font-mono">
-R = (v · f<sub>b</sub>) / (2S)
-</td>
-<td class="px-4 py-2">Depth calculation</td>
-</tr>
-<tr class="border-t">
 <td class="px-4 py-2 font-semibold">Range Resolution</td>
 <td class="px-4 py-2 font-mono">
 ΔR = c / (2B)
 </td>
-<td class="px-4 py-2">Resolution vs bandwidth</td>
+<td class="px-4 py-2">
+Minimum resolvable depth separation determined by FMCW bandwidth.
+</td>
 </tr>
+
 </tbody>
 </table>
 </div>
