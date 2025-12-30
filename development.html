@@ -11,21 +11,19 @@
 <style>
 body { font-family: 'Inter', sans-serif; }
 
-/* PANEL VISIBILITY */
-.panel {
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(0.96);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+.panel { will-change: max-height; }
+
+/* GLASS EFFECT */
+.glass {
+    backdrop-filter: blur(12px);
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.85),
+        rgba(255,255,255,0.65)
+    );
 }
 
-.panel.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1);
-}
-
-/* PLUS BUTTON */
+/* TOGGLE BUTTON */
 .toggle-btn {
     width: 38px;
     height: 38px;
@@ -34,41 +32,26 @@ body { font-family: 'Inter', sans-serif; }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
-    line-height: 1;
     transition: all 0.25s ease;
 }
 
 .toggle-btn:hover {
     background: rgba(255,255,255,0.2);
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .toggle-btn.active {
     transform: rotate(45deg);
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.25);
 }
 
-/* ENSURE TEXT IS ABOVE OVERLAY */
-.panel {
-    position: relative;
-    z-index: 20;
-}
-
-/* IMAGE FIT (NO CROP) */
+/* IMAGE SIZE (NO CROP, NOT TOO BIG) */
 .panel img {
+    max-height: 220px;
+    width: 100%;
     object-fit: contain;
-}
-
-/* GLASS */
-.glass {
-    backdrop-filter: blur(12px);
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.88),
-        rgba(255,255,255,0.68)
-    );
 }
 </style>
 </head>
@@ -108,11 +91,13 @@ Concept, design, simulation, hardware, and signal processing workflow.
 <button class="toggle-btn" onclick="togglePanel('step1', this)">+</button>
 </div>
 
-<div id="step1" class="panel glass text-slate-800 rounded-xl p-6 mt-6">
+<div id="step1"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slate-800 rounded-xl p-6 mt-6">
+
 <div class="grid lg:grid-cols-3 gap-6">
 
 <div class="bg-slate-50 rounded-lg p-4 shadow">
-<img src="images/blockdiag.jpg" class="w-full mb-4 rounded-md">
+<img src="images/blockdiag.jpg" class="mb-4 rounded-md">
 <h4 class="font-semibold">System Block Diagram</h4>
 <p class="text-sm text-slate-600">
 Overall FMCW-GPR architecture and signal flow.
@@ -132,7 +117,7 @@ Overall FMCW-GPR architecture and signal flow.
 <tr class="border-t">
 <td class="px-4 py-2 font-semibold">Radar Type</td>
 <td class="px-4 py-2">FMCW</td>
-<td class="px-4 py-2">High tion, low peak power</td>
+<td class="px-4 py-2">High resolution, low peak power</td>
 </tr>
 <tr class="border-t bg-slate-50">
 <td class="px-4 py-2 font-semibold">Frequency</td>
@@ -164,9 +149,11 @@ Overall FMCW-GPR architecture and signal flow.
 <button class="toggle-btn" onclick="togglePanel('step2', this)">+</button>
 </div>
 
-<div id="step2" class="panel glass rounded-xl p-6 mt-6 grid lg:grid-cols-2 gap-6 text-slate-800">
+<div id="step2"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid lg:grid-cols-2 gap-6 text-slate-800">
+
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/swept.png" class="w-full mb-4 rounded-md">
+<img src="images/swept.png" class="mb-4 rounded-md">
 <h4 class="font-semibold">FMCW Chirp Signal</h4>
 <p class="text-sm text-slate-600">
 Linear frequency-modulated continuous wave used to encode target depth
@@ -193,9 +180,36 @@ S(f, t) = ∑τ x(τ) · w(t − τ) · e<sup>−j2πfτ</sup>
 Short-Time Fourier Transform used to extract time–frequency information.
 </td>
 </tr>
+
+<tr class="border-t bg-slate-50">
+<td class="px-4 py-2 font-semibold">Beat Frequency</td>
+<td class="px-4 py-2 font-mono">f<sub>b</sub> = f<sub>2</sub> − f<sub>1</sub></td>
+<td class="px-4 py-2">
+Difference between transmitted and received frequencies after mixing.
+</td>
+</tr>
+
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">Range Estimation</td>
+<td class="px-4 py-2 font-mono">
+R = (c · T · f<sub>b</sub>) / (2B)
+</td>
+<td class="px-4 py-2">
+Depth calculation using beat frequency.
+</td>
+</tr>
+
+<tr class="border-t bg-slate-50">
+<td class="px-4 py-2 font-semibold">Range Resolution</td>
+<td class="px-4 py-2 font-mono">ΔR = c / (2B)</td>
+<td class="px-4 py-2">
+Minimum resolvable depth separation.
+</td>
+</tr>
 </tbody>
 </table>
 </div>
+
 </div>
 </div>
 </section>
@@ -289,11 +303,13 @@ function togglePanel(id, btn) {
     const panels = document.querySelectorAll('.panel');
     const buttons = document.querySelectorAll('.toggle-btn');
 
-    panels.forEach(panel => {
-        if (panel.id === id) {
-            panel.classList.toggle('active');
+    panels.forEach(p => {
+        if (p.id === id) {
+            p.classList.toggle('max-h-0');
+            p.classList.toggle('max-h-[1400px]');
         } else {
-            panel.classList.remove('active');
+            p.classList.add('max-h-0');
+            p.classList.remove('max-h-[1400px]');
         }
     });
 
