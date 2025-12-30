@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Problem & Approach - FMCW-GPR Research</title>
@@ -78,78 +78,142 @@
     <div class="space-y-10">
     
         <!-- Step Template -->
-        <!-- Step 1 -->
-        <div class="relative flex md:odd:flex-row-reverse items-center">
-            <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold z-10">1</div>
-            <div class="md:w-[45%] bg-white p-6 ml-6 rounded-lg shadow border flex gap-4 items-center">
-                <div>
-                    <h3 class="font-bold mb-1">Transmission</h3>
-                    <p class="text-slate-600">FMCW chirp transmitted toward the ground.</p>
-                </div>
-                <img src="images/chirp.jpg" class="w-45 h-45 object-contain" alt="">
-            </div>
+<!-- Step 1 -->
+<div class="relative flex md:odd:flex-row-reverse items-center group">
+    
+    <!-- Pulse Ring -->
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
+
+    <!-- Step Number -->
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        1
+    </div>
+
+    <!-- Content Card -->
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
+
+        <!-- Accent Bar -->
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
+
+        <!-- Text -->
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Transmission</h3>
+            <p class="text-slate-600">
+                FMCW chirp transmitted toward the ground.
+            </p>
         </div>
 
-        <!-- Step 2 -->
-        <div class="relative flex md:odd:flex-row-reverse items-center">
-            <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold z-10">2</div>
-            <div class="md:w-[45%] bg-white p-6 ml-6 rounded-lg shadow border flex gap-4 items-center">
-                <div>
-                    <h3 class="font-bold mb-1">Reflection</h3>
-                    <p class="text-slate-600">A frequency-swept FMCW chirp is transmitted toward the ground. Reflected signals from subsurface objects return to the receiver.</p>
-                </div>
-                <img src="images/bcksct.png" class="w-43 h-37 object-contain" alt="">
-            </div>
+        <!-- Image -->
+        <img src="images/chirp.jpg"
+             class="w-48 h-48 object-contain drop-shadow-lg"
+             alt="">
+    </div>
+</div>
+
+       <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        2
+    </div>
+
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
+
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Reflection</h3>
+            <p class="text-slate-600">
+                A frequency-swept FMCW chirp is transmitted toward the ground. Reflected signals from subsurface objects return to the receiver.
+            </p>
         </div>
 
-        <!-- Step 3 -->
-        <div class="relative flex md:odd:flex-row-reverse items-center">
-            <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold z-10">3</div>
-            <div class="md:w-[45%] bg-white p-6 ml-6 rounded-lg shadow border flex gap-4 items-center">
-                <div>
-                    <h3 class="font-bold mb-1">Mixing</h3>
-                    <p class="text-slate-600">The transmitted and received signals are mixed, producing a beat frequency.</p>
-                </div>
-                <img src="images/mixing.jpg" class="w-45 h-48 object-contain" alt="">
-            </div>
+        <img src="images/bcksct.png" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
+    </div>
+</div>
+
+        <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        3
+    </div>
+
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
+
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Mixing</h3>
+            <p class="text-slate-600">
+                The transmitted and received signals are mixed, producing a beat frequency.
+            </p>
         </div>
 
-        <!-- Step 4 -->
-        <div class="relative flex md:odd:flex-row-reverse items-center">
-            <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold z-10">4</div>
-            <div class="md:w-[45%] bg-white p-6 ml-6 rounded-lg shadow border flex gap-4 items-center">
-                <div>
-                    <h3 class="font-bold mb-1">Digitization</h3>
-                    <p class="text-slate-600">Beat signal digitized via HackRF (SDR).</p>
-                </div>
-                <img src="images/digitization.jpg" class="w-45 h-40 object-contain" alt="">
-            </div>
+        <img src="images/mixing.jpg" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
+    </div>
+</div>
+
+
+       <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        4
+    </div>
+
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
+
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Digitization</h3>
+            <p class="text-slate-600">
+                Beat signal digitized via HackRF (SDR).
+            </p>
         </div>
 
-        <!-- Step 5 STFT -->
-        <div class="relative flex md:odd:flex-row-reverse items-center">
-            <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold z-10">5</div>
-            <div class="md:w-[45%] bg-white p-6 ml-6 rounded-lg shadow border flex gap-4 items-center">
-                <div>
-                    <h3 class="font-bold mb-1">STFT Processing</h3>
-                    <p class="text-slate-600">STFT processing converts the signal into depth-related frequency components.</p>
-                </div>
-                <img src="images/stft'.png" class="w-45 h-42 object-contain" alt="">
-            </div>
+        <img src="images/digitization.jpg" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
+    </div>
+</div>
+
+        <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        5
+    </div>
+
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
+
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">STFT Processing</h3>
+            <p class="text-slate-600">
+                STFT processing converts the signal into depth-related frequency components.
+            </p>
         </div>
 
-        <!-- Step 6 -->
-        <div class="relative flex md:odd:flex-row-reverse items-center">
-            <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold z-10">6</div>
-            <div class="md:w-[45%] bg-white p-6 ml-6 rounded-lg shadow border flex gap-4 items-center">
-                <div>
-                    <h3 class="font-bold mb-1">Visualization</h3>
-                    <p class="text-slate-600">Results are visualized as radargrams showing depth and lateral position.</p>
-                </div>
-                <img src="images/result.jpg" class="w-45 h-45 object-contain" alt="">
-            </div>
+        <img src="images/stft'.png" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
+    </div>
+</div>
+
+
+       <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-green-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        6
+    </div>
+
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-green-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-green-500"></div>
+
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Visualization</h3>
+            <p class="text-slate-600">
+                Results are visualized as radargrams showing depth and lateral position.
+            </p>
         </div>
 
+        <img src="images/result.jpg" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
     </div>
 </div>
 
