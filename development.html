@@ -11,12 +11,12 @@
 <style>
 body { font-family: 'Inter', sans-serif; }
 
-/* PANEL BEHAVIOR (NO PULL-DOWN) */
+/* PANEL VISIBILITY */
 .panel {
     opacity: 0;
     pointer-events: none;
     transform: scale(0.96);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .panel.active {
@@ -27,40 +27,47 @@ body { font-family: 'Inter', sans-serif; }
 
 /* PLUS BUTTON */
 .toggle-btn {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: 9999px;
-    border: 2px solid rgba(255,255,255,0.75);
+    border: 2px solid rgba(255,255,255,0.85);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    line-height: 1;
+    transition: all 0.25s ease;
 }
 
 .toggle-btn:hover {
-    background: rgba(255,255,255,0.15);
-    transform: scale(1.08);
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
 }
 
 .toggle-btn.active {
     transform: rotate(45deg);
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.3);
 }
 
-/* IMAGE SCALING (NO CROP) */
+/* ENSURE TEXT IS ABOVE OVERLAY */
+.panel {
+    position: relative;
+    z-index: 20;
+}
+
+/* IMAGE FIT (NO CROP) */
 .panel img {
     object-fit: contain;
 }
 
-/* GLASS EFFECT */
+/* GLASS */
 .glass {
     backdrop-filter: blur(12px);
     background: linear-gradient(
         135deg,
-        rgba(255,255,255,0.85),
-        rgba(255,255,255,0.65)
+        rgba(255,255,255,0.88),
+        rgba(255,255,255,0.68)
     );
 }
 </style>
@@ -71,7 +78,7 @@ body { font-family: 'Inter', sans-serif; }
 <!-- NAV -->
 <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
+<a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
 </div>
 </nav>
 
@@ -80,10 +87,10 @@ body { font-family: 'Inter', sans-serif; }
 <img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
 <div class="absolute inset-0 bg-slate-900/70"></div>
 <div class="relative z-10 px-6">
-    <h1 class="text-4xl font-bold mb-2">Building the Prototype</h1>
-    <p class="text-slate-300 max-w-2xl mx-auto">
-        Concept, design, simulation, hardware, and signal processing workflow.
-    </p>
+<h1 class="text-4xl font-bold mb-2">Building the Prototype</h1>
+<p class="text-slate-300 max-w-2xl mx-auto">
+Concept, design, simulation, hardware, and signal processing workflow.
+</p>
 </div>
 </header>
 
@@ -102,8 +109,46 @@ body { font-family: 'Inter', sans-serif; }
 </div>
 
 <div id="step1" class="panel glass text-slate-800 rounded-xl p-6 mt-6">
-<!-- CONTENT UNCHANGED -->
-...
+<div class="grid lg:grid-cols-3 gap-6">
+
+<div class="bg-slate-50 rounded-lg p-4 shadow">
+<img src="images/blockdiag.jpg" class="w-full mb-4 rounded-md">
+<h4 class="font-semibold">System Block Diagram</h4>
+<p class="text-sm text-slate-600">
+Overall FMCW-GPR architecture and signal flow.
+</p>
+</div>
+
+<div class="lg:col-span-2 overflow-x-auto">
+<table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
+<thead class="bg-slate-800 text-white">
+<tr>
+<th class="px-4 py-2">Parameter</th>
+<th class="px-4 py-2">Specification</th>
+<th class="px-4 py-2">Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">Radar Type</td>
+<td class="px-4 py-2">FMCW</td>
+<td class="px-4 py-2">High tion, low peak power</td>
+</tr>
+<tr class="border-t bg-slate-50">
+<td class="px-4 py-2 font-semibold">Frequency</td>
+<td class="px-4 py-2">2.4 GHz</td>
+<td class="px-4 py-2">Balanced penetration</td>
+</tr>
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">Processing</td>
+<td class="px-4 py-2">STFT</td>
+<td class="px-4 py-2">Depth-time mapping</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
 </div>
 </div>
 </section>
@@ -120,7 +165,37 @@ body { font-family: 'Inter', sans-serif; }
 </div>
 
 <div id="step2" class="panel glass rounded-xl p-6 mt-6 grid lg:grid-cols-2 gap-6 text-slate-800">
-<!-- CONTENT UNCHANGED -->
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/swept.png" class="w-full mb-4 rounded-md">
+<h4 class="font-semibold">FMCW Chirp Signal</h4>
+<p class="text-sm text-slate-600">
+Linear frequency-modulated continuous wave used to encode target depth
+information into beat frequency.
+</p>
+</div>
+
+<div class="overflow-x-auto">
+<table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
+<thead class="bg-slate-800 text-white">
+<tr>
+<th class="px-4 py-2">Equation</th>
+<th class="px-4 py-2">Expression</th>
+<th class="px-4 py-2">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">STFT</td>
+<td class="px-4 py-2 font-mono">
+S(f, t) = ∑τ x(τ) · w(t − τ) · e<sup>−j2πfτ</sup>
+</td>
+<td class="px-4 py-2">
+Short-Time Fourier Transform used to extract time–frequency information.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </section>
@@ -137,7 +212,21 @@ body { font-family: 'Inter', sans-serif; }
 </div>
 
 <div id="step3" class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-<!-- CONTENT UNCHANGED -->
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/rf.jpg" class="w-full mb-4 rounded-md">
+<h4 class="font-semibold">RF Front-End</h4>
+<p class="text-sm text-slate-600">
+In the initial phase, the RF components were carefully interconnected...
+</p>
+</div>
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/hackrf.jpg" class="w-full mb-4 rounded-md">
+<h4 class="font-semibold">SDR Digitization</h4>
+<p class="text-sm text-slate-600">
+The ADC on this SDR is used to digitize the beat frequency only...
+</p>
+</div>
 </div>
 </div>
 </section>
@@ -154,7 +243,11 @@ body { font-family: 'Inter', sans-serif; }
 </div>
 
 <div id="step4" class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-<!-- CONTENT UNCHANGED -->
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/sttft.jpg" class="w-full mb-4 rounded-md">
+<h4 class="font-semibold">STFT Analysis</h4>
+<p class="text-sm text-slate-600">Time–frequency depth extraction.</p>
+</div>
 </div>
 </div>
 </section>
@@ -171,7 +264,13 @@ body { font-family: 'Inter', sans-serif; }
 </div>
 
 <div id="step5" class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-<!-- CONTENT UNCHANGED -->
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/testi.jpg" class="w-full mb-4 rounded-md">
+<h4 class="font-semibold">Lateral Position</h4>
+<p class="text-sm text-slate-600">
+Controlled test environment with embedded metallic object.
+</p>
+</div>
 </div>
 </div>
 </section>
