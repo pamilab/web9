@@ -3,227 +3,302 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FMCW-GPR Development</title>
+<title>Development Process - FMCW-GPR Research</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- INTERACTION CORE ---------- */
-.panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease;
-}
-
-/* ---------- TIMELINE ---------- */
-.timeline {
-  position: relative;
-  padding-left: 4rem;
-}
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 1.7rem;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, #38bdf8, #2563eb);
-}
-.timeline-dot {
-  position: absolute;
-  left: 0.9rem;
-  width: 22px;
-  height: 22px;
-  background: #2563eb;
-  border-radius: 50%;
-  border: 4px solid #e0f2fe;
-  transition: 0.3s;
-}
-.timeline-dot.active {
-  box-shadow: 0 0 0 10px rgba(37,99,235,.3);
-}
-
-/* ---------- IMAGE FULL DISPLAY ---------- */
-.full-img {
-  width: 100%;
-  height: auto;
-  display: block;
+body { font-family: 'Inter', sans-serif; }
+.panel { will-change: max-height; }
+.glass {
+    backdrop-filter: blur(12px);
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.85),
+        rgba(255,255,255,0.65)
+    );
 }
 </style>
 </head>
 
-<body class="bg-slate-100 text-slate-800">
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
 
-<header class="bg-slate-900 text-white py-14 text-center">
-  <h1 class="text-4xl font-bold">FMCW-GPR Development Process</h1>
-  <p class="text-slate-300 mt-2">Interactive timeline with expandable stages</p>
+<!-- NAV -->
+<nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
+</div>
+</nav>
+
+<!-- HEADER -->
+<header class="relative h-72 flex items-center justify-center text-center text-white">
+<img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-slate-900/70"></div>
+<div class="relative z-10 px-6">
+    <h1 class="text-4xl font-bold mb-2">Building the Prototype</h1>
+    <p class="text-slate-300 max-w-2xl mx-auto">
+        Concept, design, simulation, hardware, and signal processing workflow.
+    </p>
+</div>
 </header>
 
-<main class="container mx-auto px-6 py-16">
-<div class="timeline space-y-12">
+<!-- MAIN -->
+<main class="container mx-auto px-6 py-16 space-y-12">
 
-<!-- ================= STEP 1 ================= -->
-<section class="relative">
-<span class="timeline-dot" data-step="step1"></span>
+<!-- STEP 1 -->
+<section class="relative rounded-xl overflow-hidden shadow-lg">
+<img src="images/conceptplanning.jpg" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="bg-white rounded-xl shadow p-6">
-  <div class="flex items-center">
-    <h2 class="text-2xl font-bold">1. Concept & Planning</h2>
-    <button onclick="togglePanel('step1', this)" class="ml-auto text-xl">▼</button>
-  </div>
-
-  <div id="step1" class="panel mt-6">
-    <!-- HORIZONTAL LAYOUT -->
-    <div class="grid md:grid-cols-3 gap-6 items-start">
-
-      <!-- IMAGE -->
-      <div>
-        <img src="images/blockdiag.jpg" alt="Block Diagram" class="full-img rounded-lg">
-      </div>
-
-      <!-- DESCRIPTION -->
-      <div class="text-sm">
-        <h3 class="font-semibold mb-2">System Overview</h3>
-        <p>
-          High-level FMCW-GPR architecture including transmitter, receiver,
-          mixer, SDR digitization and signal processing chain.
-        </p>
-      </div>
-
-      <!-- TABLE -->
-      <div class="overflow-x-auto text-sm">
-        <table class="w-full border border-slate-300">
-          <thead class="bg-slate-800 text-white">
-            <tr>
-              <th class="px-3 py-2 text-left">Parameter</th>
-              <th class="px-3 py-2 text-left">Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-t">
-              <td class="px-3 py-2">Radar Type</td>
-              <td class="px-3 py-2">FMCW</td>
-            </tr>
-            <tr class="border-t bg-slate-50">
-              <td class="px-3 py-2">Frequency</td>
-              <td class="px-3 py-2">2.4 GHz</td>
-            </tr>
-            <tr class="border-t">
-              <td class="px-3 py-2">Processing</td>
-              <td class="px-3 py-2">STFT</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </div>
+<div class="relative z-10 p-8 text-white">
+<div class="flex justify-between items-center">
+    <h2 class="text-2xl font-bold">1. Concept and Planning</h2>
+    <button onclick="togglePanel('step1', this)" class="text-xl transition-transform">▼</button>
 </div>
-</section>
 
-<!-- ================= STEP 2 ================= -->
-<section class="relative">
-<span class="timeline-dot" data-step="step2"></span>
+<div id="step1"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slate-800 rounded-xl p-6 mt-6">
 
-<div class="bg-white rounded-xl shadow p-6">
-  <div class="flex items-center">
-    <h2 class="text-2xl font-bold">2. Design & Simulation</h2>
-    <button onclick="togglePanel('step2', this)" class="ml-auto text-xl">▼</button>
-  </div>
+<div class="grid lg:grid-cols-3 gap-6">
 
-  <div id="step2" class="panel mt-4 text-sm space-y-2">
-    <p><strong>FMCW Chirp:</strong> s(t) = A cos(2π(f₀t + ½St²))</p>
-    <p><strong>Beat Frequency:</strong> f<sub>b</sub> = Sτ</p>
-    <p><strong>Delay:</strong> τ = 2R / v</p>
-    <p><strong>Depth:</strong> R = (v · f<sub>b</sub>) / (2S)</p>
-    <p><strong>Resolution:</strong> ΔR = c / (2B)</p>
-  </div>
-</div>
-</section>
-
-<!-- ================= STEP 3 ================= -->
-<section class="relative">
-<span class="timeline-dot" data-step="step3"></span>
-
-<div class="bg-white rounded-xl shadow p-6">
-  <div class="flex items-center">
-    <h2 class="text-2xl font-bold">3. Hardware Integration</h2>
-    <button onclick="togglePanel('step3', this)" class="ml-auto text-xl">▼</button>
-  </div>
-
-  <div id="step3" class="panel mt-4">
-    <img src="images/hackrf.jpg" class="full-img rounded-lg mb-3">
-    <p class="text-sm">
-      RF front-end, antennas, mixer, and SDR integration for beat signal capture.
+<div class="bg-slate-50 rounded-lg p-4 shadow">
+    <img src="images/blockdiag.jpg" class="w-full object-contain mb-4 rounded-md">
+    <h4 class="font-semibold">System Block Diagram</h4>
+    <p class="text-sm text-slate-600">
+        Overall FMCW-GPR architecture and signal flow.
     </p>
-  </div>
+</div>
+
+<div class="lg:col-span-2 overflow-x-auto">
+<table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
+<thead class="bg-slate-800 text-white">
+<tr>
+<th class="px-4 py-2">Parameter</th>
+<th class="px-4 py-2">Specification</th>
+<th class="px-4 py-2">Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">Radar Type</td>
+<td class="px-4 py-2">FMCW</td>
+<td class="px-4 py-2">High resolution, low peak power</td>
+</tr>
+<tr class="border-t bg-slate-50">
+<td class="px-4 py-2 font-semibold">Frequency</td>
+<td class="px-4 py-2">2.4 GHz</td>
+<td class="px-4 py-2">Balanced penetration</td>
+</tr>
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">Processing</td>
+<td class="px-4 py-2">STFT</td>
+<td class="px-4 py-2">Depth-time mapping</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
 </div>
 </section>
 
-<!-- ================= STEP 4 ================= -->
-<section class="relative">
-<span class="timeline-dot" data-step="step4"></span>
+<!-- STEP 2 -->
+<section class="relative rounded-xl overflow-hidden shadow-lg">
+<img src="images/desimulatin.jpg" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="bg-white rounded-xl shadow p-6">
-  <div class="flex items-center">
-    <h2 class="text-2xl font-bold">4. Software & Signal Processing</h2>
-    <button onclick="togglePanel('step4', this)" class="ml-auto text-xl">▼</button>
-  </div>
+<div class="relative z-10 p-8 text-white">
+<div class="flex justify-between items-center">
+    <h2 class="text-2xl font-bold">2. Design and Simulation</h2>
+    <button onclick="togglePanel('step2', this)" class="text-xl transition-transform">▼</button>
+</div>
 
-  <div id="step4" class="panel mt-4">
-    <img src="images/radargram.jpg" class="full-img rounded-lg mb-3">
-    <p class="text-sm">
-      STFT-based time-frequency analysis, clutter suppression and radargram generation.
-    </p>
-  </div>
+<div id="step2"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid lg:grid-cols-2 gap-6 text-slate-800">
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/swept.png" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">FMCW Chirp Signal</h4>
+<p class="text-sm text-slate-600">
+Linear frequency sweep used for range estimation.
+</p>
+</div>
+
+<div class="overflow-x-auto">
+<table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
+<thead class="bg-slate-800 text-white">
+<tr>
+<th class="px-4 py-2">Equation</th>
+<th class="px-4 py-2">Expression</th>
+<th class="px-4 py-2">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">Chirp Signal</td>
+<td class="px-4 py-2 font-mono">
+s(t) = A cos(2π(f₀t + ½St²))
+</td>
+<td class="px-4 py-2">Transmitted FMCW waveform</td>
+</tr>
+<tr class="border-t bg-slate-50">
+<td class="px-4 py-2 font-semibold">Beat Frequency</td>
+<td class="px-4 py-2 font-mono">
+f<sub>b</sub> = S · τ
+</td>
+<td class="px-4 py-2">Frequency difference due to delay</td>
+</tr>
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">Propagation Delay</td>
+<td class="px-4 py-2 font-mono">
+τ = 2R / v
+</td>
+<td class="px-4 py-2">Two-way travel time</td>
+</tr>
+<tr class="border-t bg-slate-50">
+<td class="px-4 py-2 font-semibold">Depth Estimation</td>
+<td class="px-4 py-2 font-mono">
+R = (v · f<sub>b</sub>) / (2S)
+</td>
+<td class="px-4 py-2">Depth calculation</td>
+</tr>
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">Range Resolution</td>
+<td class="px-4 py-2 font-mono">
+ΔR = c / (2B)
+</td>
+<td class="px-4 py-2">Resolution vs bandwidth</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
 </div>
 </section>
 
-<!-- ================= STEP 5 ================= -->
-<section class="relative">
-<span class="timeline-dot" data-step="step5"></span>
+<!-- STEP 3 -->
+<section class="relative rounded-xl overflow-hidden shadow-lg">
+<img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="bg-white rounded-xl shadow p-6">
-  <div class="flex items-center">
-    <h2 class="text-2xl font-bold">5. Testing & Validation</h2>
-    <button onclick="togglePanel('step5', this)" class="ml-auto text-xl">▼</button>
-  </div>
+<div class="relative z-10 p-8 text-white">
+<div class="flex justify-between items-center">
+<h2 class="text-2xl font-bold">3. Hardware Integration</h2>
+<button onclick="togglePanel('step3', this)" class="text-xl transition-transform">▼</button>
+</div>
 
-  <div id="step5" class="panel mt-4">
-    <img src="images/testi.jpg" class="full-img rounded-lg mb-3">
-    <p class="text-sm">
-      Controlled experiments at 29 cm and 72 cm depths with percentage error analysis.
-    </p>
-  </div>
+<div id="step3"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/rf.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">RF Front-End</h4>
+<p class="text-sm text-slate-600">Antenna, mixer, RF chain assembly.</p>
+</div>
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/hackrf.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">SDR Digitization</h4>
+<p class="text-sm text-slate-600">Beat signal acquisition using SDR.</p>
+</div>
+
+</div>
 </div>
 </section>
 
+<!-- STEP 4 -->
+<section class="relative rounded-xl overflow-hidden shadow-lg">
+<img src="images/softwaredev.jpg" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-slate-900/75"></div>
+
+<div class="relative z-10 p-8 text-white">
+<div class="flex justify-between items-center">
+<h2 class="text-2xl font-bold">4. Software & Signal Processing</h2>
+<button onclick="togglePanel('step4', this)" class="text-xl transition-transform">▼</button>
 </div>
+
+<div id="step4"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/sttft.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">STFT Analysis</h4>
+<p class="text-sm text-slate-600">Time–frequency depth extraction.</p>
+</div>
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/radargram.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Radargram</h4>
+<p class="text-sm text-slate-600">Depth vs lateral position.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- STEP 5 -->
+<section class="relative rounded-xl overflow-hidden shadow-lg">
+<img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-slate-900/75"></div>
+
+<div class="relative z-10 p-8 text-white">
+<div class="flex justify-between items-center">
+<h2 class="text-2xl font-bold">5. Testing and Validation</h2>
+<button onclick="togglePanel('step5', this)" class="text-xl transition-transform">▼</button>
+</div>
+
+<div id="step5"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/testi.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Experimental Setup</h4>
+<p class="text-sm text-slate-600">
+Controlled testbed with buried metallic targets.
+</p>
+</div>
+
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/299.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Validation Results</h4>
+<p class="text-sm text-slate-600">
+Depth estimation accuracy at 29 cm and 72 cm with percentage error analysis.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
 </main>
 
-<!-- ---------- SCRIPT ---------- -->
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-slate-400 py-10 text-center">
+<p class="text-white font-semibold">Developed by Omicropade</p>
+<p>BS Electronics Engineering – Rizal Technological University</p>
+<p class="text-sm opacity-75 mt-2">© 2025 FMCW-GPR Research Project</p>
+</footer>
+
 <script>
 function togglePanel(id, btn) {
-  const panels = document.querySelectorAll('.panel');
-  const dots = document.querySelectorAll('.timeline-dot');
-  const buttons = document.querySelectorAll('button');
+    const panels = document.querySelectorAll('.panel');
+    const buttons = document.querySelectorAll('button');
 
-  panels.forEach(p => {
-    if (p.id === id) {
-      p.style.maxHeight = p.style.maxHeight
-        ? null
-        : p.scrollHeight + "px";
-    } else {
-      p.style.maxHeight = null;
-    }
-  });
+    panels.forEach(p => {
+        if (p.id === id) {
+            p.classList.toggle('max-h-0');
+            p.classList.toggle('max-h-[1400px]');
+        } else {
+            p.classList.add('max-h-0');
+            p.classList.remove('max-h-[1400px]');
+        }
+    });
 
-  dots.forEach(dot =>
-    dot.classList.toggle('active', dot.dataset.step === id)
-  );
-
-  buttons.forEach(b => b.textContent = "▼");
-  btn.textContent = btn.textContent === "▼" ? "▲" : "▼";
+    buttons.forEach(b => b.classList.remove('rotate-180'));
+    btn.classList.toggle('rotate-180');
 }
 </script>
 
