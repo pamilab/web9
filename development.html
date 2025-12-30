@@ -1,240 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Development Process - FMCW-GPR Research</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Development</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-body { font-family: 'Inter', sans-serif; }
-.panel { will-change: max-height; }
-
-/* Glass cards */
-.glass {
-    backdrop-filter: blur(12px);
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.85),
-        rgba(255,255,255,0.65)
-    );
-}
-
-/* Timeline */
-.timeline {
-    position: relative;
-    padding-left: 3rem;
-}
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 1.3rem;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, #38bdf8, #2563eb);
-}
-.timeline-dot {
-    position: absolute;
-    left: 0.7rem;
-    width: 22px;
-    height: 22px;
-    background: #2563eb;
-    border-radius: 50%;
-    border: 4px solid #e0f2fe;
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(37,99,235,0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
-}
-</style>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-slate-100 text-slate-800">
 
-<body class="bg-slate-50 text-slate-800">
+<main class="max-w-6xl mx-auto p-6 space-y-8">
 
-<!-- HEADER -->
-<header class="relative h-72 flex items-center justify-center text-center text-white">
-<img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/70"></div>
-<div class="relative z-10 px-6">
-<h1 class="text-4xl font-bold mb-2">FMCW-GPR Development Timeline</h1>
-<p class="text-slate-300 max-w-2xl mx-auto">
-Concept → Design → Hardware → Software → Validation
-</p>
-</div>
-</header>
+    <!-- ================================================= -->
+    <!-- 1. CONCEPT AND PLANNING -->
+    <!-- ================================================= -->
+    <section class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">
+            1. Concept and Planning
+        </h2>
 
-<!-- MAIN -->
-<main class="container mx-auto px-6 py-16">
+        <p class="mb-6 text-sm">
+            The project began with identifying system limitations in existing GPR designs and selecting FMCW radar as the optimal solution.
+        </p>
 
-<div class="timeline space-y-14">
+        <!-- PARAMETERS TABLE (UNCHANGED) -->
+        <div class="overflow-x-auto">
+            <table class="w-full border border-slate-300 text-sm">
+                <thead class="bg-slate-800 text-white">
+                    <tr>
+                        <th class="px-4 py-2 text-left">Parameter</th>
+                        <th class="px-4 py-2 text-left">Specification</th>
+                        <th class="px-4 py-2 text-left">Design Rationale</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+                    <tr class="border-t">
+                        <td class="px-4 py-2 font-semibold">Radar Type</td>
+                        <td class="px-4 py-2">FMCW (Frequency-Modulated Continuous Wave)</td>
+                        <td class="px-4 py-2">
+                            Enables high range resolution with lower peak power compared
+                            to pulsed GPR systems.
+                        </td>
+                    </tr>
 
-<!-- STEP 1 -->
-<section>
-<span class="timeline-dot"></span>
-<div class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/conceptplanning.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+                    <tr class="border-t bg-slate-50">
+                        <td class="px-4 py-2 font-semibold">Operating Frequency</td>
+                        <td class="px-4 py-2">2.4 GHz (ISM Band)</td>
+                        <td class="px-4 py-2">
+                            Selected to balance penetration depth and resolution while
+                            ensuring regulatory compliance and component availability.
+                        </td>
+                    </tr>
 
-<div class="relative z-10 p-8 text-white">
-<h2 class="text-2xl font-bold mb-2">1. Concept & Planning</h2>
+                    <tr class="border-t">
+                        <td class="px-4 py-2 font-semibold">Bandwidth</td>
+                        <td class="px-4 py-2">Hundreds of MHz (chirp-dependent)</td>
+                        <td class="px-4 py-2">
+                            Larger bandwidth improves depth resolution in subsurface
+                            target detection.
+                        </td>
+                    </tr>
 
-<div class="glass text-slate-800 rounded-xl p-6 mt-4 grid lg:grid-cols-3 gap-6">
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/blockdiag.jpg" class="w-full object-contain mb-4 rounded-md">
-<p class="font-semibold">System Architecture</p>
-<p class="text-sm text-slate-600">Overall FMCW-GPR signal flow.</p>
-</div>
+                    <tr class="border-t bg-slate-50">
+                        <td class="px-4 py-2 font-semibold">Target Depth Range</td>
+                        <td class="px-4 py-2">Up to ~1 meter (controlled environment)</td>
+                        <td class="px-4 py-2">
+                            Suitable for laboratory-scale validation and shallow subsurface
+                            inspection applications.
+                        </td>
+                    </tr>
 
-<div class="lg:col-span-2 overflow-x-auto">
-<table class="w-full border text-sm rounded-lg overflow-hidden">
-<thead class="bg-slate-800 text-white">
-<tr>
-<th class="px-4 py-2">Parameter</th>
-<th class="px-4 py-2">Specification</th>
-<th class="px-4 py-2">Rationale</th>
-</tr>
-</thead>
-<tbody>
-<tr><td class="px-4 py-2">Radar</td><td class="px-4 py-2">FMCW</td><td class="px-4 py-2">High resolution</td></tr>
-<tr class="bg-slate-50"><td class="px-4 py-2">Frequency</td><td class="px-4 py-2">2.4 GHz</td><td class="px-4 py-2">Penetration</td></tr>
-<tr><td class="px-4 py-2">Processing</td><td class="px-4 py-2">STFT</td><td class="px-4 py-2">Depth analysis</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</section>
+                    <tr class="border-t">
+                        <td class="px-4 py-2 font-semibold">Digitization Platform</td>
+                        <td class="px-4 py-2">Software-Defined Radio (SDR)</td>
+                        <td class="px-4 py-2">
+                            Provides flexibility in signal acquisition, processing, and
+                            rapid prototyping.
+                        </td>
+                    </tr>
 
-<!-- STEP 2 -->
-<section>
-<span class="timeline-dot"></span>
-<div class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/desimulatin.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+                    <tr class="border-t bg-slate-50">
+                        <td class="px-4 py-2 font-semibold">Signal Processing</td>
+                        <td class="px-4 py-2">STFT-based analysis</td>
+                        <td class="px-4 py-2">
+                            Enables time-frequency representation for depth estimation
+                            and radargram visualization.
+                        </td>
+                    </tr>
 
-<div class="relative z-10 p-8 text-white">
-<h2 class="text-2xl font-bold mb-4">2. Design & Simulation</h2>
+                    <tr class="border-t">
+                        <td class="px-4 py-2 font-semibold">Cost Objective</td>
+                        <td class="px-4 py-2">Low-cost research prototype</td>
+                        <td class="px-4 py-2">
+                            Designed to be accessible for academic and institutional use
+                            compared to commercial GPR systems.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-<div class="glass rounded-xl p-6 grid lg:grid-cols-2 gap-6 text-slate-800">
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/swept.png" class="w-full object-contain mb-4">
-<p class="font-semibold">FMCW Chirp</p>
-</div>
+    <!-- ================================================= -->
+    <!-- 2. DESIGN AND SIMULATION -->
+    <!-- ================================================= -->
+    <section class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">
+            2. Design and Simulation
+        </h2>
 
-<div class="overflow-x-auto">
-<table class="w-full border text-sm rounded-lg">
-<thead class="bg-slate-800 text-white">
-<tr><th>Equation</th><th>Expression</th><th>Description</th></tr>
-</thead>
-<tbody>
-<tr><td>Chirp</td><td>s(t)=Acos(2π(f₀t+½St²))</td><td>Transmit signal</td></tr>
-<tr class="bg-slate-50"><td>Beat</td><td>fᵦ=S·τ</td><td>Delay frequency</td></tr>
-<tr><td>Delay</td><td>τ=2R/v</td><td>Round-trip</td></tr>
-<tr class="bg-slate-50"><td>Depth</td><td>R=(v·fᵦ)/(2S)</td><td>Depth calc</td></tr>
-<tr><td>Resolution</td><td>ΔR=c/(2B)</td><td>Range resolution</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</section>
+        <p class="text-sm">
+            Radar equations, chirp characteristics, and depth-to-frequency relationships were analyzed to predict system performance.
+        </p>
+    </section>
 
-<!-- STEP 3 -->
-<section>
-<span class="timeline-dot"></span>
-<div class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+    <!-- ================================================= -->
+    <!-- 3. HARDWARE INTEGRATION -->
+    <!-- ================================================= -->
+    <section class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">
+            3. Hardware Integration
+        </h2>
 
-<div class="relative z-10 p-8 text-white">
-<h2 class="text-2xl font-bold mb-4">3. Hardware Integration</h2>
+        <p class="text-sm">
+            RF modules, control units, and digitization hardware were assembled into a unified radar front-end.
+        </p>
+    </section>
 
-<div class="glass rounded-xl p-6 grid md:grid-cols-2 gap-6 text-slate-800">
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/rf.jpg" class="w-full object-contain mb-4">
-<p class="font-semibold">RF Front-End</p>
-</div>
+    <!-- ================================================= -->
+    <!-- 4. SOFTWARE DEVELOPMENT -->
+    <!-- ================================================= -->
+    <section class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">
+            4. Software Development
+        </h2>
 
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/hackrf.jpg" class="w-full object-contain mb-4">
-<p class="font-semibold">SDR Digitization</p>
-</div>
-</div>
-</div>
-</div>
-</section>
+        <p class="text-sm">
+            Signal acquisition and processing were implemented using GNU Radio and Python.
+        </p>
+    </section>
 
-<!-- STEP 4 -->
-<section>
-<span class="timeline-dot"></span>
-<div class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/softwaredev.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
-
-<div class="relative z-10 p-8 text-white">
-<h2 class="text-2xl font-bold mb-4">4. Software & Signal Processing</h2>
-
-<div class="glass rounded-xl p-6 grid md:grid-cols-2 gap-6 text-slate-800">
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/sttft.jpg" class="w-full object-contain mb-4">
-<p class="font-semibold">STFT Processing</p>
-</div>
-
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/radargram.jpg" class="w-full object-contain mb-4">
-<p class="font-semibold">Radargram Output</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- STEP 5 -->
-<section>
-<span class="timeline-dot"></span>
-<div class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
-
-<div class="relative z-10 p-8 text-white">
-<h2 class="text-2xl font-bold mb-4">5. Testing & Validation</h2>
-
-<div class="glass rounded-xl p-6 grid md:grid-cols-3 gap-6 text-slate-800">
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/testi.jpg" class="w-full object-contain mb-4">
-<p class="font-semibold">Experimental Setup</p>
-</div>
-
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/299.jpg" class="w-full object-contain mb-4">
-<p class="font-semibold">Error @ 29 cm</p>
-</div>
-
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/722.jpg" class="w-full object-contain mb-4">
-<p class="font-semibold">Error @ 72 cm</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-</div>
 </main>
-
-<!-- FOOTER -->
-<footer class="bg-slate-900 text-slate-400 py-10 text-center">
-<p class="text-white font-semibold">Developed by Omicropade</p>
-<p>BS Electronics Engineering – Rizal Technological University</p>
-<p class="text-sm opacity-75 mt-2">© 2025 FMCW-GPR Research Project</p>
-</footer>
 
 </body>
 </html>
