@@ -25,10 +25,28 @@
 </nav>
 
 <!-- Header -->
-<header class="bg-slate-800 text-white py-12 text-center">
-    <h1 class="text-3xl font-bold mb-2">Problem Context & Methodology</h1>
-    <p class="text-slate-400">Bridging the gap between high-cost commercial radar and accessible research tools.</p>
+<header class="relative h-72 flex items-center justify-center text-center text-white">
+    
+    <!-- Background Image -->
+    <img src="images/subsurface.jpg"
+         alt="FMCW GPR Background"
+         class="absolute inset-0 w-full h-full object-cover">
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-slate-900/70"></div>
+
+    <!-- Text Content -->
+    <div class="relative z-10 px-6">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">
+            Problem Context & Methodology
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+            Bridging the gap between high-cost commercial radar and accessible research tools.
+        </p>
+    </div>
+
 </header>
+
 
 <main class="container mx-auto px-6 py-16">
 
