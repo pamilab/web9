@@ -32,7 +32,7 @@
 
 <!-- HEADER WITH IMAGE OVERLAY -->
 <header class="relative h-72 flex items-center justify-center text-center text-white">
-    <img src="images/development-bg.jpg"
+    <img src="images/hardw.jpg"
          class="absolute inset-0 w-full h-full object-cover"
          alt="Development Background">
 
@@ -52,7 +52,7 @@
 
 <!-- ================= STEP 1 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-    <img src="images/concept-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+    <img src="images/conceptplanning.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
     <div class="relative z-10 p-8 text-white">
@@ -72,23 +72,12 @@
             <!-- Images -->
             <div class="grid md:grid-cols-2 gap-6 mb-8">
                 <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/block-diagram.jpg" class="w-full h-40 object-cover">
+                    <img src="images/blockdiag.jpg" class="w-full h-40 object-cover">
                     <div class="p-3 text-sm">
                         <p class="font-semibold">System Block Diagram</p>
                         <p class="text-slate-600">
                             Overall FMCW-GPR architecture showing the transmitter, receiver,
                             mixer, digitization stage, and signal processing chain.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-slate-100 rounded-lg overflow-hidden">
-                    <img src="images/requirements.jpg" class="w-full h-40 object-cover">
-                    <div class="p-3 text-sm">
-                        <p class="font-semibold">Design Objectives</p>
-                        <p class="text-slate-600">
-                            Initial requirements defining operating frequency,
-                            depth range, resolution, and cost constraints.
                         </p>
                     </div>
                 </div>
@@ -130,7 +119,7 @@
 
 <!-- ================= STEP 2 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-    <img src="images/simulation-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+    <img src="images/desimulatin.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
     <div class="relative z-10 p-8 text-white">
@@ -156,12 +145,82 @@
                 </div>
             </div>
 
-            <div class="bg-slate-100 rounded-lg overflow-hidden">
-                <img src="images/equation.jpg" class="w-full h-40 object-cover">
-                <div class="p-3 text-sm">
+
                     <p class="font-semibold">Range Equation</p>
                     <p class="text-slate-600">
                         Mathematical relationship between beat frequency and target depth.
+                    <h3 class="text-lg font-bold mt-8 mb-4">
+    Mathematical Model of FMCW-GPR Operation
+</h3>
+
+<div class="overflow-x-auto">
+    <table class="w-full border border-slate-300 text-sm">
+        <thead class="bg-slate-800 text-white">
+            <tr>
+                <th class="px-4 py-2 text-left">Equation</th>
+                <th class="px-4 py-2 text-left">Expression</th>
+                <th class="px-4 py-2 text-left">Description</th>
+            </tr>
+        </thead>
+
+        <tbody class="bg-white">
+            <tr class="border-t">
+                <td class="px-4 py-2 font-semibold">Chirp Signal</td>
+                <td class="px-4 py-2 font-mono">
+                    s(t) = A cos(2π(f₀t + ½St²))
+                </td>
+                <td class="px-4 py-2">
+                    Time-domain expression of the transmitted FMCW chirp,
+                    where f₀ is the start frequency and S is the chirp slope.
+                </td>
+            </tr>
+
+            <tr class="border-t bg-slate-50">
+                <td class="px-4 py-2 font-semibold">Beat Frequency</td>
+                <td class="px-4 py-2 font-mono">
+                    f<sub>b</sub> = S · τ
+                </td>
+                <td class="px-4 py-2">
+                    Frequency difference between transmitted and received
+                    signals caused by propagation delay τ.
+                </td>
+            </tr>
+
+            <tr class="border-t">
+                <td class="px-4 py-2 font-semibold">Propagation Delay</td>
+                <td class="px-4 py-2 font-mono">
+                    τ = 2R / v
+                </td>
+                <td class="px-4 py-2">
+                    Two-way travel time of the radar signal,
+                    where R is the target depth and v is wave velocity in the medium.
+                </td>
+            </tr>
+
+            <tr class="border-t bg-slate-50">
+                <td class="px-4 py-2 font-semibold">Depth Estimation</td>
+                <td class="px-4 py-2 font-mono">
+                    R = (v · f<sub>b</sub>) / (2S)
+                </td>
+                <td class="px-4 py-2">
+                    Relationship used to estimate subsurface target depth
+                    from the measured beat frequency.
+                </td>
+            </tr>
+
+            <tr class="border-t">
+                <td class="px-4 py-2 font-semibold">Range Resolution</td>
+                <td class="px-4 py-2 font-mono">
+                    ΔR = c / (2B)
+                </td>
+                <td class="px-4 py-2">
+                    Depth resolution determined by the chirp bandwidth B.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
                     </p>
                 </div>
             </div>
@@ -171,7 +230,7 @@
 
 <!-- ================= STEP 3 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-    <img src="images/hardware-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+    <img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
     <div class="relative z-10 p-8 text-white">
@@ -185,7 +244,7 @@
                     bg-white text-slate-800 rounded-lg p-6 mt-6 grid md:grid-cols-2 gap-6">
 
             <div class="bg-slate-100 rounded-lg overflow-hidden">
-                <img src="images/rf-front-end.jpg" class="w-full h-40 object-cover">
+                <img src="images/rf.jpg" class="w-full h-40 object-cover">
                 <div class="p-3 text-sm">
                     <p class="font-semibold">RF Front-End Assembly</p>
                     <p class="text-slate-600">
@@ -195,7 +254,7 @@
             </div>
 
             <div class="bg-slate-100 rounded-lg overflow-hidden">
-                <img src="images/sdr.jpg" class="w-full h-40 object-cover">
+                <img src="images/hackrf.jpg" class="w-full h-40 object-cover">
                 <div class="p-3 text-sm">
                     <p class="font-semibold">SDR Digitization</p>
                     <p class="text-slate-600">
@@ -209,7 +268,7 @@
 
 <!-- ================= STEP 4 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-    <img src="images/software-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+    <img src="images/softwaredev.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
     <div class="relative z-10 p-8 text-white">
@@ -223,7 +282,7 @@
                     bg-white text-slate-800 rounded-lg p-6 mt-6 grid md:grid-cols-2 gap-6">
 
             <div class="bg-slate-100 rounded-lg overflow-hidden">
-                <img src="images/stft.png" class="w-full h-40 object-cover">
+                <img src="images/sttft.jpg" class="w-full h-40 object-cover">
                 <div class="p-3 text-sm">
                     <p class="font-semibold">STFT Processing</p>
                     <p class="text-slate-600">
@@ -247,7 +306,7 @@
 
 <!-- ================= STEP 5 ================= -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-    <img src="images/testing-bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+    <img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-slate-900/75"></div>
 
     <div class="relative z-10 p-8 text-white">
@@ -261,7 +320,7 @@
                     bg-white text-slate-800 rounded-lg p-6 mt-6 grid md:grid-cols-2 gap-6">
 
             <div class="bg-slate-100 rounded-lg overflow-hidden">
-                <img src="images/test-setup.jpg" class="w-full h-40 object-cover">
+                <img src="images/testi.jpg" class="w-full h-40 object-cover">
                 <div class="p-3 text-sm">
                     <p class="font-semibold">Experimental Setup</p>
                     <p class="text-slate-600">
@@ -271,11 +330,20 @@
             </div>
 
             <div class="bg-slate-100 rounded-lg overflow-hidden">
-                <img src="images/results.jpg" class="w-full h-40 object-cover">
+                <img src="images/299.jpg" class="w-full h-40 object-cover">
                 <div class="p-3 text-sm">
-                    <p class="font-semibold">Validation Results</p>
+                    <p class="font-semibold">Percentage Error</p>
                     <p class="text-slate-600">
-                        Comparison between estimated depths and actual measured values.
+                        Comparison between estimated depths and actual measured values at 29 cm.
+                    </p>
+                </div>
+            </div>
+           <div class="bg-slate-100 rounded-lg overflow-hidden">
+                <img src="images/722.jpg" class="w-full h-40 object-cover">
+                <div class="p-3 text-sm">
+                    <p class="font-semibold">Percentage Error</p>
+                    <p class="text-slate-600">
+                        Comparison between estimated depths and actual measured values at 72 cm.
                     </p>
                 </div>
             </div>
@@ -286,11 +354,16 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-slate-900 text-slate-400 py-10 text-center mt-auto">
-    <p class="text-white font-semibold">Developed by: Omicropade</p>
-    <p>© 2025 FMCW-GPR Research Project</p>
-</footer>
-
+<footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <p class="text-white font-semibold mb-2">Developed by: Omicropade</p>
+                <p>BS Electronics Engineering</p>
+                <p>Rizal Technological University</p>
+            </div>
+            <p class="text-sm opacity-75">© 2025 FMCW-GPR Research Project. All rights reserved.</p>
+        </div>
+    </footer>
 <!-- SCRIPT -->
 <script>
 function togglePanel(id, btn) {
