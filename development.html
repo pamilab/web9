@@ -341,7 +341,7 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
 </div>
 </section>
 
-  <!-- DEVELOPMENT PHASES – CLICKABLE DOCUMENTATION -->
+<!-- DEVELOPMENT PHASES – ACCORDION DOCUMENTATION -->
 <section class="bg-white rounded-xl shadow p-6 mt-10">
 
     <h2 class="text-2xl font-bold mb-6 text-slate-800">
@@ -349,75 +349,91 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
     </h2>
 
     <!-- Phase Blocks -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <button onclick="openPhase('phase1')"
-                class="phase-box bg-slate-100 hover:bg-slate-200 transition rounded-xl p-6 shadow text-center">
-            <h3 class="font-semibold">Concept & Planning</h3>
-        </button>
-
-        <button onclick="openPhase('phase2')"
-                class="phase-box bg-slate-100 hover:bg-slate-200 transition rounded-xl p-6 shadow text-center">
-            <h3 class="font-semibold">Design & Simulation</h3>
-        </button>
-
-        <button onclick="openPhase('phase3')"
-                class="phase-box bg-slate-100 hover:bg-slate-200 transition rounded-xl p-6 shadow text-center">
-            <h3 class="font-semibold">Hardware Integration</h3>
-        </button>
-
-        <button onclick="openPhase('phase4')"
-                class="phase-box bg-slate-100 hover:bg-slate-200 transition rounded-xl p-6 shadow text-center">
-            <h3 class="font-semibold">Software Development</h3>
-        </button>
-
-    </div>
-
-    <!-- Panels -->
-    <div class="mt-6 space-y-6">
+    <div class="space-y-4">
 
         <!-- PHASE 1 -->
-        <div id="phase1" class="phase-panel hidden bg-slate-50 rounded-xl p-6 shadow">
-            <h4 class="font-semibold mb-4">Concept & Planning Documentation</h4>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <img src="images/concept1.jpg" class="rounded-lg shadow">
-                <img src="images/concept2.jpg" class="rounded-lg shadow">
-                <img src="images/concept3.jpg" class="rounded-lg shadow">
+        <div>
+            <button onclick="togglePhase('phase1', this)"
+                class="w-full bg-slate-100 hover:bg-slate-200 transition rounded-xl p-4 shadow flex justify-between items-center">
+                <span class="font-semibold">Concept & Planning</span>
+                <span class="transition-transform">▼</span>
+            </button>
+
+            <div id="phase1"
+                class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <div class="bg-slate-50 rounded-xl p-6 mt-3 shadow">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <img src="images/concept1.jpg" class="rounded-lg shadow">
+                        <img src="images/concept2.jpg" class="rounded-lg shadow">
+                        <img src="images/concept3.jpg" class="rounded-lg shadow">
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- PHASE 2 -->
-        <div id="phase2" class="phase-panel hidden bg-slate-50 rounded-xl p-6 shadow">
-            <h4 class="font-semibold mb-4">Design & Simulation Documentation</h4>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <img src="images/design1.jpg" class="rounded-lg shadow">
-                <img src="images/design2.jpg" class="rounded-lg shadow">
-                <img src="images/design3.jpg" class="rounded-lg shadow">
+        <div>
+            <button onclick="togglePhase('phase2', this)"
+                class="w-full bg-slate-100 hover:bg-slate-200 transition rounded-xl p-4 shadow flex justify-between items-center">
+                <span class="font-semibold">Design & Simulation</span>
+                <span class="transition-transform">▼</span>
+            </button>
+
+            <div id="phase2"
+                class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <div class="bg-slate-50 rounded-xl p-6 mt-3 shadow">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <img src="images/design1.jpg" class="rounded-lg shadow">
+                        <img src="images/design2.jpg" class="rounded-lg shadow">
+                        <img src="images/design3.jpg" class="rounded-lg shadow">
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- PHASE 3 -->
-        <div id="phase3" class="phase-panel hidden bg-slate-50 rounded-xl p-6 shadow">
-            <h4 class="font-semibold mb-4">Hardware Integration Documentation</h4>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <img src="images/hardware1.jpg" class="rounded-lg shadow">
-                <img src="images/hardware2.jpg" class="rounded-lg shadow">
-                <img src="images/hardware3.jpg" class="rounded-lg shadow">
+        <div>
+            <button onclick="togglePhase('phase3', this)"
+                class="w-full bg-slate-100 hover:bg-slate-200 transition rounded-xl p-4 shadow flex justify-between items-center">
+                <span class="font-semibold">Hardware Integration</span>
+                <span class="transition-transform">▼</span>
+            </button>
+
+            <div id="phase3"
+                class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <div class="bg-slate-50 rounded-xl p-6 mt-3 shadow">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <img src="images/hardware1.jpg" class="rounded-lg shadow">
+                        <img src="images/hardware2.jpg" class="rounded-lg shadow">
+                        <img src="images/hardware3.jpg" class="rounded-lg shadow">
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- PHASE 4 -->
-        <div id="phase4" class="phase-panel hidden bg-slate-50 rounded-xl p-6 shadow">
-            <h4 class="font-semibold mb-4">Software Development Documentation</h4>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <img src="images/software1.jpg" class="rounded-lg shadow">
-                <img src="images/software2.jpg" class="rounded-lg shadow">
-                <img src="images/software3.jpg" class="rounded-lg shadow">
+        <div>
+            <button onclick="togglePhase('phase4', this)"
+                class="w-full bg-slate-100 hover:bg-slate-200 transition rounded-xl p-4 shadow flex justify-between items-center">
+                <span class="font-semibold">Software Development</span>
+                <span class="transition-transform">▼</span>
+            </button>
+
+            <div id="phase4"
+                class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <div class="bg-slate-50 rounded-xl p-6 mt-3 shadow">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <img src="images/software1.jpg" class="rounded-lg shadow">
+                        <img src="images/software2.jpg" class="rounded-lg shadow">
+                        <img src="images/software3.jpg" class="rounded-lg shadow">
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
 </section>
+
 
 </main>
 
@@ -445,6 +461,35 @@ function togglePanel(id, btn) {
 
     buttons.forEach(b => b.classList.remove('rotate-180'));
     btn.classList.toggle('rotate-180');
+}
+</script>
+<script>
+function togglePhase(id, btn) {
+    const panels = document.querySelectorAll('.phase-panel');
+    const buttons = document.querySelectorAll('button span:last-child');
+    const panel = document.getElementById(id);
+    const icon = btn.querySelector('span:last-child');
+
+    panels.forEach(p => {
+        if (p !== panel) {
+            p.style.maxHeight = null;
+        }
+    });
+
+    buttons.forEach(i => i.style.transform = 'rotate(0deg)');
+
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        icon.style.transform = 'rotate(180deg)';
+
+        panel.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
 }
 </script>
 
