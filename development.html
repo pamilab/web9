@@ -94,21 +94,52 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slat
 </tr>
 </thead>
 <tbody>
+
 <tr class="border-t">
-<td class="px-4 py-2 font-semibold">Radar Type</td>
-<td class="px-4 py-2">FMCW</td>
-<td class="px-4 py-2">High tion, low peak power</td>
+<td class="px-4 py-2 font-semibold">Center Frequency</td>
+<td class="px-4 py-2">2.4&nbsp;GHz (ISM Band)</td>
+<td class="px-4 py-2">
+    Balances penetration depth and spatial resolution while allowing
+    license-free operation and use of available RF components.
+</td>
 </tr>
+
 <tr class="border-t bg-slate-50">
-<td class="px-4 py-2 font-semibold">Frequency</td>
-<td class="px-4 py-2">2.4 GHz</td>
-<td class="px-4 py-2">Balanced penetration</td>
+<td class="px-4 py-2 font-semibold">Bandwidth</td>
+<td class="px-4 py-2">≈ 200&nbsp;MHz</td>
+<td class="px-4 py-2">
+    Provides sufficient depth resolution for shallow subsurface target
+    discrimination while remaining compatible with SDR constraints.
+</td>
 </tr>
+
 <tr class="border-t">
-<td class="px-4 py-2 font-semibold">Processing</td>
-<td class="px-4 py-2">STFT</td>
-<td class="px-4 py-2">Depth-time mapping</td>
+<td class="px-4 py-2 font-semibold">Chirp Rate</td>
+<td class="px-4 py-2">Bandwidth / Chirp Duration</td>
+<td class="px-4 py-2">
+    Determines the beat frequency after mixing, enabling depth estimation
+    through frequency-to-range mapping.
+</td>
 </tr>
+
+<tr class="border-t bg-slate-50">
+<td class="px-4 py-2 font-semibold">Antenna Characteristics</td>
+<td class="px-4 py-2">Broadband antennas (2.4&nbsp;GHz)</td>
+<td class="px-4 py-2">
+    Required to support wideband FMCW operation and efficient coupling of
+    electromagnetic energy into the ground.
+</td>
+</tr>
+
+<tr class="border-t">
+<td class="px-4 py-2 font-semibold">Signal Processing</td>
+<td class="px-4 py-2">STFT</td>
+<td class="px-4 py-2">
+    Enables time–frequency analysis for depth estimation and radargram
+    generation.
+</td>
+</tr>
+
 </tbody>
 </table>
 </div>
@@ -117,6 +148,7 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slat
 </div>
 </div>
 </section>
+
 
 <!-- STEP 2 -->
 <!-- STEP 2 -->
