@@ -341,7 +341,7 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
 </div>
 </section>
 
-<!-- DEVELOPMENT PHASES – HORIZONTAL CLICKABLE DOCUMENTATION -->
+<!-- DEVELOPMENT PHASES – POPUP DOCUMENTATION -->
 <section class="bg-white rounded-xl shadow p-6 mt-10">
 
     <h2 class="text-2xl font-bold mb-6 text-slate-800">
@@ -349,77 +349,87 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
     </h2>
 
     <!-- Horizontal Phase Boxes -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-        <button onclick="togglePhase('phase1', this)"
-            class="phase-box bg-sky-200 hover:bg-sky-300 transition rounded-xl p-4 shadow text-center font-semibold">
+        <button onclick="openModal('modal1')"
+            class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
             Concept & Planning
         </button>
 
-        <button onclick="togglePhase('phase2', this)"
-            class="phase-box bg-sky-200 hover:bg-sky-300 transition rounded-xl p-4 shadow text-center font-semibold">
+        <button onclick="openModal('modal2')"
+            class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
             Design & Simulation
         </button>
 
-        <button onclick="togglePhase('phase3', this)"
-            class="phase-box bg-sky-200 hover:bg-sky-300 transition rounded-xl p-4 shadow text-center font-semibold">
+        <button onclick="openModal('modal3')"
+            class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
             Hardware Integration
         </button>
 
-        <button onclick="togglePhase('phase4', this)"
-            class="phase-box bg-sky-200 hover:bg-sky-300 transition rounded-xl p-4 shadow text-center font-semibold">
+        <button onclick="openModal('modal4')"
+            class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
             Software Development
         </button>
 
     </div>
+</section>
 
-    <!-- Panels -->
 
-    <div id="phase1" class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-        <div class="bg-slate-50 rounded-xl p-6 shadow">
+</main>
+<!-- MODAL OVERLAY -->
+<div id="modalOverlay"
+     class="fixed inset-0 bg-black/70 hidden z-50 flex items-center justify-center">
+
+    <!-- MODAL CONTENT -->
+    <div class="bg-white rounded-xl max-w-5xl w-full mx-6 p-6 relative">
+
+        <button onclick="closeModal()"
+            class="absolute top-3 right-3 text-2xl font-bold text-slate-600">
+            ✕
+        </button>
+
+        <!-- MODAL 1 -->
+        <div id="modal1" class="modal-panel hidden">
+            <h3 class="text-xl font-semibold mb-4">Concept & Planning</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <img src="images/concept1.jpg" class="rounded-lg shadow">
                 <img src="images/concept2.jpg" class="rounded-lg shadow">
                 <img src="images/concept3.jpg" class="rounded-lg shadow">
             </div>
         </div>
-    </div>
 
-    <div id="phase2" class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-        <div class="bg-slate-50 rounded-xl p-6 shadow">
+        <!-- MODAL 2 -->
+        <div id="modal2" class="modal-panel hidden">
+            <h3 class="text-xl font-semibold mb-4">Design & Simulation</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <img src="images/design1.jpg" class="rounded-lg shadow">
                 <img src="images/design2.jpg" class="rounded-lg shadow">
                 <img src="images/design3.jpg" class="rounded-lg shadow">
             </div>
         </div>
-    </div>
 
-    <div id="phase3" class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-        <div class="bg-slate-50 rounded-xl p-6 shadow">
+        <!-- MODAL 3 -->
+        <div id="modal3" class="modal-panel hidden">
+            <h3 class="text-xl font-semibold mb-4">Hardware Integration</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <img src="images/hardware1.jpg" class="rounded-lg shadow">
                 <img src="images/hardware2.jpg" class="rounded-lg shadow">
                 <img src="images/hardware3.jpg" class="rounded-lg shadow">
             </div>
         </div>
-    </div>
 
-    <div id="phase4" class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-        <div class="bg-slate-50 rounded-xl p-6 shadow">
+        <!-- MODAL 4 -->
+        <div id="modal4" class="modal-panel hidden">
+            <h3 class="text-xl font-semibold mb-4">Software Development</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <img src="images/software1.jpg" class="rounded-lg shadow">
                 <img src="images/software2.jpg" class="rounded-lg shadow">
                 <img src="images/software3.jpg" class="rounded-lg shadow">
             </div>
         </div>
+
     </div>
-
-</section>
-
-
-
-</main>
+</div>
 
 <!-- FOOTER -->
 <footer class="bg-slate-900 text-slate-400 py-10 text-center">
@@ -448,32 +458,21 @@ function togglePanel(id, btn) {
 }
 </script>
 <script>
-function togglePhase(id, btn) {
-    const panels = document.querySelectorAll('.phase-panel');
-    const boxes = document.querySelectorAll('.phase-box');
-    const panel = document.getElementById(id);
+function openModal(id) {
+    document.getElementById('modalOverlay').classList.remove('hidden');
 
-    panels.forEach(p => {
-        if (p !== panel) { 
-            p.style.maxHeight = null;
-        }
+    document.querySelectorAll('.modal-panel').forEach(panel => {
+        panel.classList.add('hidden');
     });
 
-    boxes.forEach(b => b.classList.remove('ring-4', 'ring-sky-400'));
+    document.getElementById(id).classList.remove('hidden');
+}
 
-    if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-    } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-        btn.classList.add('ring-4', 'ring-sky-400');
-
-        panel.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    }
+function closeModal() {
+    document.getElementById('modalOverlay').classList.add('hidden');
 }
 </script>
+
 
 
 </body>
