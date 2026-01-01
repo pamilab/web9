@@ -83,7 +83,7 @@ body { font-family: 'Inter', sans-serif; }
 
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
-    <h2 class="text-2xl font-bold">1. Concept and Planning</h2>
+    <h2 class="text-2xl font-bold">1. CONCEPT AND PLANNING</h2>
     <button onclick="togglePanel('step1', this)" class="text-xl transition-transform">▼</button>
 </div>
 
@@ -173,7 +173,7 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slat
 
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
-    <h2 class="text-2xl font-bold">2. Design</h2>
+    <h2 class="text-2xl font-bold">2. DESIGN</h2>
     <button onclick="togglePanel('step2', this)" class="text-xl transition-transform">▼</button>
 </div>
 
@@ -182,77 +182,28 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-x
 
 <!-- LEFT: SIGNAL VISUAL -->
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-    <img src="images/swept.png" class="w-full object-contain mb-4 rounded-md">
-    <h4 class="font-semibold">FMCW Chirp Signal</h4>
+    <img src="images/rf.jpg" class="w-full object-contain mb-4 rounded-md">
+    <h4 class="font-semibold">RF Integration</h4>
     <p class="text-sm text-slate-600">
-        Linear frequency-modulated continuous wave used to encode target depth
-        information into beat frequency.
+RF components were carefully interconnected to
+establish the complete signal path of the radar system. Each component was
+connected according to the designed configuration, ensuring proper alignment
+and continuity of the signals.
     </p>
 </div>
 
-<!-- RIGHT: EQUATIONS TABLE -->
-<div class="overflow-x-auto">
-<table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
-<thead class="bg-slate-800 text-white">
-<tr>
-<th class="px-4 py-2">Equation</th>
-<th class="px-4 py-2">Expression</th>
-<th class="px-4 py-2">Description</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr class="border-t">
-<td class="px-4 py-2 font-semibold">STFT</td>
-<td class="px-4 py-2 font-mono">
-S(f, t) = ∑<sub>τ=0</sub><sup>N−1</sup> x(τ) · w(t − τ) · e<sup>−j2πfτ</sup>
-</td>
-<td class="px-4 py-2">
-Short-Time Fourier Transform used to extract time–frequency
-information from the beat signal.
-</td>
-</tr>
-
-<tr class="border-t bg-slate-50">
-<td class="px-4 py-2 font-semibold">Beat Frequency</td>
-<td class="px-4 py-2 font-mono">
-f<sub>b</sub> = f<sub>2</sub> − f<sub>1</sub>
-</td>
-<td class="px-4 py-2">
-Difference between transmitted and received frequencies after mixing.
-</td>
-</tr>
-
-<tr class="border-t">
-<td class="px-4 py-2 font-semibold">Range Estimation</td>
-<td class="px-4 py-2 font-mono">
-R = (c · T · f<sub>b</sub>) / (2B)
-</td>
-<td class="px-4 py-2">
-Depth calculation using beat frequency, where c is propagation velocity,
-T is chirp duration, and B is bandwidth.
-</td>
-</tr>
-
-<tr class="border-t bg-slate-50">
-<td class="px-4 py-2 font-semibold">Range Resolution</td>
-<td class="px-4 py-2 font-mono">
-ΔR = c / (2B)
-</td>
-<td class="px-4 py-2">
-Minimum resolvable depth separation determined by FMCW bandwidth.
-</td>
-</tr>
-
-</tbody>
-</table>
+  <div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/rd2.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">RF Connection</h4>
+<p class="text-sm text-slate-600">In the initial phase, the RF components were carefully interconnected to establish the complete signal path of the radar system. Each component was connected according to the designed configuration, ensuring proper alignment and continuity of the signals. 
+</p>
 </div>
 
+  
 </div>
 </div>
 </section>
-
+   
 <!-- STEP 3 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
 <img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
@@ -260,7 +211,7 @@ Minimum resolvable depth separation determined by FMCW bandwidth.
 
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">3. Hardware Integration</h2>
+<h2 class="text-2xl font-bold">3. COMPONENTS INTEGRATION </h2>
 <button onclick="togglePanel('step3', this)" class="text-xl transition-transform">▼</button>
 </div>
 
@@ -268,19 +219,13 @@ Minimum resolvable depth separation determined by FMCW bandwidth.
 class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
 
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/rf.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">RF Front-End</h4>
-<p class="text-sm text-slate-600">In the initial phase, the RF components were carefully interconnected to establish the complete signal path of the radar system. Every high-frequency connection uses standard SMA connectors using 50-ohm impedance-matched devices.</p>
-</div>
+<img src="images/hardware integ.jpg" class="w-full object-contain mb-4 rounded-md">
 
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/hackrf.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">SDR Digitization</h4>
-<p class="text-sm text-slate-600">The ADC on this SDR is used to digitize the beat frequency only and other functions will not be used. The sampling rate will be maximized and the Nyquist limit will be reached at maximum modulating frequency since it is using sampling.
-The USB will carry 1.28Gbps at 20MSPS sampling rate using complex64 data type which contains 32 bits each of I and Q samples.
-This was chosen because it is the cheapest available digitizer with very high sampling rate, increasing the bandwidth limits, hence range resolution. 
+<p class="text-sm text-slate-600">The assembled RF components were initially found to be unstable without a proper mounting base. Since these components are fragile and prone to damage during handling and testing, the researchers integrated all RF modules onto an acrylic platform.
 </p>
 </div>
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/acry.jpg" class="w-full object-contain mb-4 rounded-md">
 
 </div>
 </div>
@@ -293,7 +238,7 @@ This was chosen because it is the cheapest available digitizer with very high sa
 
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">4. Software & Signal Processing</h2>
+<h2 class="text-2xl font-bold">4. SYSTEM COMPONENTS AND SIGNAL FLOW</h2>
 <button onclick="togglePanel('step4', this)" class="text-xl transition-transform">▼</button>
 </div>
 
@@ -301,24 +246,19 @@ This was chosen because it is the cheapest available digitizer with very high sa
 class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
 
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/sttft.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">STFT Analysis</h4>
-<p class="text-sm text-slate-600">Time–frequency depth extraction.</p>
+<img src="images/comptest.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Component Testing</h4>
+<p class="text-sm text-slate-600">After mounting the components onto the acrylic platform, the researchers
+conducted tests on the parameters and frequency response of each RF
+component. These tests ensured proper operation, verified the continuity of the
+signal path, minimized potential confusion, and reduced the need for additional
+troubleshooting.</p>
 </div>
-
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/hamming.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">Hamming Window</h4>
-<p class="text-sm text-slate-600">The Hamming window is a mathematical function used in FMCW-GPR System. It is applied to the beat signal before performing the 
-    Fourier Transform to reduce spectral leakage, which can distort the frequency analysis of the signal.</p>
+<img src="images/tesy.png" class="w-full object-contain mb-4 rounded-md">
 </div>
-    
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/radargram.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">Radargram</h4>
-<p class="text-sm text-slate-600">Frequency vs Time</p>
-</div>
-
+<img src="images/twe.jpg" class="w-full object-contain mb-4 rounded-md">
 </div>
 </div>
 </section>
@@ -330,28 +270,77 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-x
 
 <div class="relative z-10 p-8 text-white">
 <div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">5. Testing and Validation</h2>
+<h2 class="text-2xl font-bold">5. INTEGRATION OF SIGNAL PROCESSING UNIT</h2>
 <button onclick="togglePanel('step5', this)" class="text-xl transition-transform">▼</button>
 </div>
 
-<div id="step5"
+  <div id="step5"
+class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+    
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/sttft.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">STFT Analysis</h4>
+<p class="text-sm text-slate-600">The Short-Time Fourier Transform (STFT) analyzes how a signal’s frequency changes over time. In FMCW radar, it is applied to the beat signal to track time-varying frequencies caused by moving or multiple targets, enabling analysis of target distance and dynamic behavior.</p>
+</div>
+
+ <div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/cpu.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Central Processing Unit</h4>
+<p class="text-sm text-slate-600">An x86-based mini PC was incorporated into the acrylic platform to function as the primary unit for signal processing and data acquisition. This
+integration enabled the system to process the radar signals and record the measurements efficiently.</p>
+</div>
+
+    
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/hamming.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Hamming Window</h4>
+<p class="text-sm text-slate-600">The Hamming window is a mathematical function used in FMCW-GPR System. It is applied to the beat signal before performing the 
+    Fourier Transform to reduce spectral leakage, which can distort the frequency analysis of the signal.</p>
+</div>
+
+ <div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/hackrf.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">SDR Digitization</h4>
+<p class="text-sm text-slate-600">The ADC on this SDR is used to digitize the beat frequency only and other functions will not be used. The sampling rate will be maximized and the Nyquist limit will be reached at maximum modulating frequency since it is using sampling.
+The USB will carry 1.28Gbps at 20MSPS sampling rate using complex64 data type which contains 32 bits each of I and Q samples.
+This was chosen because it is the cheapest available digitizer with very high sampling rate, increasing the bandwidth limits, hence range resolution. 
+</p>
+</div>
+</div>
+</section>
+
+<!-- STEP 6 -->
+<section class="relative rounded-xl overflow-hidden shadow-lg">
+<img src="images/softwaredev.jpg" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-slate-900/75"></div>
+
+<div class="relative z-10 p-8 text-white">
+<div class="flex justify-between items-center">
+<h2 class="text-2xl font-bold">6. CONSTRUCTION OF RADAR FRAME AND INITIAL TESTING</h2>
+<button onclick="togglePanel('step4', this)" class="text-xl transition-transform">▼</button>
+</div>
+
+<div id="step4"
 class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
 
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/testi.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">Lateral Position</h4>
-<p class="text-sm text-slate-600">
-Controlled test environment with embedded metallic object.
-</p>
+<img src="images/comptest.jpg" class="w-full object-contain mb-4 rounded-md">
+<h4 class="font-semibold">Component Testing</h4>
+<p class="text-sm text-slate-600">After mounting the components onto the acrylic platform, the researchers
+conducted tests on the parameters and frequency response of each RF
+component. These tests ensured proper operation, verified the continuity of the
+signal path, minimized potential confusion, and reduced the need for additional
+troubleshooting.</p>
 </div>
-
 <div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/combi.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">Depth Detection Accuracy (Static)</h4>
-<p class="text-sm text-slate-600">
-Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FMCW-GPR System.
-</p>
+<img src="images/tesy.png" class="w-full object-contain mb-4 rounded-md">
 </div>
+<div class="bg-slate-50 p-4 rounded-lg shadow">
+<img src="images/twe.jpg" class="w-full object-contain mb-4 rounded-md">
+</div>
+</div>
+</section>
+
 
 </div>
 </div>
@@ -392,8 +381,7 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
     <!-- PANELS -->
 
     <div id="doc1" class="doc-panel bg-sky-100 rounded-xl p-6 mb-4">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <img src="images/blockdiag.jpg" class="rounded-lg shadow">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"> 
             <img src="images/c1 (5).jpg" class="rounded-lg shadow">
             <img src="images/c1 (4).jpg" class="rounded-lg shadow">
             <img src="images/c1 (3).jpg" class="rounded-lg shadow">
