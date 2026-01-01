@@ -23,31 +23,31 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-.doc-panel {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.8s ease, opacity 0.4s ease;
-}
-
-.doc-panel.open {
-    opacity: 1;
-}
-</style>
-
-<style>
 body { font-family: 'Inter', sans-serif; }
+
+/* MAIN STEP PANELS */
 .panel {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
     opacity: 0;
+    transition: max-height 0.7s ease, opacity 0.4s ease;
 }
-
 .panel.open {
     opacity: 1;
 }
 
+/* DOCUMENTATION POPUP PANEL */
+.doc-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+}
+.doc-panel.open {
+    opacity: 1;
+}
+
+/* GLASS EFFECT */
 .glass {
     backdrop-filter: blur(12px);
     background: linear-gradient(
@@ -56,7 +56,20 @@ body { font-family: 'Inter', sans-serif; }
         rgba(255,255,255,0.65)
     );
 }
+
+/* IMAGE SCALING – IMPORTANT */
+img {
+    max-height: 260px;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* ROTATE ARROW */
+.rotate-180 {
+    transform: rotate(180deg);
+}
 </style>
+
 </head>
 
 
@@ -514,12 +527,18 @@ function togglePanel(id, btn) {
         panel.style.maxHeight = null;
         panel.classList.remove('open');
     } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
         panel.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + "px";
         btn.classList.add('rotate-180');
+
+        panel.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
     }
 }
 </script>
+
 
 <script>
 function openModal(id) {
@@ -551,23 +570,40 @@ function closeModal() {
 </script>
 
 <script>
+let activeDoc = null;
+
 function toggleDoc(id) {
     const panel = document.getElementById(id);
+    const allPanels = document.querySelectorAll('.doc-panel');
+
+    if (activeDoc && activeDoc !== panel) {
+        activeDoc.style.maxHeight = null;
+        activeDoc.classList.remove('open');
+    }
 
     if (panel.classList.contains('open')) {
-        panel.style.maxHeight = "0px";
+        panel.style.maxHeight = null;
         panel.classList.remove('open');
+        activeDoc = null;
     } else {
         panel.classList.add('open');
         panel.style.maxHeight = panel.scrollHeight + "px";
-
-        panel.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+        activeDoc = panel;
     }
 }
+
+/* CLICK OUTSIDE TO CLOSE */
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.doc-panel') && !e.target.closest('button[onclick^="toggleDoc"]')) {
+        document.querySelectorAll('.doc-panel').forEach(panel => {
+            panel.style.maxHeight = null;
+            panel.classList.remove('open');
+        });
+        activeDoc = null;
+    }
+});
 </script>
+
 
 
 </body>
