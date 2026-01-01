@@ -22,6 +22,18 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+.doc-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.8s ease, opacity 0.4s ease;
+}
+
+.doc-panel.open {
+    opacity: 1;
+}
+</style>
 
 <style>
 body { font-family: 'Inter', sans-serif; }
@@ -345,7 +357,7 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
 </div>
 </section>
 
-<!-- DEVELOPMENT PHASES – POPUP DOCUMENTATION -->
+<!-- DEVELOPMENT PHASES – DOCUMENTATION (SMOOTH PANEL) -->
 <section class="bg-white rounded-xl shadow p-6 mt-10">
 
     <h2 class="text-2xl font-bold mb-6 text-slate-800">
@@ -353,29 +365,64 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
     </h2>
 
     <!-- Horizontal Phase Boxes -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
 
-        <button onclick="openModal('modal1')"
+        <button onclick="toggleDoc('doc1', this)"
             class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
             Concept & Planning
         </button>
 
-        <button onclick="openModal('modal2')"
+        <button onclick="toggleDoc('doc2', this)"
             class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
             Design & Simulation
         </button>
 
-        <button onclick="openModal('modal3')"
+        <button onclick="toggleDoc('doc3', this)"
             class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
             Hardware Integration
         </button>
 
-        <button onclick="openModal('modal4')"
+        <button onclick="toggleDoc('doc4', this)"
             class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
             Software Development
         </button>
 
     </div>
+
+    <!-- PANELS -->
+
+    <div id="doc1" class="doc-panel bg-sky-100 rounded-xl p-6 mb-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <img src="images/concept1.jpg" class="rounded-lg shadow">
+            <img src="images/concept2.jpg" class="rounded-lg shadow">
+            <img src="images/concept3.jpg" class="rounded-lg shadow">
+        </div>
+    </div>
+
+    <div id="doc2" class="doc-panel bg-sky-100 rounded-xl p-6 mb-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <img src="images/design1.jpg" class="rounded-lg shadow">
+            <img src="images/design2.jpg" class="rounded-lg shadow">
+            <img src="images/design3.jpg" class="rounded-lg shadow">
+        </div>
+    </div>
+
+    <div id="doc3" class="doc-panel bg-sky-100 rounded-xl p-6 mb-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <img src="images/hardware1.jpg" class="rounded-lg shadow">
+            <img src="images/hardware2.jpg" class="rounded-lg shadow">
+            <img src="images/hardware3.jpg" class="rounded-lg shadow">
+        </div>
+    </div>
+
+    <div id="doc4" class="doc-panel bg-sky-100 rounded-xl p-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <img src="images/software1.jpg" class="rounded-lg shadow">
+            <img src="images/software2.jpg" class="rounded-lg shadow">
+            <img src="images/software3.jpg" class="rounded-lg shadow">
+        </div>
+    </div>
+
 </section>
 
 
@@ -501,6 +548,32 @@ function closeModal() {
 }
 </script>
 
+<script>
+function toggleDoc(id, btn) {
+    const panel = document.getElementById(id);
+    const allPanels = document.querySelectorAll('.doc-panel');
+
+    allPanels.forEach(p => {
+        if (p !== panel) {
+            p.style.maxHeight = null;
+            p.classList.remove('open');
+        }
+    });
+
+    if (panel.classList.contains('open')) {
+        panel.style.maxHeight = null;
+        panel.classList.remove('open');
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.classList.add('open');
+
+        panel.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
+</script>
 
 
 </body>
