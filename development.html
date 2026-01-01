@@ -1,562 +1,234 @@
-<nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
-  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
-      <div class="hidden md:flex space-x-8">
-          <a href="index.html">Home</a>
-          <a href="problem-approach.html" class="text-blue-400 font-semibold">Approach</a>
-          <a href="development.html">    class="text-blue-400 font-semibold">Development</a>
-          <a href="results.html">Results</a>
-          <a href="applications.html">Applications</a>
-      </div>
-  </div>
-</nav>
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Development Process - FMCW-GPR Research</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-body { font-family: 'Inter', sans-serif; }
-.panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
-    opacity: 0;
-}
-
-.panel.open {
-    opacity: 1;
-}
-
-.glass {
-    backdrop-filter: blur(12px);
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.85),
-        rgba(255,255,255,0.65)
-    );
-}
-
-  html {
-    scroll-behavior: smooth;
-}
-
-</style>
-
-  <style>
-.doc-panel {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.8s ease, opacity 0.4s ease;
-}
-
-.doc-panel.open {
-    opacity: 1;
-}
-</style>
-
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem & Approach - FMCW-GPR Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
 
+<!-- Navigation -->
+<nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="index.html">Home</a>
+            <a href="problem-approach.html" class="text-blue-400 font-semibold">Approach</a>
+            <a href="development.html">Development</a>
+            <a href="results.html">Results</a>
+            <a href="applications.html">Applications</a>
+        </div>
+    </div>
+</nav>
 
-<!-- HEADER -->
+<!-- Header -->
 <header class="relative h-72 flex items-center justify-center text-center text-white">
-<img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/70"></div>
-<div class="relative z-10 px-6">
-    <h1 class="text-4xl font-bold mb-2">Building the Prototype</h1>
-    <p class="text-slate-300 max-w-2xl mx-auto">
-        Concept, design, simulation, hardware, and signal processing workflow.
-    </p>
-</div>
+    
+    <!-- Background Image -->
+    <img src="images/subsurface.jpg"
+         alt="FMCW GPR Background"
+         class="absolute inset-0 w-full h-full object-cover">
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-slate-900/70"></div>
+
+    <!-- Text Content -->
+    <div class="relative z-10 px-6">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">
+            Problem Context & Methodology
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+            Bridging the gap between high-cost commercial radar and accessible research tools.
+        </p>
+    </div>
+
 </header>
 
-<!-- MAIN -->
-<main class="container mx-auto px-6 py-16 space-y-12">
 
-<!-- STEP 1 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/conceptplanning.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+<main class="container mx-auto px-6 py-16">
 
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-    <h2 class="text-2xl font-bold">1. Concept and Planning</h2>
-    <button onclick="togglePanel('step1', this)" class="text-xl transition-transform">▼</button>
+<!-- Problem Section -->
+<div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+    <div>
+        <h2 class="text-3xl font-bold mb-6">The Problem We Address</h2>
+        <p class="text-slate-600 mb-4">
+            Subsurface inspection is critical in civil engineering, disaster response,
+            and underground mapping. Existing GPR systems are expensive and bulky.
+        </p>
+        <ul class="space-y-3">
+            <li>✔ Affordable for researchers</li>
+            <li>✔ Easy to deploy</li>
+            <li>✔ Reliable operation</li>
+        </ul>
+    </div>
+    <img src="images/crack.jpg"
+         class="rounded-lg shadow-lg w-full h-80 object-cover"
+         alt="Construction site">
 </div>
 
-<div id="step1"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slate-800 rounded-xl p-6 mt-6">
+<!-- Timeline -->
+<h2 class="text-3xl font-bold mb-10 text-center">How the System Works</h2>
 
-<div class="grid lg:grid-cols-3 gap-6">
+<div class="relative">
+    <div class="hidden md:block absolute left-1/2 w-0.5 bg-blue-200 h-full"></div>
 
-<div class="bg-slate-50 rounded-lg p-4 shadow">
-    <img src="images/blockdiag.jpg" class="w-full object-contain mb-4 rounded-md">
-    <h4 class="font-semibold">System Block Diagram</h4>
-    <p class="text-sm text-slate-600">
-        Overall FMCW-GPR architecture and signal flow.
-    </p>
-</div>
-
-<div class="lg:col-span-2 overflow-x-auto">
-<table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
-<thead class="bg-slate-800 text-white">
-<tr>
-<th class="px-4 py-2">Parameter</th>
-<th class="px-4 py-2">Specification</th>
-<th class="px-4 py-2">Rationale</th>
-</tr>
-</thead>
-<tbody>
-
-<tr class="border-t">
-<td class="px-4 py-2 font-semibold">Center Frequency</td>
-<td class="px-4 py-2">125&nbsp;Mhz</td>
-<td class="px-4 py-2">Provides sufficient depth resolution for shallow subsurface target
-    discrimination while remaining compatible with SDR constraints.
-</td>
-</tr>
-
-<tr class="border-t bg-slate-50">
-<td class="px-4 py-2 font-semibold">Bandwidth</td>
-<td class="px-4 py-2">≈ 2.4&nbsp;GHz</td>
-<td class="px-4 py-2">
-        Balances penetration depth and spatial resolution while allowing
-    license-free operation and use of available RF components.
-</td>
-</tr>
-
-<tr class="border-t">
-<td class="px-4 py-2 font-semibold">Chirp Rate</td>
-<td class="px-4 py-2">500Hz</td>
-<td class="px-4 py-2">
-    Determines the beat frequency after mixing, enabling depth estimation
-    through frequency-to-range mapping.
-</td>
-</tr>
-
-<tr class="border-t bg-slate-50">
-<td class="px-4 py-2 font-semibold">Antenna Characteristics</td>
-<td class="px-4 py-2">Yagi-Uda </td>
-<td class="px-4 py-2">
-    Required to support wideband FMCW operation and efficient coupling of
-    electromagnetic energy into the ground.
-</td>
-</tr>
-
-<tr class="border-t">
-<td class="px-4 py-2 font-semibold">Signal Processing</td>
-<td class="px-4 py-2">STFT</td>
-<td class="px-4 py-2">
-    Enables time–frequency analysis for depth estimation and radargram
-    generation.
-</td>
-</tr>
-
-</tbody>
-</table>
-</div>
-
-</div>
-</div>
-</div>
-</section>
-
-
-<!-- STEP 2 -->
-<!-- STEP 2 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/desimulatin.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
-
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-    <h2 class="text-2xl font-bold">2. Design and Simulation</h2>
-    <button onclick="togglePanel('step2', this)" class="text-xl transition-transform">▼</button>
-</div>
-
-<div id="step2"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid lg:grid-cols-2 gap-6 text-slate-800">
-
-<!-- LEFT: SIGNAL VISUAL -->
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-    <img src="images/swept.png" class="w-full object-contain mb-4 rounded-md">
-    <h4 class="font-semibold">FMCW Chirp Signal</h4>
-    <p class="text-sm text-slate-600">
-        Linear frequency-modulated continuous wave used to encode target depth
-        information into beat frequency.
-    </p>
-</div>
-
-<!-- RIGHT: EQUATIONS TABLE -->
-<div class="overflow-x-auto">
-<table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
-<thead class="bg-slate-800 text-white">
-<tr>
-<th class="px-4 py-2">Equation</th>
-<th class="px-4 py-2">Expression</th>
-<th class="px-4 py-2">Description</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr class="border-t">
-<td class="px-4 py-2 font-semibold">STFT</td>
-<td class="px-4 py-2 font-mono">
-S(f, t) = ∑<sub>τ=0</sub><sup>N−1</sup> x(τ) · w(t − τ) · e<sup>−j2πfτ</sup>
-</td>
-<td class="px-4 py-2">
-Short-Time Fourier Transform used to extract time–frequency
-information from the beat signal.
-</td>
-</tr>
-
-<tr class="border-t bg-slate-50">
-<td class="px-4 py-2 font-semibold">Beat Frequency</td>
-<td class="px-4 py-2 font-mono">
-f<sub>b</sub> = f<sub>2</sub> − f<sub>1</sub>
-</td>
-<td class="px-4 py-2">
-Difference between transmitted and received frequencies after mixing.
-</td>
-</tr>
-
-<tr class="border-t">
-<td class="px-4 py-2 font-semibold">Range Estimation</td>
-<td class="px-4 py-2 font-mono">
-R = (c · T · f<sub>b</sub>) / (2B)
-</td>
-<td class="px-4 py-2">
-Depth calculation using beat frequency, where c is propagation velocity,
-T is chirp duration, and B is bandwidth.
-</td>
-</tr>
-
-<tr class="border-t bg-slate-50">
-<td class="px-4 py-2 font-semibold">Range Resolution</td>
-<td class="px-4 py-2 font-mono">
-ΔR = c / (2B)
-</td>
-<td class="px-4 py-2">
-Minimum resolvable depth separation determined by FMCW bandwidth.
-</td>
-</tr>
-
-</tbody>
-</table>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- STEP 3 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
-
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">3. Hardware Integration</h2>
-<button onclick="togglePanel('step3', this)" class="text-xl transition-transform">▼</button>
-</div>
-
-<div id="step3"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/rf.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">RF Front-End</h4>
-<p class="text-sm text-slate-600">In the initial phase, the RF components were carefully interconnected to establish the complete signal path of the radar system. Every high-frequency connection uses standard SMA connectors using 50-ohm impedance-matched devices.</p>
-</div>
-
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/hackrf.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">SDR Digitization</h4>
-<p class="text-sm text-slate-600">The ADC on this SDR is used to digitize the beat frequency only and other functions will not be used. The sampling rate will be maximized and the Nyquist limit will be reached at maximum modulating frequency since it is using sampling.
-The USB will carry 1.28Gbps at 20MSPS sampling rate using complex64 data type which contains 32 bits each of I and Q samples.
-This was chosen because it is the cheapest available digitizer with very high sampling rate, increasing the bandwidth limits, hence range resolution. 
-</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- STEP 4 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/softwaredev.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
-
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">4. Software & Signal Processing</h2>
-<button onclick="togglePanel('step4', this)" class="text-xl transition-transform">▼</button>
-</div>
-
-<div id="step4"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/sttft.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">STFT Analysis</h4>
-<p class="text-sm text-slate-600">Time–frequency depth extraction.</p>
-</div>
-
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/hamming.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">Hamming Window</h4>
-<p class="text-sm text-slate-600">The Hamming window is a mathematical function used in FMCW-GPR System. It is applied to the beat signal before performing the 
-    Fourier Transform to reduce spectral leakage, which can distort the frequency analysis of the signal.</p>
-</div>
+    <div class="space-y-10">
     
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/radargram.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">Radargram</h4>
-<p class="text-sm text-slate-600">Frequency vs Time</p>
-</div>
+        <!-- Step Template -->
+<!-- Step 1 -->
+<div class="relative flex md:odd:flex-row-reverse items-center group">
+    
+    <!-- Pulse Ring -->
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
 
-</div>
-</div>
-</section>
-
-<!-- STEP 5 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
-
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">5. Testing and Validation</h2>
-<button onclick="togglePanel('step5', this)" class="text-xl transition-transform">▼</button>
-</div>
-
-<div id="step5"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/testi.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">Lateral Position</h4>
-<p class="text-sm text-slate-600">
-Controlled test environment with embedded metallic object.
-</p>
-</div>
-
-<div class="bg-slate-50 p-4 rounded-lg shadow">
-<img src="images/combi.jpg" class="w-full object-contain mb-4 rounded-md">
-<h4 class="font-semibold">Depth Detection Accuracy (Static)</h4>
-<p class="text-sm text-slate-600">
-Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FMCW-GPR System.
-</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- DEVELOPMENT PHASES – DOCUMENTATION (SMOOTH PANEL) -->
-<section class="bg-white rounded-xl shadow p-6 mt-10">
-
-    <h2 class="text-2xl font-bold mb-6 text-slate-800">
-        Development Phases (Documentation)
-    </h2>
-
-    <!-- Horizontal Phase Boxes -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-
-        <button onclick="toggleDoc('doc1', this)"
-            class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
-            Concept & Planning
-        </button>
-
-        <button onclick="toggleDoc('doc2', this)"
-            class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
-            Design & Simulation
-        </button>
-
-        <button onclick="toggleDoc('doc3', this)"
-            class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
-            Hardware Integration
-        </button>
-
-        <button onclick="toggleDoc('doc4', this)"
-            class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 shadow text-center font-semibold">
-            Software Development
-        </button>
-
+    <!-- Step Number -->
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        1
     </div>
 
-    <!-- PANELS -->
+    <!-- Content Card -->
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
 
-    <div id="doc1" class="doc-panel bg-sky-100 rounded-xl p-6 mb-4">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <img src="images/concept1.jpg" class="rounded-lg shadow">
-            <img src="images/concept2.jpg" class="rounded-lg shadow">
-            <img src="images/concept3.jpg" class="rounded-lg shadow">
+        <!-- Accent Bar -->
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
+
+        <!-- Text -->
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Transmission</h3>
+            <p class="text-slate-600">
+                FMCW chirp transmitted toward the ground.
+            </p>
         </div>
+
+        <!-- Image -->
+        <img src="images/chirp.jpg"
+             class="w-48 h-48 object-contain drop-shadow-lg"
+             alt="">
+    </div>
+</div>
+
+       <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        2
     </div>
 
-    <div id="doc2" class="doc-panel bg-sky-100 rounded-xl p-6 mb-4">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <img src="images/design1.jpg" class="rounded-lg shadow">
-            <img src="images/design2.jpg" class="rounded-lg shadow">
-            <img src="images/design3.jpg" class="rounded-lg shadow">
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
+
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Reflection</h3>
+            <p class="text-slate-600">
+                A frequency-swept FMCW chirp is transmitted toward the ground. Reflected signals from subsurface objects return to the receiver.
+            </p>
         </div>
+
+        <img src="images/bcksct.png" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
+    </div>
+</div>
+
+        <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        3
     </div>
 
-    <div id="doc3" class="doc-panel bg-sky-100 rounded-xl p-6 mb-4">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <img src="images/hardware1.jpg" class="rounded-lg shadow">
-            <img src="images/hardware2.jpg" class="rounded-lg shadow">
-            <img src="images/hardware3.jpg" class="rounded-lg shadow">
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
+
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Mixing</h3>
+            <p class="text-slate-600">
+                The transmitted and received signals are mixed, producing a beat frequency.
+            </p>
         </div>
+
+        <img src="images/mixing.jpg" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
+    </div>
+</div>
+
+
+       <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        4
     </div>
 
-    <div id="doc4" class="doc-panel bg-sky-100 rounded-xl p-6">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <img src="images/software1.jpg" class="rounded-lg shadow">
-            <img src="images/software2.jpg" class="rounded-lg shadow">
-            <img src="images/software3.jpg" class="rounded-lg shadow">
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
+
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Digitization</h3>
+            <p class="text-slate-600">
+                Beat signal digitized via HackRF (SDR).
+            </p>
         </div>
+
+        <img src="images/digitization.jpg" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
+    </div>
+</div>
+
+        <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-blue-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        5
     </div>
 
-</section>
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-blue-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-blue-500"></div>
 
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">STFT Processing</h3>
+            <p class="text-slate-600">
+                STFT processing converts the signal into depth-related frequency components.
+            </p>
+        </div>
+
+        <img src="images/stft'.png" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
+    </div>
+</div>
+
+
+       <div class="relative flex md:odd:flex-row-reverse items-center group">
+    <div class="absolute left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-green-400/20 blur-xl animate-pulse"></div>
+
+    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 text-white rounded-full flex items-center justify-center font-bold z-10 shadow-lg">
+        6
+    </div>
+
+    <div class="md:w-[45%] bg-white p-8 ml-6 rounded-xl shadow-xl border border-green-100 flex gap-6 items-center relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-green-500"></div>
+
+        <div>
+            <h3 class="font-bold mb-1 tracking-wide">Visualization</h3>
+            <p class="text-slate-600">
+                Results are visualized as radargrams showing depth and lateral position.
+            </p>
+        </div>
+
+        <img src="images/result.jpg" class="w-48 h-48 object-contain drop-shadow-lg" alt="">
+    </div>
+</div>
 
 </main>
-<!-- MODAL OVERLAY -->
-<div id="modalOverlay"
-     class="fixed inset-0 bg-black/70 opacity-0 pointer-events-none
-            transition-opacity duration-300 z-50 flex items-center justify-center">
 
-    <!-- MODAL CONTENT -->
-   <div id="modalBox"
-     class="bg-white rounded-xl max-w-5xl w-full mx-6 p-6 relative
-            transform scale-95 opacity-0 transition-all duration-300">
-
-        <button onclick="closeModal()"
-            class="absolute top-3 right-3 text-2xl font-bold text-slate-600">
-            ✕
-        </button>
-
-        <!-- MODAL 1 -->
-        <div id="modal1" class="modal-panel hidden">
-            <h3 class="text-xl font-semibold mb-4">Concept & Planning</h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <img src="images/concept1.jpg" class="rounded-lg shadow">
-                <img src="images/concept2.jpg" class="rounded-lg shadow">
-                <img src="images/concept3.jpg" class="rounded-lg shadow">
+<footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <p class="text-white font-semibold mb-2">Developed by: Omicropade</p>
+                <p>BS Electronics Engineering</p>
+                <p>Rizal Technological University</p>
             </div>
+            <p class="text-sm opacity-75">© 2025 FMCW-GPR Research Project. All rights reserved.</p>
         </div>
-
-        <!-- MODAL 2 -->
-        <div id="modal2" class="modal-panel hidden">
-            <h3 class="text-xl font-semibold mb-4">Design & Simulation</h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <img src="images/design1.jpg" class="rounded-lg shadow">
-                <img src="images/design2.jpg" class="rounded-lg shadow">
-                <img src="images/design3.jpg" class="rounded-lg shadow">
-            </div>
-        </div>
-
-        <!-- MODAL 3 -->
-        <div id="modal3" class="modal-panel hidden">
-            <h3 class="text-xl font-semibold mb-4">Hardware Integration</h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <img src="images/hardware1.jpg" class="rounded-lg shadow">
-                <img src="images/hardware2.jpg" class="rounded-lg shadow">
-                <img src="images/hardware3.jpg" class="rounded-lg shadow">
-            </div>
-        </div>
-
-        <!-- MODAL 4 -->
-        <div id="modal4" class="modal-panel hidden">
-            <h3 class="text-xl font-semibold mb-4">Software Development</h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <img src="images/software1.jpg" class="rounded-lg shadow">
-                <img src="images/software2.jpg" class="rounded-lg shadow">
-                <img src="images/software3.jpg" class="rounded-lg shadow">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!-- FOOTER -->
-<footer class="bg-slate-900 text-slate-400 py-10 text-center">
-<p class="text-white font-semibold">Developed by Omicropade</p>
-<p>BS Electronics Engineering – Rizal Technological University</p>
-<p class="text-sm opacity-75 mt-2">© 2025 FMCW-GPR Research Project</p>
-</footer>
-
-<script>
-function toggleDoc(id, btn) {
-    const panel = document.getElementById(id);
-    const allPanels = document.querySelectorAll('.doc-panel');
-
-    allPanels.forEach(p => {
-        if (p !== panel) {
-            p.style.maxHeight = null;
-            p.classList.remove('open');
-        }
-    });
-
-    if (panel.classList.contains('open')) {
-        panel.style.maxHeight = null;
-        panel.classList.remove('open');
-    } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-        panel.classList.add('open');
-
-        panel.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    }
-}
-</script>
-
-
-<script>
-function openModal(id) {
-    const overlay = document.getElementById('modalOverlay');
-    const box = document.getElementById('modalBox');
-
-    overlay.classList.remove('pointer-events-none', 'opacity-0');
-    box.classList.remove('scale-95', 'opacity-0');
-    box.classList.add('scale-100', 'opacity-100');
-
-    document.querySelectorAll('.modal-panel').forEach(panel => {
-        panel.classList.add('hidden');
-    });
-
-    document.getElementById(id).classList.remove('hidden');
-}
-
-function closeModal() {
-    const overlay = document.getElementById('modalOverlay');
-    const box = document.getElementById('modalBox');
-
-    box.classList.add('scale-95', 'opacity-0');
-    overlay.classList.add('opacity-0');
-
-    setTimeout(() => {
-        overlay.classList.add('pointer-events-none');
-    }, 300);
-}
-</script>
-
-
-
+    </footer>
 
 </body>
 </html>
