@@ -549,23 +549,26 @@ function closeModal() {
 </script>
 
 <script>
-function toggleDoc(id, btn) {
+function toggleDoc(id) {
     const panel = document.getElementById(id);
     const allPanels = document.querySelectorAll('.doc-panel');
 
     allPanels.forEach(p => {
         if (p !== panel) {
-            p.style.maxHeight = null;
-            p.classList.remove('open');
+            p.style.maxHeight = p.scrollHeight + "px"; // ensure measurable
+            requestAnimationFrame(() => {
+                p.style.maxHeight = "0px";
+                p.classList.remove('open');
+            });
         }
     });
 
     if (panel.classList.contains('open')) {
-        panel.style.maxHeight = null;
+        panel.style.maxHeight = "0px";
         panel.classList.remove('open');
     } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
         panel.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + "px";
 
         panel.scrollIntoView({
             behavior: "smooth",
