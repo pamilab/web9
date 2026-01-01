@@ -24,7 +24,17 @@
 
 <style>
 body { font-family: 'Inter', sans-serif; }
-.panel { will-change: max-height; }
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.panel.open {
+    opacity: 1;
+}
+
 .glass {
     backdrop-filter: blur(12px);
     background: linear-gradient(
@@ -371,10 +381,13 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
 </main>
 <!-- MODAL OVERLAY -->
 <div id="modalOverlay"
-     class="fixed inset-0 bg-black/70 hidden z-50 flex items-center justify-center">
+     class="fixed inset-0 bg-black/70 opacity-0 pointer-events-none
+            transition-opacity duration-300 z-50 flex items-center justify-center">
 
     <!-- MODAL CONTENT -->
-    <div class="bg-white rounded-xl max-w-5xl w-full mx-6 p-6 relative">
+   <div id="modalBox"
+     class="bg-white rounded-xl max-w-5xl w-full mx-6 p-6 relative
+            transform scale-95 opacity-0 transition-all duration-300">
 
         <button onclick="closeModal()"
             class="absolute top-3 right-3 text-2xl font-bold text-slate-600">
@@ -433,26 +446,38 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
 
 <script>
 function togglePanel(id, btn) {
-    const panels = document.querySelectorAll('.panel');
-    const buttons = document.querySelectorAll('button');
+    const panel = document.getElementById(id);
+    const allPanels = document.querySelectorAll('.panel');
+    const allButtons = document.querySelectorAll('[onclick^="togglePanel"]');
 
-    panels.forEach(p => {
-        if (p.id === id) {
-            p.classList.toggle('max-h-0');
-            p.classList.toggle('max-h-[1400px]');
-        } else {
-            p.classList.add('max-h-0');
-            p.classList.remove('max-h-[1400px]');
+    allPanels.forEach(p => {
+        if (p !== panel) {
+            p.style.maxHeight = null;
+            p.classList.remove('open');
         }
     });
 
-    buttons.forEach(b => b.classList.remove('rotate-180'));
-    btn.classList.toggle('rotate-180');
+    allButtons.forEach(b => b.classList.remove('rotate-180'));
+
+    if (panel.classList.contains('open')) {
+        panel.style.maxHeight = null;
+        panel.classList.remove('open');
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.classList.add('open');
+        btn.classList.add('rotate-180');
+    }
 }
 </script>
+
 <script>
 function openModal(id) {
-    document.getElementById('modalOverlay').classList.remove('hidden');
+    const overlay = document.getElementById('modalOverlay');
+    const box = document.getElementById('modalBox');
+
+    overlay.classList.remove('pointer-events-none', 'opacity-0');
+    box.classList.remove('scale-95', 'opacity-0');
+    box.classList.add('scale-100', 'opacity-100');
 
     document.querySelectorAll('.modal-panel').forEach(panel => {
         panel.classList.add('hidden');
@@ -462,9 +487,18 @@ function openModal(id) {
 }
 
 function closeModal() {
-    document.getElementById('modalOverlay').classList.add('hidden');
+    const overlay = document.getElementById('modalOverlay');
+    const box = document.getElementById('modalBox');
+
+    box.classList.add('scale-95', 'opacity-0');
+    overlay.classList.add('opacity-0');
+
+    setTimeout(() => {
+        overlay.classList.add('pointer-events-none');
+    }, 300);
 }
 </script>
+
 
 
 
