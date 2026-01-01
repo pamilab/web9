@@ -466,9 +466,8 @@ function togglePanel(id, btn) {
 <script>
 function togglePhase(id, btn) {
     const panels = document.querySelectorAll('.phase-panel');
-    const buttons = document.querySelectorAll('button span:last-child');
+    const boxes = document.querySelectorAll('.phase-box');
     const panel = document.getElementById(id);
-    const icon = btn.querySelector('span:last-child');
 
     panels.forEach(p => {
         if (p !== panel) {
@@ -476,14 +475,13 @@ function togglePhase(id, btn) {
         }
     });
 
-    buttons.forEach(i => i.style.transform = 'rotate(0deg)');
+    boxes.forEach(b => b.classList.remove('ring-4', 'ring-sky-400'));
 
     if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
-        icon.style.transform = 'rotate(0deg)';
     } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
-        icon.style.transform = 'rotate(180deg)';
+        btn.classList.add('ring-4', 'ring-sky-400');
 
         panel.scrollIntoView({
             behavior: "smooth",
