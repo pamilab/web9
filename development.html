@@ -551,17 +551,6 @@ function closeModal() {
 <script>
 function toggleDoc(id) {
     const panel = document.getElementById(id);
-    const allPanels = document.querySelectorAll('.doc-panel');
-
-    allPanels.forEach(p => {
-        if (p !== panel) {
-            p.style.maxHeight = p.scrollHeight + "px"; // ensure measurable
-            requestAnimationFrame(() => {
-                p.style.maxHeight = "0px";
-                p.classList.remove('open');
-            });
-        }
-    });
 
     if (panel.classList.contains('open')) {
         panel.style.maxHeight = "0px";
