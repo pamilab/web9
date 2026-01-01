@@ -341,98 +341,82 @@ Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FM
 </div>
 </section>
 
-<!-- DEVELOPMENT PHASES – ACCORDION DOCUMENTATION -->
+<!-- DEVELOPMENT PHASES – HORIZONTAL CLICKABLE DOCUMENTATION -->
 <section class="bg-white rounded-xl shadow p-6 mt-10">
 
     <h2 class="text-2xl font-bold mb-6 text-slate-800">
         Development Phases (Documentation)
     </h2>
 
-    <!-- Phase Blocks -->
-    <div class="space-y-4">
+    <!-- Horizontal Phase Boxes -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
 
-        <!-- PHASE 1 -->
-        <div>
-            <button onclick="togglePhase('phase1', this)"
-                class="w-full bg-slate-100 hover:bg-slate-200 transition rounded-xl p-4 shadow flex justify-between items-center">
-                <span class="font-semibold">Concept & Planning</span>
-                <span class="transition-transform">▼</span>
-            </button>
+        <button onclick="togglePhase('phase1', this)"
+            class="phase-box bg-sky-200 hover:bg-sky-300 transition rounded-xl p-4 shadow text-center font-semibold">
+            Concept & Planning
+        </button>
 
-            <div id="phase1"
-                class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                <div class="bg-slate-50 rounded-xl p-6 mt-3 shadow">
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <img src="images/concept1.jpg" class="rounded-lg shadow">
-                        <img src="images/concept2.jpg" class="rounded-lg shadow">
-                        <img src="images/concept3.jpg" class="rounded-lg shadow">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <button onclick="togglePhase('phase2', this)"
+            class="phase-box bg-sky-200 hover:bg-sky-300 transition rounded-xl p-4 shadow text-center font-semibold">
+            Design & Simulation
+        </button>
 
-        <!-- PHASE 2 -->
-        <div>
-            <button onclick="togglePhase('phase2', this)"
-                class="w-full bg-slate-100 hover:bg-slate-200 transition rounded-xl p-4 shadow flex justify-between items-center">
-                <span class="font-semibold">Design & Simulation</span>
-                <span class="transition-transform">▼</span>
-            </button>
+        <button onclick="togglePhase('phase3', this)"
+            class="phase-box bg-sky-200 hover:bg-sky-300 transition rounded-xl p-4 shadow text-center font-semibold">
+            Hardware Integration
+        </button>
 
-            <div id="phase2"
-                class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                <div class="bg-slate-50 rounded-xl p-6 mt-3 shadow">
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <img src="images/design1.jpg" class="rounded-lg shadow">
-                        <img src="images/design2.jpg" class="rounded-lg shadow">
-                        <img src="images/design3.jpg" class="rounded-lg shadow">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PHASE 3 -->
-        <div>
-            <button onclick="togglePhase('phase3', this)"
-                class="w-full bg-slate-100 hover:bg-slate-200 transition rounded-xl p-4 shadow flex justify-between items-center">
-                <span class="font-semibold">Hardware Integration</span>
-                <span class="transition-transform">▼</span>
-            </button>
-
-            <div id="phase3"
-                class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                <div class="bg-slate-50 rounded-xl p-6 mt-3 shadow">
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <img src="images/hardware1.jpg" class="rounded-lg shadow">
-                        <img src="images/hardware2.jpg" class="rounded-lg shadow">
-                        <img src="images/hardware3.jpg" class="rounded-lg shadow">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PHASE 4 -->
-        <div>
-            <button onclick="togglePhase('phase4', this)"
-                class="w-full bg-slate-100 hover:bg-slate-200 transition rounded-xl p-4 shadow flex justify-between items-center">
-                <span class="font-semibold">Software Development</span>
-                <span class="transition-transform">▼</span>
-            </button>
-
-            <div id="phase4"
-                class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                <div class="bg-slate-50 rounded-xl p-6 mt-3 shadow">
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <img src="images/software1.jpg" class="rounded-lg shadow">
-                        <img src="images/software2.jpg" class="rounded-lg shadow">
-                        <img src="images/software3.jpg" class="rounded-lg shadow">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <button onclick="togglePhase('phase4', this)"
+            class="phase-box bg-sky-200 hover:bg-sky-300 transition rounded-xl p-4 shadow text-center font-semibold">
+            Software Development
+        </button>
 
     </div>
+
+    <!-- Panels -->
+
+    <div id="phase1" class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+        <div class="bg-slate-50 rounded-xl p-6 shadow">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <img src="images/concept1.jpg" class="rounded-lg shadow">
+                <img src="images/concept2.jpg" class="rounded-lg shadow">
+                <img src="images/concept3.jpg" class="rounded-lg shadow">
+            </div>
+        </div>
+    </div>
+
+    <div id="phase2" class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+        <div class="bg-slate-50 rounded-xl p-6 shadow">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <img src="images/design1.jpg" class="rounded-lg shadow">
+                <img src="images/design2.jpg" class="rounded-lg shadow">
+                <img src="images/design3.jpg" class="rounded-lg shadow">
+            </div>
+        </div>
+    </div>
+
+    <div id="phase3" class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+        <div class="bg-slate-50 rounded-xl p-6 shadow">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <img src="images/hardware1.jpg" class="rounded-lg shadow">
+                <img src="images/hardware2.jpg" class="rounded-lg shadow">
+                <img src="images/hardware3.jpg" class="rounded-lg shadow">
+            </div>
+        </div>
+    </div>
+
+    <div id="phase4" class="phase-panel max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+        <div class="bg-slate-50 rounded-xl p-6 shadow">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <img src="images/software1.jpg" class="rounded-lg shadow">
+                <img src="images/software2.jpg" class="rounded-lg shadow">
+                <img src="images/software3.jpg" class="rounded-lg shadow">
+            </div>
+        </div>
+    </div>
+
 </section>
+
 
 
 </main>
@@ -490,6 +474,7 @@ function togglePhase(id, btn) {
     }
 }
 </script>
+
 
 </body>
 </html>
