@@ -329,6 +329,34 @@ function togglePanel(id,btn){const panel=document.getElementById(id);document.qu
   <img id="modalImg"
        class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl transition-transform duration-300 scale-95">
 </div>
+<script>
+  function openImage(img) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+
+    modalImg.src = img.src;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+    setTimeout(() => {
+      modalImg.classList.remove('scale-95');
+      modalImg.classList.add('scale-100');
+    }, 10);
+  }
+
+  function closeImage() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+
+    modalImg.classList.remove('scale-100');
+    modalImg.classList.add('scale-95');
+
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }, 200);
+  }
+</script>
 
 </body>
 </html>
