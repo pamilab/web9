@@ -381,7 +381,7 @@ and continuity of the signals
     Development Phases (Documentation)
   </h2>
 
-  <!-- Clickable Boxes -->
+  <!-- CLICKABLE BOXES -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
 
     <button onclick="toggleDoc('doc1')"
@@ -406,31 +406,64 @@ and continuity of the signals
 
   </div>
 
-  <!-- EXPANDABLE PANELS -->
+  <!-- PANEL 1 -->
+  <div id="doc1" class="doc-panel">
+    <h3 class="font-semibold mb-4">Concept & Planning</h3>
 
- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
-
-  <div class="text-center">
-    <img src="images/img1.jpg" class="w-full h-48 object-contain rounded-lg cursor-zoom-in">
-    <p class="text-sm text-slate-600 mt-2">Description for image 1</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="text-center">
+        <img src="images/img1.jpg" class="doc-img">
+        <p class="text-sm text-slate-600 mt-2">Initial system concept</p>
+      </div>
+      <div class="text-center">
+        <img src="images/img2.jpg" class="doc-img">
+        <p class="text-sm text-slate-600 mt-2">Requirement analysis</p>
+      </div>
+    </div>
   </div>
 
-  <div class="text-center">
-    <img src="images/img2.jpg" class="w-full h-48 object-contain rounded-lg cursor-zoom-in">
-    <p class="text-sm text-slate-600 mt-2">Description for image 2</p>
+  <!-- PANEL 2 -->
+  <div id="doc2" class="doc-panel">
+    <h3 class="font-semibold mb-4">Design</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="text-center">
+        <img src="images/img3.jpg" class="doc-img">
+        <p class="text-sm text-slate-600 mt-2">RF design layout</p>
+      </div>
+      <div class="text-center">
+        <img src="images/img4.jpg" class="doc-img">
+        <p class="text-sm text-slate-600 mt-2">Simulation results</p>
+      </div>
+    </div>
   </div>
 
-  <div class="text-center">
-    <img src="images/img3.jpg" class="w-full h-48 object-contain rounded-lg cursor-zoom-in">
-    <p class="text-sm text-slate-600 mt-2">Description for image 3</p>
+  <!-- PANEL 3 -->
+  <div id="doc3" class="doc-panel">
+    <h3 class="font-semibold mb-4">Hardware Integration</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="text-center">
+        <img src="images/img5.jpg" class="doc-img">
+        <p class="text-sm text-slate-600 mt-2">Component mounting</p>
+      </div>
+    </div>
   </div>
 
-  <div class="text-center">
-    <img src="images/img4.jpg" class="w-full h-48 object-contain rounded-lg cursor-zoom-in">
-    <p class="text-sm text-slate-600 mt-2">Description for image 4</p>
+  <!-- PANEL 4 -->
+  <div id="doc4" class="doc-panel">
+    <h3 class="font-semibold mb-4">Software Development</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="text-center">
+        <img src="images/img6.jpg" class="doc-img">
+        <p class="text-sm text-slate-600 mt-2">Signal processing code</p>
+      </div>
+    </div>
   </div>
 
 </section>
+
 
 <!-- STYLES -->
 <style>
