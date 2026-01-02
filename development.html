@@ -86,35 +86,98 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
   <main class="max-w-7xl mx-auto px-6 py-12">
 <!-- STEP 1 -->
 <section class="step-section">
-  <div class="step-bg"><img src="images/conceptplanning.jpg"><div class="step-overlay"></div></div>
+  <div class="step-bg">
+    <img src="images/conceptplanning.jpg">
+    <div class="step-overlay"></div>
+  </div>
+
   <div class="relative z-10 p-8 text-white">
     <div class="flex justify-between items-center">
       <h2 class="text-2xl font-bold">1. SYSTEM OVERVIEW</h2>
       <button onclick="togglePanel('step1',this)" class="text-2xl">▼</button>
     </div>
-    <div id="step1" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
+
+    <!-- PANEL START -->
+    <div id="step1" class="panel glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
+
+      <!-- IMAGE -->
       <div class="img-box">
-  <img src="images/blockdiag.jpg"
-       class="cursor-zoom-in"
-       onclick="openImage(this)">
-</div>
-        <div class="step-text">
-          <p class="text-sm text-slate-600">The FMCW-GPR system architecture consists of a signal generation unit, transmit and receive antennas, a signal processing module, and a data acquisition system. This configuration enables continuous-wave frequency modulation, allowing accurate subsurface target detection and range profiling.</p>
-        </div>
+        <img src="images/blockdiag.jpg"
+             class="cursor-zoom-in"
+             onclick="openImage(this)">
       </div>
+
+      <!-- DESCRIPTION -->
+      <div class="step-text">
+        <p class="text-sm text-slate-600">
+          The FMCW-GPR system architecture consists of a signal generation unit,
+          transmit and receive antennas, a signal processing module, and a data
+          acquisition system. This configuration enables continuous-wave frequency
+          modulation, allowing accurate subsurface target detection and range profiling.
+        </p>
+      </div>
+
+      <!-- TABLE -->
       <div class="overflow-x-auto">
         <table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
-          <thead class="bg-slate-800 text-white"><tr><th class="px-4 py-2">Parameter</th><th class="px-4 py-2">Specification</th><th class="px-4 py-2">Rationale</th></tr></thead>
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-2">Parameter</th>
+              <th class="px-4 py-2">Specification</th>
+              <th class="px-4 py-2">Rationale</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr class="border-t"><td class="px-4 py-2 font-semibold">Center Frequency</td><td class="px-4 py-2">125&nbsp;Mhz</td><td class="px-4 py-2">Provides sufficient depth resolution for shallow subsurface target discrimination while remaining compatible with SDR constraints.</td></tr>
-            <tr class="border-t bg-slate-50"><td class="px-4 py-2 font-semibold">Bandwidth</td><td class="px-4 py-2">≈ 2.4&nbsp;GHz</td><td class="px-4 py-2">Balances penetration depth and spatial resolution while allowing license-free operation and use of available RF components.</td></tr>
-            <tr class="border-t"><td class="px-4 py-2 font-semibold">Chirp Rate</td><td class="px-4 py-2">500Hz</td><td class="px-4 py-2">Determines the beat frequency after mixing, enabling depth estimation through frequency-to-range mapping.</td></tr>
-            <tr class="border-t bg-slate-50"><td class="px-4 py-2 font-semibold">Antenna Characteristics</td><td class="px-4 py-2">Yagi-Uda</td><td class="px-4 py-2">Required to support wideband FMCW operation and efficient coupling of electromagnetic energy into the ground.</td></tr>
-            <tr class="border-t"><td class="px-4 py-2 font-semibold">Signal Processing</td><td class="px-4 py-2">STFT</td><td class="px-4 py-2">Enables time–frequency analysis for depth estimation and radargram generation.</td></tr>
+            <tr class="border-t">
+              <td class="px-4 py-2 font-semibold">Center Frequency</td>
+              <td class="px-4 py-2">125&nbsp;MHz</td>
+              <td class="px-4 py-2">
+                Provides sufficient depth resolution for shallow subsurface target
+                discrimination while remaining compatible with SDR constraints.
+              </td>
+            </tr>
+
+            <tr class="border-t bg-slate-50">
+              <td class="px-4 py-2 font-semibold">Bandwidth</td>
+              <td class="px-4 py-2">≈ 2.4&nbsp;GHz</td>
+              <td class="px-4 py-2">
+                Balances penetration depth and spatial resolution while allowing
+                license-free operation and use of available RF components.
+              </td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="px-4 py-2 font-semibold">Chirp Rate</td>
+              <td class="px-4 py-2">500&nbsp;Hz</td>
+              <td class="px-4 py-2">
+                Determines the beat frequency after mixing, enabling depth estimation
+                through frequency-to-range mapping.
+              </td>
+            </tr>
+
+            <tr class="border-t bg-slate-50">
+              <td class="px-4 py-2 font-semibold">Antenna Characteristics</td>
+              <td class="px-4 py-2">Yagi-Uda</td>
+              <td class="px-4 py-2">
+                Required to support wideband FMCW operation and efficient coupling of
+                electromagnetic energy into the ground.
+              </td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="px-4 py-2 font-semibold">Signal Processing</td>
+              <td class="px-4 py-2">STFT</td>
+              <td class="px-4 py-2">
+                Enables time–frequency analysis for depth estimation and radargram generation.
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
+
     </div>
+    <!-- PANEL END -->
+
   </div>
 </section>
 
@@ -144,7 +207,10 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
           <div class="step-text mt-4">
             <h4 class="font-semibold">RF Component Assembly</h4>
             <p class="text-sm text-slate-600">
-              RF components were carefully interconnected to establish the complete signal path of the radar system.
+             The RF components were carefully interconnected to
+establish the complete signal path of the radar system. Each component was
+connected according to the designed configuration, ensuring proper alignment
+and continuity of the signals 
             </p>
           </div>
         </div>
@@ -157,7 +223,8 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
           <div class="step-text mt-4">
             <h4 class="font-semibold">RF Signal Path Validation</h4>
             <p class="text-sm text-slate-600">
-              Each RF connection was verified to ensure proper signal continuity and impedance matching.
+              Every high-frequency connection uses standard SMA connectors using 50-ohm impedance-matched devices. Each RF connection was verified to ensure proper signal continuity and impedance matching. 
+
             </p>
           </div>
         </div>
