@@ -80,8 +80,7 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
 
 </main>
 
-</body>
-</html>
+
 
   <main class="max-w-7xl mx-auto px-6 py-12">
 <!-- STEP 1 -->
@@ -585,7 +584,7 @@ and continuity of the signals
   font-weight:600;
   transition:.3s;
 }
-..doc-btn{
+.doc-btn{
   background:#bae6fd;
   padding:1.5rem;
   border-radius:0.75rem;
@@ -595,14 +594,20 @@ and continuity of the signals
 .doc-btn:hover{ background:#7dd3fc }
 
 /* OVERLAY */
-.popup-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.45);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:999;
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-overlay.active {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 4rem;
 }
 
 /* POPUP PANEL */
@@ -736,7 +741,9 @@ function togglePanel(id,btn){const panel=document.getElementById(id);document.qu
 </script>
 <script>
 function openPopup(id){
-  document.getElementById('popupOverlay').style.display = 'flex';
+  const overlay = document.getElementById('popupOverlay');
+
+  overlay.classList.add('active');
 
   document.querySelectorAll('.popup-panel')
     .forEach(p => p.classList.remove('active'));
@@ -746,7 +753,9 @@ function openPopup(id){
 
 function closePopup(e){
   if(e.target.id === 'popupOverlay'){
-    document.getElementById('popupOverlay').style.display = 'none';
+    const overlay = document.getElementById('popupOverlay');
+    overlay.classList.remove('active');
+
     document.querySelectorAll('.popup-panel')
       .forEach(p => p.classList.remove('active'));
   }
