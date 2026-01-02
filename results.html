@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results & Accuracy - FMCW-GPR Research</title>
 
-    <!-- Tailwind -->
+    <!-- Tailwind --> 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
@@ -91,18 +91,40 @@
         </div>
 
         <!-- INSIGHT PANEL -->
-        <div class="flex items-center justify-center bg-slate-100 rounded-xl border p-8">
-            <div class="text-center">
-                <div class="text-5xl mb-4">🎯</div>
-                <h4 class="text-xl font-bold mb-2">High Precision & Repeatability</h4>
-                <p class="text-slate-600 leading-relaxed">
-                    Trial-to-trial variations are minimal, supporting the null
-                    hypothesis that FMCW-GPR depth measurements are statistically
-                    consistent with physical reference values.
-                </p>
-            </div>
+<div class="flex items-center justify-center bg-slate-100 rounded-xl border p-8">
+    <div class="text-center space-y-4">
+
+        <!-- ICON ROW -->
+        <div class="flex justify-center space-x-4 text-3xl">
+            <span title="Repeated Trials">🔁</span>
+            <span title="Statistical Consistency">📊</span>
+            <span title="Signal Stability">📡</span>
+        </div>
+
+        <h4 class="text-xl font-bold text-slate-800">
+            Measurement Consistency
+        </h4>
+
+        <p class="text-slate-600 leading-relaxed max-w-md mx-auto">
+            Depth estimation was evaluated using
+            <strong>10 repeated trials per reference depth (n = 10)</strong>.
+            Results demonstrate stable FMCW chirp generation, consistent
+            beat-frequency extraction, and reliable STFT-based signal processing
+            under controlled laboratory conditions.
+        </p>
+
+        <!-- TRIAL BADGES -->
+        <div class="flex justify-center gap-3 mt-4 flex-wrap">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">
+                n = 10 trials @ 29 cm
+            </span>
+            <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
+                n = 10 trials @ 72 cm
+            </span>
         </div>
     </div>
+</div>
+
 
     <!-- ERROR PER TRIAL GRAPHS -->
     <div class="mt-16 grid md:grid-cols-2 gap-10">
