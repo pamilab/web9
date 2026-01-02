@@ -32,6 +32,71 @@
               );
             background-color: #f8fafc;
         }
+
+        /* ================= GRADIENT PANELS (PROBLEM & APPROACH) ================= */
+
+/* Base panel override (keeps border, shadow, radius intact) */
+.relative > .md\:w-\[45\%\]{
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.95),
+    rgba(248,250,252,0.95)
+  );
+}
+
+/* STEP 1 – Blue */
+.space-y-10 > div:nth-child(1) .md\:w-\[45\%\]{
+  background: linear-gradient(
+    135deg,
+    #eff6ff,
+    #dbeafe
+  );
+}
+
+/* STEP 2 – Sky */
+.space-y-10 > div:nth-child(2) .md\:w-\[45\%\]{
+  background: linear-gradient(
+    135deg,
+    #f0f9ff,
+    #e0f2fe
+  );
+}
+
+/* STEP 3 – Indigo */
+.space-y-10 > div:nth-child(3) .md\:w-\[45\%\]{
+  background: linear-gradient(
+    135deg,
+    #eef2ff,
+    #e0e7ff
+  );
+}
+
+/* STEP 4 – Violet */
+.space-y-10 > div:nth-child(4) .md\:w-\[45\%\]{
+  background: linear-gradient(
+    135deg,
+    #f5f3ff,
+    #ede9fe
+  );
+}
+
+/* STEP 5 – Cyan */
+.space-y-10 > div:nth-child(5) .md\:w-\[45\%\]{
+  background: linear-gradient(
+    135deg,
+    #ecfeff,
+    #cffafe
+  );
+}
+
+/* STEP 6 – Green (already green-accented) */
+.space-y-10 > div:nth-child(6) .md\:w-\[45\%\]{
+  background: linear-gradient(
+    135deg,
+    #ecfdf5,
+    #d1fae5
+  );
+}
     </style>
 </head>
 
