@@ -150,7 +150,7 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
 
     <div id="step4" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
 
-      <!-- FIRST CARD (UNCHANGED) -->
+      <!-- FIRST CARD -->
       <div class="step-card">
         <div class="img-box">
           <img src="images/comptest.jpg">
@@ -163,18 +163,29 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
         </div>
       </div>
 
-      <!-- SECOND + LAST IMAGE (HORIZONTAL SERIES) -->
-      <div class="flex flex-col md:flex-row gap-6 justify-center mt-6">
+      <!-- SECOND + LAST IMAGE (ALIGNED WITH FIRST IMAGE) -->
+      <div class="flex flex-col md:flex-row gap-6 mt-6">
 
-        <div class="img-box">
-          <img src="images/tesy.png">
-        </div>
+        <!-- spacer = text column width -->
+        <div class="hidden md:block step-text"></div>
 
-        <div class="img-box">
-          <img src="images/twe.jpg">
+        <!-- image row -->
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="img-box">
+            <img src="images/tesy.png">
+          </div>
+
+          <div class="img-box">
+            <img src="images/twe.jpg">
           </div>
         </div>
-</section> 
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- STEP 5 -->
 <section class="step-section">
   <div class="step-bg"><img src="images/softwaredev.jpg"><div class="step-overlay"></div></div>
