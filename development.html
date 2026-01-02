@@ -93,8 +93,11 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
       <button onclick="togglePanel('step1',this)" class="text-2xl">▼</button>
     </div>
     <div id="step1" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
-      <div class="step-card">
-        <div class="img-box"><img src="images/blockdiag.jpg"></div>
+      <div class="img-box">
+  <img src="images/blockdiag.jpg"
+       class="cursor-zoom-in"
+       onclick="openImage(this)">
+</div>
         <div class="step-text">
           <p class="text-sm text-slate-600">The FMCW-GPR system architecture consists of a signal generation unit, transmit and receive antennas, a signal processing module, and a data acquisition system. This configuration enables continuous-wave frequency modulation, allowing accurate subsurface target detection and range profiling.</p>
         </div>
@@ -117,15 +120,54 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
 
 <!-- STEP 2 -->
 <section class="step-section">
-  <div class="step-bg"><img src="images/desimulatin.jpg"><div class="step-overlay"></div></div>
+  <div class="step-bg">
+    <img src="images/desimulatin.jpg">
+    <div class="step-overlay"></div>
+  </div>
+
   <div class="relative z-10 p-8 text-white">
-    <div class="flex justify-between items-center"><h2 class="text-2xl font-bold">2. DESIGN</h2><button onclick="togglePanel('step2',this)" class="text-2xl">▼</button></div>
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">2. DESIGN</h2>
+      <button onclick="togglePanel('step2',this)" class="text-2xl">▼</button>
+    </div>
+
     <div id="step2" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
-      <div class="step-card"><div class="img-box"><img src="images/rf.jpg"></div><div class="step-text"><h4 class="font-semibold">RF Component Assembly</h4><p class="text-sm text-slate-600">RF components were carefully interconnected to establish the complete signal path of the radar system.</p></div></div>
-      <div class="step-card"><div class="img-box"><img src="images/rd2.jpg"></div><div class="step-text"><h4 class="font-semibold">RF Signal Path Validation</h4><p class="text-sm text-slate-600">Each RF connection was verified to ensure proper signal continuity and impedance matching.</p></div></div>
+
+      <!-- HORIZONTAL IMAGE SERIES -->
+      <div class="flex flex-col md:flex-row gap-8">
+
+        <!-- IMAGE 1 -->
+        <div class="flex-1 text-center">
+          <div class="img-box mx-auto">
+            <img src="images/rf.jpg">
+          </div>
+          <div class="step-text mt-4">
+            <h4 class="font-semibold">RF Component Assembly</h4>
+            <p class="text-sm text-slate-600">
+              RF components were carefully interconnected to establish the complete signal path of the radar system.
+            </p>
+          </div>
+        </div>
+
+        <!-- IMAGE 2 -->
+        <div class="flex-1 text-center">
+          <div class="img-box mx-auto">
+            <img src="images/rd2.jpg">
+          </div>
+          <div class="step-text mt-4">
+            <h4 class="font-semibold">RF Signal Path Validation</h4>
+            <p class="text-sm text-slate-600">
+              Each RF connection was verified to ensure proper signal continuity and impedance matching.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 </section>
+
 
 <!-- STEP 3 -->
 <section class="step-section">
@@ -163,24 +205,18 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
         </div>
       </div>
 
-      <!-- SECOND + LAST IMAGE (ALIGNED WITH FIRST IMAGE) -->
-      <div class="flex flex-col md:flex-row gap-6 mt-6">
+<!-- SECOND + LAST IMAGE (ALIGNED UNDER FIRST IMAGE) -->
+<div class="mt-6" style="width:40%">
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="img-box">
+      <img src="images/tesy.png">
+    </div>
 
-        <!-- spacer = text column width -->
-        <div class="hidden md:block step-text"></div>
-
-        <!-- image row -->
-        <div class="flex flex-col md:flex-row gap-6">
-          <div class="img-box">
-            <img src="images/tesy.png">
-          </div>
-
-          <div class="img-box">
-            <img src="images/twe.jpg">
-          </div>
-        </div>
-
-      </div>
+    <div class="img-box">
+      <img src="images/twe.jpg">
+    </div>
+  </div>
+</div>
 
     </div>
   </div>
@@ -285,6 +321,14 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
 <script>
 function togglePanel(id,btn){const panel=document.getElementById(id);document.querySelectorAll('.panel').forEach(p=>{if(p!==panel){p.classList.remove('open');p.style.maxHeight=null}});if(panel.classList.contains('open')){panel.classList.remove('open');panel.style.maxHeight=null}else{panel.classList.add('open');panel.style.maxHeight=panel.scrollHeight+'px';panel.scrollIntoView({behavior:'smooth',block:'nearest'})}}
 </script>
+<!-- IMAGE MODAL -->
+<div id="imageModal"
+     class="fixed inset-0 bg-black/80 hidden items-center justify-center z-[999]"
+     onclick="closeImage()">
+
+  <img id="modalImg"
+       class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl transition-transform duration-300 scale-95">
+</div>
 
 </body>
 </html>
