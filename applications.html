@@ -1,48 +1,183 @@
-// Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - FMCW-GPR Research</title>
 
-    if (btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    }
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    // Contact Form Handling with Database
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerText;
-            submitBtn.innerText = 'Submitting...';
-            submitBtn.disabled = true;
+<!-- ✅ SAME RADIATED SIGNAL BACKGROUND -->
+<style>
+body{
+  background-color: transparent !important;
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
 
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
+body::before{
+  content:"";
+  position: fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,0.18), transparent 42%),
+    radial-gradient(circle at 80% 40%, rgba(14,165,233,0.16), transparent 48%),
+    radial-gradient(circle at 50% 70%, rgba(99,102,241,0.14), transparent 52%),
+    repeating-radial-gradient(
+      circle at 30% 50%,
+      rgba(59,130,246,0.12) 0 1.5px,
+      transparent 1.5px 32px
+    );
+  background-color:#f8fafc;
+}
 
-            try {
-                // Use LeadGenRuntime to store data
-                // This works because we defined the table in databaseSchema
-                if (window.LeadGenRuntime && window.LeadGenRuntime.insertData) {
-                    await window.LeadGenRuntime.insertData('inquiries', data);
-                    alert('Thank you for your inquiry! Your message has been recorded.');
-                    contactForm.reset();
-                } else {
-                    // Fallback if runtime isn't ready (just visual feedback)
-                    console.log('Form data captured (demo mode):', data);
-                    alert('Thank you! In a live environment, this would save to the database.');
-                    contactForm.reset();
-                }
-            } catch (error) {
-                console.error('Submission error:', error);
-                alert('There was an error submitting your message. Please try again.');
-            } finally {
-                submitBtn.innerText = originalBtnText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
-});
+/* Glass card */
+.glass{
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+}
+
+/* Profile image */
+.profile-pic{
+  width:140px;
+  height:140px;
+  border-radius:9999px;
+  object-fit:cover;
+  border:4px solid #3b82f6;
+}
+</style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+<!-- NAVIGATION -->
+<nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html">Home</a>
+      <a href="problem-approach.html">Approach</a>
+      <a href="development.html">Development</a>
+      <a href="results.html">Results & Discussion</a>
+      <a href="about-us.html" class="text-blue-400 font-semibold">About Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="relative h-72 flex items-center justify-center text-center text-white">
+
+  <img src="images/team-bg.jpg"
+       class="absolute inset-0 w-full h-full object-cover"
+       alt="Research Team">
+
+  <div class="absolute inset-0 bg-slate-900/70"></div>
+
+  <div class="relative z-10 px-6">
+    <h1 class="text-3xl md:text-4xl font-bold mb-2">
+      About the Research Team
+    </h1>
+    <p class="text-slate-300 max-w-2xl mx-auto">
+      A student-led initiative driven by accessibility, innovation, and applied radar research.
+    </p>
+  </div>
+
+</header>
+
+<main class="container mx-auto px-6 py-16">
+
+<!-- STORY BEHIND THE RESEARCH -->
+<section class="max-w-4xl mx-auto mb-24 glass rounded-2xl p-10 shadow-xl">
+  <h2 class="text-3xl font-bold mb-6 text-center">The Story Behind This Research</h2>
+  <p class="text-slate-600 text-lg leading-relaxed text-center">
+    This FMCW-GPR prototype was developed by a group of Electronics Engineering students
+    motivated by the limitations of commercially available subsurface radar systems.
+    High costs and restricted access inspired the team to design a research-grade yet
+    affordable solution that could support academic study, field experimentation, and
+    future robotic integration. The project reflects a balance between theoretical signal
+    processing principles and practical hardware implementation.
+  </p>
+</section>
+
+<!-- RESEARCHERS -->
+<section>
+  <h2 class="text-3xl font-bold mb-14 text-center">Meet the Researchers</h2>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+
+    <!-- MEMBER 1 -->
+    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
+      <img src="images/member1.jpg" class="profile-pic mx-auto mb-4" alt="">
+      <h3 class="font-semibold text-lg">Project Lead</h3>
+      <p class="text-blue-600 font-medium mb-2">System Integration & Architecture</p>
+      <p class="text-slate-600 text-sm">
+        Led the overall system design, coordinated hardware-software integration,
+        and ensured experimental objectives were met.
+      </p>
+    </div>
+
+    <!-- MEMBER 2 -->
+    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
+      <img src="images/member2.jpg" class="profile-pic mx-auto mb-4" alt="">
+      <h3 class="font-semibold text-lg">Signal Processing Lead</h3>
+      <p class="text-blue-600 font-medium mb-2">STFT & Data Analysis</p>
+      <p class="text-slate-600 text-sm">
+        Designed and implemented STFT-based processing pipelines
+        for depth estimation and radargram visualization.
+      </p>
+    </div>
+
+    <!-- MEMBER 3 -->
+    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
+      <img src="images/member3.jpg" class="profile-pic mx-auto mb-4" alt="">
+      <h3 class="font-semibold text-lg">Hardware Engineer</h3>
+      <p class="text-blue-600 font-medium mb-2">RF & SDR Implementation</p>
+      <p class="text-slate-600 text-sm">
+        Handled FMCW signal generation, RF connections,
+        and HackRF configuration for reliable data acquisition.
+      </p>
+    </div>
+
+    <!-- MEMBER 4 -->
+    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
+      <img src="images/member4.jpg" class="profile-pic mx-auto mb-4" alt="">
+      <h3 class="font-semibold text-lg">Experimental Analyst</h3>
+      <p class="text-blue-600 font-medium mb-2">Testing & Validation</p>
+      <p class="text-slate-600 text-sm">
+        Conducted controlled depth trials, performance evaluation,
+        and ensured consistency across experimental runs.
+      </p>
+    </div>
+
+    <!-- MEMBER 5 -->
+    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
+      <img src="images/member5.jpg" class="profile-pic mx-auto mb-4" alt="">
+      <h3 class="font-semibold text-lg">Documentation Lead</h3>
+      <p class="text-blue-600 font-medium mb-2">Technical Writing & Visualization</p>
+      <p class="text-slate-600 text-sm">
+        Prepared technical documentation, diagrams, and presentation
+        materials for academic dissemination.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-auto">
+  <div class="container mx-auto px-6 text-center">
+    <p class="text-white font-semibold mb-2">Developed by: Omicropade</p>
+    <p>BS Electronics Engineering — Rizal Technological University</p>
+    <p class="text-sm opacity-75 mt-4">
+      © 2025 FMCW-GPR Research Project. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
