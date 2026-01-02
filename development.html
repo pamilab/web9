@@ -50,7 +50,28 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
     </div>
 </nav>
 <main class="max-w-7xl mx-auto px-6 py-12">
+<!-- Header -->
+<header class="relative h-72 flex items-center justify-center text-center text-white">
 
+    <!-- Background Image -->
+    <img src="images/hardw.jpg"
+         alt="FMCW GPR Background"
+         class="absolute inset-0 w-full h-full object-cover">
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-slate-900/70"></div>
+
+    <!-- Text Content -->
+    <div class="relative z-10 px-6">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">
+            Development Process – FMCW-GPR Research
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+            System design, signal processing, and validation from concept to field testing.
+        </p>
+    </div>
+
+</header>
   
 <!-- STEP 1 -->
 <section class="step-section">
@@ -113,7 +134,7 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
 
 <!-- STEP 5 -->
 <section class="step-section">
-  <div class="step-bg"><img src="images/analys.jpg"><div class="step-overlay"></div></div>
+  <div class="step-bg"><img src="images/softwaredev.jpg"><div class="step-overlay"></div></div>
   <div class="relative z-10 p-8 text-white"><div class="flex justify-between items-center"><h2 class="text-2xl font-bold">5. INTEGRATION OF SIGNAL PROCESSING UNIT</h2><button onclick="togglePanel('step5',this)" class="text-2xl">▼</button></div>
     <div id="step5" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
       <div class="step-card"><div class="img-box"><img src="images/sttft.jpg"></div><div class="step-text"><h4 class="font-semibold">STFT Analysis</h4><p class="text-sm text-slate-600">The Short-Time Fourier Transform (STFT) analyzes how a signal’s frequency changes over time. In FMCW radar, it is applied to the beat signal to track time-varying frequencies caused by moving or multiple targets, enabling analysis of target distance and dynamic behavior.</p></div></div>
@@ -142,26 +163,55 @@ img{background:linear-gradient(135deg,#1e293b,#334155);border-radius:0.5rem}
 
 <!-- STEP 8 -->
 <section class="step-section">
-  <div class="step-bg"><img src="images/analys.jpg"><div class="step-overlay"></div></div>
-  <div class="relative z-10 p-8 text-white"><div class="flex justify-between items-center"><h2 class="text-2xl font-bold">8. FIELD TESTING</h2><button onclick="togglePanel('step8',this)" class="text-2xl">▼</button></div>
+  <div class="step-bg">
+    <img src="images/analys.jpg">
+    <div class="step-overlay"></div>
+  </div>
+
+  <div class="relative z-10 p-8 text-white">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">8. FIELD TESTING</h2>
+      <button onclick="togglePanel('step8',this)" class="text-2xl">▼</button>
+    </div>
+
     <div id="step8" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
-      <div class="grid md:grid-cols-2 gap-6 items-start">
-        <div class="text-center">
-          <div class="h-56 flex items-center justify-center">
+
+      <!-- Horizontal Image Series -->
+      <div class="flex flex-col md:flex-row gap-8 justify-center">
+
+        <!-- Image 1 -->
+        <div class="flex-1 text-center">
+          <div class="h-56 flex items-center justify-center mb-4">
             <img src="images/testi.jpg" class="object-contain h-full">
           </div>
-         <div class="step-text"><h4 class="font-semibold">Lateral Position</h4> <p class="text-sm text-slate-600 mt-3">Controlled test environment with embedded metallic object.</p>
+          <div class="step-text">
+            <h4 class="font-semibold">Lateral Position</h4>
+            <p class="text-sm text-slate-600 mt-3">
+              Controlled test environment with embedded metallic object.
+            </p>
+          </div>
         </div>
-        <div class="text-center">
-          <div class="h-56 flex items-center justify-center">
+
+        <!-- Image 2 -->
+        <div class="flex-1 text-center">
+          <div class="h-56 flex items-center justify-center mb-4">
             <img src="images/combi.jpg" class="object-contain h-full">
           </div>
-           <div class="step-text"><h4 class="font-semibold">Static Position</h4><p class="text-sm text-slate-600 mt-3">Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FMCW-GPR System.</p>
+          <div class="step-text">
+            <h4 class="font-semibold">Static Position</h4>
+            <p class="text-sm text-slate-600 mt-3">
+              Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FMCW-GPR System.
+            </p>
+          </div>
         </div>
+
       </div>
+      <!-- End Horizontal Series -->
+
     </div>
   </div>
 </section>
+
 
 <!-- DEVELOPMENT PHASES – DOCUMENTATION -->
 <section class="bg-white rounded-xl shadow p-6 mt-10">
