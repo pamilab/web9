@@ -1,182 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - FMCW-GPR Research</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FMCW-GPR Research</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- ✅ SAME RADIATED SIGNAL BACKGROUND -->
-<style>
-body{
-  background-color: transparent !important;
-  position: relative;
-  overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
-}
+    <!-- ✅ Radiated Signal Background (Static, Consistent Across Pages) -->
+    <style>
+        body {
+            background-color: transparent !important;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-body::before{
-  content:"";
-  position: fixed;
-  inset:0;
-  z-index:-1;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(59,130,246,0.18), transparent 42%),
-    radial-gradient(circle at 80% 40%, rgba(14,165,233,0.16), transparent 48%),
-    radial-gradient(circle at 50% 70%, rgba(99,102,241,0.14), transparent 52%),
-    repeating-radial-gradient(
-      circle at 30% 50%,
-      rgba(59,130,246,0.12) 0 1.5px,
-      transparent 1.5px 32px
-    );
-  background-color:#f8fafc;
-}
-
-/* Glass card */
-.glass{
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-}
-
-/* Profile image */
-.profile-pic{
-  width:140px;
-  height:140px;
-  border-radius:9999px;
-  object-fit:cover;
-  border:4px solid #3b82f6;
-}
-</style>
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+              radial-gradient(circle at 20% 30%, rgba(59,130,246,0.18), transparent 42%),
+              radial-gradient(circle at 80% 40%, rgba(14,165,233,0.16), transparent 48%),
+              radial-gradient(circle at 50% 70%, rgba(99,102,241,0.14), transparent 52%),
+              repeating-radial-gradient(
+                circle at 30% 50%,
+                rgba(59,130,246,0.12) 0 1.5px,
+                transparent 1.5px 32px
+              );
+            background-color: #f8fafc;
+        }
+    </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
 
-<!-- NAVIGATION -->
+<!-- Navigation -->
 <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
-  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
-    <div class="hidden md:flex space-x-8">
-      <a href="index.html">Home</a>
-      <a href="problem-approach.html">Approach</a>
-      <a href="development.html">Development</a>
-      <a href="results.html">Results & Discussion</a>
-      <a href="about-us.html" class="text-blue-400 font-semibold">About Us</a>
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold text-blue-400">FMCW-GPR</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="index.html">Home</a>
+            <a href="problem-approach.html">Approach</a>
+            <a href="development.html">Development</a>
+            <a href="results.html">Results & Discussion</a>
+            <a href="applications.html" class="text-blue-400 font-semibold">About Us</a>
+        </div>
     </div>
-  </div>
 </nav>
 
-<!-- HEADER -->
+<!-- Header -->
 <header class="relative h-72 flex items-center justify-center text-center text-white">
-
-  <img src="images/team-bg.jpg"
-       class="absolute inset-0 w-full h-full object-cover"
-       alt="Research Team">
-
-  <div class="absolute inset-0 bg-slate-900/70"></div>
-
-  <div class="relative z-10 px-6">
-    <h1 class="text-3xl md:text-4xl font-bold mb-2">
-      About the Research Team
-    </h1>
-    <p class="text-slate-300 max-w-2xl mx-auto">
-      A student-led initiative driven by accessibility, innovation, and applied radar research.
-    </p>
-  </div>
-
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+    <div class="relative z-10 px-6">
+        <h1 class="text-4xl font-bold mb-2">About the Research Team</h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+            The people, vision, and collaboration behind the FMCW-GPR prototype.
+        </p>
+    </div>
 </header>
 
-<main class="container mx-auto px-6 py-16">
+<main class="container mx-auto px-6 py-20">
 
-<!-- STORY BEHIND THE RESEARCH -->
-<section class="max-w-4xl mx-auto mb-24 glass rounded-2xl p-10 shadow-xl">
-  <h2 class="text-3xl font-bold mb-6 text-center">The Story Behind This Research</h2>
-  <p class="text-slate-600 text-lg leading-relaxed text-center">
-    This FMCW-GPR prototype was developed by a group of Electronics Engineering students
-    motivated by the limitations of commercially available subsurface radar systems.
-    High costs and restricted access inspired the team to design a research-grade yet
-    affordable solution that could support academic study, field experimentation, and
-    future robotic integration. The project reflects a balance between theoretical signal
-    processing principles and practical hardware implementation.
-  </p>
+<!-- Story Behind the Research -->
+<section class="max-w-4xl mx-auto mb-24 text-center">
+    <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+    <p class="text-slate-600 leading-relaxed text-lg">
+        This research began with the shared observation that most commercial ground-penetrating radar
+        systems remain inaccessible due to high cost and operational complexity. As electronics
+        engineering researchers, we aimed to bridge this gap by developing a compact and affordable
+        FMCW-GPR prototype using commercially available components. The project was driven by the goal
+        of combining solid theoretical design with practical system implementation, enabling reliable
+        subsurface sensing for academic and field-based applications.
+    </p>
 </section>
 
-<!-- RESEARCHERS -->
+<!-- Researchers Section -->
 <section>
-  <h2 class="text-3xl font-bold mb-14 text-center">Meet the Researchers</h2>
+    <h2 class="text-3xl font-bold text-center mb-16">Meet the Researchers</h2>
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+    <!-- Top Row (1 2 3) -->
+    <div class="grid md:grid-cols-3 gap-12 mb-16">
 
-    <!-- MEMBER 1 -->
-    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
-      <img src="images/member1.jpg" class="profile-pic mx-auto mb-4" alt="">
-      <h3 class="font-semibold text-lg">Project Lead</h3>
-      <p class="text-blue-600 font-medium mb-2">System Integration & Architecture</p>
-      <p class="text-slate-600 text-sm">
-        Led the overall system design, coordinated hardware-software integration,
-        and ensured experimental objectives were met.
-      </p>
+        <!-- Member 1 -->
+        <div class="text-center bg-white rounded-xl shadow-lg p-8 border border-slate-200">
+            <img src="images/member1.jpg" alt="Project Leader"
+                 class="w-40 h-40 mx-auto rounded-full object-cover mb-6 border-4 border-blue-500">
+            <h3 class="font-bold text-xl">Project Leader & System Architect</h3>
+            <p class="text-blue-600 font-semibold mt-1">System Design & Software Architecture</p>
+            <p class="text-slate-600 mt-4 text-sm leading-relaxed">
+                Designed the overall system architecture, block diagram, and software flow.
+                Defined the signal-processing pipeline and ensured seamless hardware–software integration.
+            </p>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="text-center bg-white rounded-xl shadow-lg p-8 border border-slate-200">
+            <img src="images/member2.jpg" alt="Lead Researcher"
+                 class="w-40 h-40 mx-auto rounded-full object-cover mb-6 border-4 border-indigo-500">
+            <h3 class="font-bold text-xl">Lead Researcher</h3>
+            <p class="text-indigo-600 font-semibold mt-1">Radar Theory & Signal Processing</p>
+            <p class="text-slate-600 mt-4 text-sm leading-relaxed">
+                Conducted in-depth research on FMCW radar principles and STFT processing.
+                Analyzed experimental results and validated system accuracy.
+            </p>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="text-center bg-white rounded-xl shadow-lg p-8 border border-slate-200">
+            <img src="images/member3.jpg" alt="Hardware Integration Developer"
+                 class="w-40 h-40 mx-auto rounded-full object-cover mb-6 border-4 border-cyan-500">
+            <h3 class="font-bold text-xl">Hardware Integration Developer</h3>
+            <p class="text-cyan-600 font-semibold mt-1">Physical Assembly & Integration</p>
+            <p class="text-slate-600 mt-4 text-sm leading-relaxed">
+                Responsible for physical integration of RF modules, SDR, antennas, and power systems.
+                Performed calibration, wiring, and system-level hardware testing.
+            </p>
+        </div>
+
     </div>
 
-    <!-- MEMBER 2 -->
-    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
-      <img src="images/member2.jpg" class="profile-pic mx-auto mb-4" alt="">
-      <h3 class="font-semibold text-lg">Signal Processing Lead</h3>
-      <p class="text-blue-600 font-medium mb-2">STFT & Data Analysis</p>
-      <p class="text-slate-600 text-sm">
-        Designed and implemented STFT-based processing pipelines
-        for depth estimation and radargram visualization.
-      </p>
-    </div>
+    <!-- Bottom Row (4 5 centered) -->
+    <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
 
-    <!-- MEMBER 3 -->
-    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
-      <img src="images/member3.jpg" class="profile-pic mx-auto mb-4" alt="">
-      <h3 class="font-semibold text-lg">Hardware Engineer</h3>
-      <p class="text-blue-600 font-medium mb-2">RF & SDR Implementation</p>
-      <p class="text-slate-600 text-sm">
-        Handled FMCW signal generation, RF connections,
-        and HackRF configuration for reliable data acquisition.
-      </p>
-    </div>
+        <!-- Member 4 -->
+        <div class="text-center bg-white rounded-xl shadow-lg p-8 border border-slate-200">
+            <img src="images/member4.jpg" alt="Research Web Developer"
+                 class="w-40 h-40 mx-auto rounded-full object-cover mb-6 border-4 border-pink-500">
+            <h3 class="font-bold text-xl">Research Web Developer</h3>
+            <p class="text-pink-600 font-semibold mt-1">Documentation & Visualization</p>
+            <p class="text-slate-600 mt-4 text-sm leading-relaxed">
+                Developed the research website to document system design, methodology, and results.
+                Translated technical concepts into clear visual and interactive content.
+            </p>
+        </div>
 
-    <!-- MEMBER 4 -->
-    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
-      <img src="images/member4.jpg" class="profile-pic mx-auto mb-4" alt="">
-      <h3 class="font-semibold text-lg">Experimental Analyst</h3>
-      <p class="text-blue-600 font-medium mb-2">Testing & Validation</p>
-      <p class="text-slate-600 text-sm">
-        Conducted controlled depth trials, performance evaluation,
-        and ensured consistency across experimental runs.
-      </p>
-    </div>
+        <!-- Member 5 -->
+        <div class="text-center bg-white rounded-xl shadow-lg p-8 border border-slate-200">
+            <img src="images/member5.jpg" alt="Finance Manager"
+                 class="w-40 h-40 mx-auto rounded-full object-cover mb-6 border-4 border-orange-500">
+            <h3 class="font-bold text-xl">Finance & Logistics Manager</h3>
+            <p class="text-orange-600 font-semibold mt-1">Budget & Procurement</p>
+            <p class="text-slate-600 mt-4 text-sm leading-relaxed">
+                Managed project budgeting, procurement, and inventory of components.
+                Coordinated logistics and ensured timely availability of resources.
+            </p>
+        </div>
 
-    <!-- MEMBER 5 -->
-    <div class="glass rounded-2xl p-8 shadow-lg text-center max-w-sm">
-      <img src="images/member5.jpg" class="profile-pic mx-auto mb-4" alt="">
-      <h3 class="font-semibold text-lg">Documentation Lead</h3>
-      <p class="text-blue-600 font-medium mb-2">Technical Writing & Visualization</p>
-      <p class="text-slate-600 text-sm">
-        Prepared technical documentation, diagrams, and presentation
-        materials for academic dissemination.
-      </p>
     </div>
-
-  </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-auto">
-  <div class="container mx-auto px-6 text-center">
-    <p class="text-white font-semibold mb-2">Developed by: Omicropade</p>
-    <p>BS Electronics Engineering — Rizal Technological University</p>
-    <p class="text-sm opacity-75 mt-4">
-      © 2025 FMCW-GPR Research Project. All rights reserved.
-    </p>
-  </div>
+     <div class="container mx-auto px-6 text-center">
+        <div class="mb-6">
+         <p class="text-white font-semibold mb-2">Developed by: Omicropade</p>
+             <p>BS Electronics Engineering</p>
+             <p>Rizal Technological University</p>
+        </div>
+         <p class="text-sm opacity-75">© 2025 FMCW-GPR Research Project. All rights reserved.</p>
+        </div>
 </footer>
 
 </body>
