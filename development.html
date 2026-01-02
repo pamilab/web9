@@ -109,18 +109,19 @@ img {
 <main class="container mx-auto px-6 py-16 space-y-12">
 
 <!-- STEP 1 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
+<section class="step-section">
   <img src="images/step1bg.jpg" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 bg-slate-900/75"></div>
 
   <div class="relative z-10 p-8 text-white">
     <div class="flex justify-between items-center">
       <h2 class="text-2xl font-bold">1. SYSTEM OVERVIEW</h2>
-      <button onclick="togglePanel('step1', this)" class="text-xl">▼</button>
+      <button onclick="togglePanel('step1', this)" class="text-xl transition-transform">▼</button>
     </div>
 
     <div id="step1"
-      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+      class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+
 
       <div class="step-card">
         <div class="img-box">
@@ -198,19 +199,19 @@ img {
 
 
 <!-- STEP 2 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
+<section class="step-section">
   <img src="images/step2bg.jpg" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 bg-slate-900/75"></div>
 
   <div class="relative z-10 p-8 text-white">
     <div class="flex justify-between items-center">
       <h2 class="text-2xl font-bold">2. RF INTEGRATION</h2>
-      <button onclick="togglePanel('step2', this)" class="text-xl">▼</button>
+      <button onclick="togglePanel('step2', this)" class="text-xl transition-transform">▼</button>
     </div>
 
     <div id="step2"
-      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-
+      class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+    
       <div class="step-card">
         <div class="img-box">
           <img src="images/rf.jpg" class="rounded-md">
@@ -237,18 +238,18 @@ img {
 
    
 <!-- STEP 3 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
+<section class="step-section">
   <img src="images/step3bg.jpg" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 bg-slate-900/75"></div>
 
   <div class="relative z-10 p-8 text-white">
     <div class="flex justify-between items-center">
       <h2 class="text-2xl font-bold">3. HARDWARE STABILIZATION</h2>
-      <button onclick="togglePanel('step3', this)" class="text-xl">▼</button>
+      <button onclick="togglePanel('step3', this)" class="text-xl transition-transform">▼</button>
     </div>
 
     <div id="step3"
-      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 text-slate-800">
+      class="panel glass rounded-xl p-6 mt-6 text-slate-800">    
 
       <div class="step-card">
         <div class="img-box">
@@ -265,18 +266,18 @@ img {
 </section>
 
 <!-- STEP 4 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
+<section class="step-section">
   <img src="images/step4bg.jpg" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 bg-slate-900/75"></div>
 
   <div class="relative z-10 p-8 text-white">
     <div class="flex justify-between items-center">
       <h2 class="text-2xl font-bold">4. COMPONENT TESTING</h2>
-      <button onclick="togglePanel('step4', this)" class="text-xl">▼</button>
+      <button onclick="togglePanel('step4', this)" class="text-xl transition-transform">▼</button>
     </div>
 
     <div id="step4"
-      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+      class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
 
       <div class="step-card">
         <div class="img-box">
@@ -301,18 +302,19 @@ troubleshooting.</p>
 </section>
 
 <!-- STEP 5 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
+<section class="step-section">
   <img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 bg-slate-900/75"></div>
 
   <div class="relative z-10 p-8 text-white">
     <div class="flex justify-between items-center">
       <h2 class="text-2xl font-bold">5. INTEGRATION OF SIGNAL PROCESSING UNIT</h2>
-      <button onclick="togglePanel('step5', this)" class="text-xl">▼</button>
+      <button onclick="togglePanel('step5', this)" class="text-xl transition-transform">▼</button>
     </div>
 
     <div id="step5"
-      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+      class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+   
 
       <div class="step-card">
         <div class="img-box">
@@ -362,18 +364,20 @@ This was chosen because it is the cheapest available digitizer with very high sa
 </section>
 
 <!-- STEP 6 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
+<section class="step-section">
   <img src="images/framebg.jpg" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 bg-slate-900/75"></div>
 
   <div class="relative z-10 p-8 text-white">
     <div class="flex justify-between items-center">
       <h2 class="text-2xl font-bold">6. RADAR FRAME CONSTRUCTION</h2>
-      <button onclick="togglePanel('step6', this)" class="text-xl">▼</button>
+      <button onclick="togglePanel('step6', this)" class="text-xl transition-transform">▼</button>
     </div>
 
     <div id="step6"
-      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
+      class="panel glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
+
+
 
       <p class="text-sm text-slate-600">
         With all essential components in place, the researchers proceeded to
@@ -401,19 +405,18 @@ This was chosen because it is the cheapest available digitizer with very high sa
 
 
 <!-- STEP 7 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
+<section class="step-section">
   <img src="images/step7bg.jpg" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 bg-slate-900/75"></div>
 
   <div class="relative z-10 p-8 text-white">
     <div class="flex justify-between items-center">
       <h2 class="text-2xl font-bold">7. UGV INTEGRATION</h2>
-      <button onclick="togglePanel('step7', this)" class="text-xl">▼</button>
+      <button onclick="togglePanel('step7', this)" class="text-xl transition-transform">▼</button>
     </div>
 
     <div id="step7"
-      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 text-slate-800">
-
+      class="panel glass rounded-xl p-6 mt-6 text-slate-800">
       <div class="step-card">
         <div class="img-box">
           <img src="images/golung2.jpg" class="rounded-md">
@@ -429,18 +432,18 @@ This was chosen because it is the cheapest available digitizer with very high sa
 
   
   <!-- STEP 8 -->
-<section class="relative rounded-xl overflow-hidden shadow-lg">
+<section class="step-section">
   <img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 bg-slate-900/75"></div>
 
   <div class="relative z-10 p-8 text-white">
     <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-bold">8. FIELD TESTING </h2>
-      <button onclick="togglePanel('step8', this)" class="text-xl">▼</button>
+      <h2 class="text-2xl font-bold">8. FIELD TESTING</h2>
+      <button onclick="togglePanel('step8', this)" class="text-xl transition-transform">▼</button>
     </div>
 
     <div id="step8"
-      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 text-slate-800">
+      class="panel glass rounded-xl p-6 mt-6 text-slate-800">
 
       <div class="step-card">
         <div class="img-box">
@@ -660,6 +663,15 @@ function closeModal() {
     }, 300);
 }
 </script>
+<style>
+.step-section {
+  position: relative;
+  min-height: 160px; /* critical */
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+</style>
 
 <script>
 let activeDoc = null;
