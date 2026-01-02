@@ -110,28 +110,24 @@ img {
 
 <!-- STEP 1 -->
 <section class="step-section">
-  <img src="images/step1bg.jpg" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-slate-900/75"></div>
+  <div class="step-bg">
+    <img src="images/conceptplanning.jpg">
+    <div class="step-overlay"></div>
+  </div>
 
   <div class="relative z-10 p-8 text-white">
-    <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-bold">1. SYSTEM OVERVIEW</h2>
-      <button onclick="togglePanel('step1', this)" class="text-xl transition-transform">▼</button>
-    </div>
+    <h2 class="text-2xl font-bold">1. SYSTEM OVERVIEW</h2>
 
-    <div id="step1"
-      class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-
-
+    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800">
       <div class="step-card">
-  <div class="img-box">
-    <img src="images/blockdiag.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <h4 class="font-semibold">System Block Diagram</h4>
-    <p class="text-sm text-slate-600">
-      Overall FMCW-GPR architecture and signal flow.
-    </p>
+        <div class="img-box">
+          <img src="images/blockdiag.jpg">
+        </div>
+        <div class="step-text">
+          <h4 class="font-semibold">System Block Diagram</h4>
+          <p class="text-sm text-slate-600">
+            Overall FMCW-GPR architecture and signal flow.
+          </p>
 
 <div class="lg:col-span-2 overflow-x-auto">
 <table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
@@ -200,39 +196,37 @@ img {
 
 <!-- STEP 2 -->
 <section class="step-section">
-  <img src="images/step2bg.jpg" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-slate-900/75"></div>
+  <div class="step-bg">
+    <img src="images/desimulatin.jpg">
+    <div class="step-overlay"></div>
+  </div>
 
   <div class="relative z-10 p-8 text-white">
-    <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-bold">2. RF INTEGRATION</h2>
-      <button onclick="togglePanel('step2', this)" class="text-xl transition-transform">▼</button>
-    </div>
+    <h2 class="text-2xl font-bold">2. RF INTEGRATION</h2>
 
-    <div id="step2"
-      class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-    
-     <div class="step-card">
-  <div class="img-box">
-    <img src="images/rf.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <h4 class="font-semibold">RF Component Assembly</h4>
-    <p class="text-sm text-slate-600">
-      RF components were carefully interconnected to establish the complete signal path of the radar system.
-    </p>
-  </div>
-</div>
+    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
 
-<div class="step-card">
-  <div class="img-box">
-    <img src="images/rd2.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <h4 class="font-semibold">RF Signal Path Validation</h4>
-    <p class="text-sm text-slate-600">
-      Each RF connection was verified to ensure proper signal continuity and impedance matching.
-    </p>
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/rf.jpg">
+        </div>
+        <div class="step-text">
+          <h4 class="font-semibold">RF Component Assembly</h4>
+          <p class="text-sm text-slate-600">
+            RF components were carefully interconnected to establish the complete signal path of the radar system.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/rd2.jpg">
+        </div>
+        <div class="step-text">
+          <h4 class="font-semibold">RF Signal Path Validation</h4>
+          <p class="text-sm text-slate-600">
+            Each RF connection was verified to ensure proper signal continuity and impedance matching.
+          </p>
     </div>
   </div>
 </section>
@@ -240,27 +234,23 @@ img {
    
 <!-- STEP 3 -->
 <section class="step-section">
-  <img src="images/step3bg.jpg" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-slate-900/75"></div>
+  <div class="step-bg">
+    <img src="images/hardw.jpg"">
+    <div class="step-overlay"></div>
+  </div>
 
   <div class="relative z-10 p-8 text-white">
-    <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-bold">3. HARDWARE STABILIZATION</h2>
-      <button onclick="togglePanel('step3', this)" class="text-xl transition-transform">▼</button>
-    </div>
+    <h2 class="text-2xl font-bold">3. HARDWARE STABILIZATION</h2>
 
-    <div id="step3"
-      class="panel glass rounded-xl p-6 mt-6 text-slate-800">    
-
+    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800">
       <div class="step-card">
-  <div class="img-box">
-    <img src="images/hardware integ.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <p class="text-sm text-slate-600">
-      The assembled RF components were initially found to be unstable without a proper mounting base. Since these components are fragile and prone to damage during handling and testing, the researchers integrated all RF modules onto an acrylic platform.
-
-        </p>
+        <div class="img-box">
+          <img src="images/hardware integ.jpg">
+        </div>
+        <div class="step-text">
+          <p class="text-sm text-slate-600">
+            The assembled RF components were initially found to be unstable without a proper mounting base. Since these components are fragile and prone to damage during handling and testing, the researchers integrated all RF modules onto an acrylic platform.
+          </p>
       </div>
 
     </div>
@@ -269,31 +259,28 @@ img {
 
 <!-- STEP 4 -->
 <section class="step-section">
-  <img src="images/step4bg.jpg" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-slate-900/75"></div>
+  <div class="step-bg">
+    <img src="images/step4bg.jpg">
+    <div class="step-overlay"></div>
+  </div>
 
   <div class="relative z-10 p-8 text-white">
-    <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-bold">4. COMPONENT TESTING</h2>
-      <button onclick="togglePanel('step4', this)" class="text-xl transition-transform">▼</button>
-    </div>
+    <h2 class="text-2xl font-bold">4. COMPONENT TESTING</h2>
 
-    <div id="step4"
-      class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-
-     <div class="step-card">
-  <div class="img-box">
-    <img src="images/comptest.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <h4 class="font-semibold">Component Testing</h4>
-    <p class="text-sm text-slate-600">
-      After mounting the components onto the acrylic platform, the researchers
-      conducted tests on the parameters and frequency response of each RF
-      component. These tests ensured proper operation, verified the continuity of the
-      signal path, minimized potential confusion, and reduced the need for additional
-      troubleshooting.
-    </p>
+    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800">
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/comptest.jpg">
+        </div>
+        <div class="step-text">
+          <h4 class="font-semibold">Component Testing</h4>
+          <p class="text-sm text-slate-600">
+            After mounting the components onto the acrylic platform, the researchers
+            conducted tests on the parameters and frequency response of each RF
+            component. These tests ensured proper operation, verified the continuity of the
+            signal path, minimized potential confusion, and reduced the need for additional
+            troubleshooting.
+          </p>
       </div>
 
       <div class="step-card">
@@ -308,68 +295,57 @@ img {
 
 <!-- STEP 5 -->
 <section class="step-section">
-  <img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-slate-900/75"></div>
+  <div class="step-bg">
+    <img src="softwaredev.jpg">
+    <div class="step-overlay"></div>
+  </div>
 
   <div class="relative z-10 p-8 text-white">
-    <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-bold">5. INTEGRATION OF SIGNAL PROCESSING UNIT</h2>
-      <button onclick="togglePanel('step5', this)" class="text-xl transition-transform">▼</button>
-    </div>
+    <h2 class="text-2xl font-bold">5. INTEGRATION OF SIGNAL PROCESSING UNIT</h2>
 
-    <div id="step5"
-      class="panel glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-   
+    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
 
       <div class="step-card">
-  <div class="img-box">
-    <img src="images/sttft.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <h4 class="font-semibold">STFT Analysis</h4>
-    <p class="text-sm text-slate-600">
-      >The Short-Time Fourier Transform (STFT) analyzes how a signal’s frequency changes over time. In FMCW radar, it is applied to the beat signal to track time-varying frequencies caused by moving or multiple targets, enabling analysis of target distance and dynamic behavior.
-    </p>
-  </div>
-</div>
+        <div class="img-box"><img src="images/sttft.jpg"></div>
+        <div class="step-text">
+          <h4 class="font-semibold">STFT Analysis</h4>
+          <p class="text-sm text-slate-600">
+            >The Short-Time Fourier Transform (STFT) analyzes how a signal’s frequency changes over time. In FMCW radar, it is applied to the beat signal to track time-varying frequencies caused by moving or multiple targets, enabling analysis of target distance and dynamic behavior.
+          </p>
+        </div>
+      </div>
 
-<div class="step-card">
-  <div class="img-box">
-    <img src="images/cpu.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <h4 class="font-semibold">Central Processing Unit</h4>
-    <p class="text-sm text-slate-600">
-      >An x86-based mini PC was incorporated into the acrylic platform to function as the primary unit for signal processing and data acquisition. This
-      integration enabled the system to process the radar signals and record the measurements efficiently.
-    </p>
-  </div>
-</div>
+      <div class="step-card">
+        <div class="img-box"><img src="images/cpu.jpg"></div>
+        <div class="step-text">
+          <h4 class="font-semibold">Central Processing Unit</h4>
+          <p class="text-sm text-slate-600">
+            >An x86-based mini PC was incorporated into the acrylic platform to function as the primary unit for signal processing and data acquisition. This
+            integration enabled the system to process the radar signals and record the measurements efficiently.
+          </p>
+        </div>
+      </div>
 
-<div class="step-card">
-  <div class="img-box">
-    <img src="images/hamming.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <h4 class="font-semibold">Hamming Window</h4>
-    <p class="text-sm text-slate-600">
-      >The Hamming window is a mathematical function used in FMCW-GPR System. It is applied to the beat signal before performing the 
-      Fourier Transform to reduce spectral leakage, which can distort the frequency analysis of the signal.
-    </p>
-  </div>
-</div>
+      <div class="step-card">
+        <div class="img-box"><img src="images/hamming.jpg"></div>
+        <div class="step-text">
+          <h4 class="font-semibold">Hamming Window</h4>
+          <p class="text-sm text-slate-600">
+            >The Hamming window is a mathematical function used in FMCW-GPR System. It is applied to the beat signal before performing the 
+            Fourier Transform to reduce spectral leakage, which can distort the frequency analysis of the signal.
+          </p>
+        </div>
+      </div>
 
-<div class="step-card">
-  <div class="img-box">
-    <img src="images/hackrf.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <h4 class="font-semibold">SDR Digitization</h4>
-    <p class="text-sm text-slate-600">
-      >The ADC on this SDR is used to digitize the beat frequency only and other functions will not be used. The sampling rate will be maximized and the Nyquist limit will be reached at maximum modulating frequency since it is using sampling.
-      The USB will carry 1.28Gbps at 20MSPS sampling rate using complex64 data type which contains 32 bits each of I and Q samples.
-      This was chosen because it is the cheapest available digitizer with very high sampling rate, increasing the bandwidth limits, hence range resolution. 
-    </p>
+      <div class="step-card">
+        <div class="img-box"><img src="images/hackrf.jpg"></div>
+        <div class="step-text">
+          <h4 class="font-semibold">SDR Digitization</h4>
+          <p class="text-sm text-slate-600">
+            >The ADC on this SDR is used to digitize the beat frequency only and other functions will not be used. The sampling rate will be maximized and the Nyquist limit will be reached at maximum modulating frequency since it is using sampling.
+            The USB will carry 1.28Gbps at 20MSPS sampling rate using complex64 data type which contains 32 bits each of I and Q samples.
+            This was chosen because it is the cheapest available digitizer with very high sampling rate, increasing the bandwidth limits, hence range resolution.
+          </p>
       </div>
 
     </div>
@@ -378,39 +354,32 @@ img {
 
 <!-- STEP 6 -->
 <section class="step-section">
-  <img src="images/framebg.jpg" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-slate-900/75"></div>
+  <div class="step-bg">
+    <img src="images/framebg.jpg">
+    <div class="step-overlay"></div>
+  </div>
 
   <div class="relative z-10 p-8 text-white">
-    <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-bold">6. RADAR FRAME CONSTRUCTION</h2>
-      <button onclick="togglePanel('step6', this)" class="text-xl transition-transform">▼</button>
-    </div>
+    <h2 class="text-2xl font-bold">6. RADAR FRAME CONSTRUCTION</h2>
 
-    <div id="step6"
-      class="panel glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
+    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
 
+      <p class="text-sm text-slate-600">
+        With all essential components in place, the researchers proceeded to
+        assemble the main frame of the radar system. This step allowed for initial
+        performance testing and the collection of preliminary results, providing insight
+        into the overall system functionality.
+      </p>
 
+      <div class="img-box mx-auto">
+        <img src="images/frame.jpg">
+      </div>
 
-<p class="text-sm text-slate-600">
-  With all essential components in place, the researchers proceeded to
-  assemble the main frame of the radar system. This step allowed for initial
-  performance testing and the collection of preliminary results, providing insight
-  into the overall system functionality.
-</p>
-
-<div class="step-card">
-  <div class="img-box">
-    <img src="images/frame.jpg" class="rounded-md">
-  </div>
-</div>
-
-<p class="text-sm text-slate-600">
-  After reviewing the initial results, the researchers constructed the final
-  radar frame to evaluate whether the system would maintain its performance
-  when the antenna was oriented according to the planned configuration.
-</p>
-
+      <p class="text-sm text-slate-600">
+        After reviewing the initial results, the researchers constructed the final
+        radar frame to evaluate whether the system would maintain its performance
+        when the antenna was oriented according to the planned configuration.
+      </p>
 
     </div>
   </div>
@@ -419,26 +388,24 @@ img {
 
 
 <!-- STEP 7 -->
-<section class="step-section">
-  <img src="images/step7bg.jpg" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-slate-900/75"></div>
+<<section class="step-section">
+  <div class="step-bg">
+    <img src="golung.jpg">
+    <div class="step-overlay"></div>
+  </div>
 
   <div class="relative z-10 p-8 text-white">
-    <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-bold">7. UGV INTEGRATION</h2>
-      <button onclick="togglePanel('step7', this)" class="text-xl transition-transform">▼</button>
-    </div>
+    <h2 class="text-2xl font-bold">7. UGV INTEGRATION</h2>
 
-    <div id="step7"
-      class="panel glass rounded-xl p-6 mt-6 text-slate-800">
+    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800">
       <div class="step-card">
-  <div class="img-box">
-    <img src="images/golung2.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <p class="text-sm text-slate-600">
-      >In this phase, the FMCW-GPR system was integrated with an Unmanned Ground Vehicle (UGV) to enable automated and consistent lateral scanning. The integration ensured stable mounting, controlled movement, and synchronized operation between the radar system and the motorized platform, reducing human-induced measurement variability.
-    </p>
+        <div class="img-box">
+          <img src="images/golung2.jpg">
+        </div>
+        <div class="step-text">
+          <p class="text-sm text-slate-600">
+            >In this phase, the FMCW-GPR system was integrated with an Unmanned Ground Vehicle (UGV) to enable automated and consistent lateral scanning. The integration ensured stable mounting, controlled movement, and synchronized operation between the radar system and the motorized platform, reducing human-induced measurement variability.
+          </p>
       </div>
 
     </div>
@@ -448,37 +415,33 @@ img {
   
   <!-- STEP 8 -->
 <section class="step-section">
-  <img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0 bg-slate-900/75"></div>
+  <div class="step-bg">
+    <img src="images/analys.jpg">
+    <div class="step-overlay"></div>
+  </div>
 
   <div class="relative z-10 p-8 text-white">
-    <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-bold">8. FIELD TESTING</h2>
-      <button onclick="togglePanel('step8', this)" class="text-xl transition-transform">▼</button>
-    </div>
+    <h2 class="text-2xl font-bold">8. FIELD TESTING</h2>
 
-    <div id="step8"
-      class="panel glass rounded-xl p-6 mt-6 text-slate-800">
+    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800">
+      <div class="grid md:grid-cols-2 gap-6">
 
-     <div class="step-card">
-  <div class="img-box">
-    <img src="images/testi.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <p class="text-sm text-slate-600">
-      >Controlled test environment with embedded metallic object.
-    </p>
-  </div>
-</div>
+        <div class="text-center">
+          <div class="h-56 flex items-center justify-center">
+            <img src="images/testi.jpg" class="object-contain h-full">
+          </div>
+          <p class="text-sm text-slate-600 mt-3">
+            >Controlled test environment with embedded metallic object.
+          </p>
+        </div>
 
-<div class="step-card">
-  <div class="img-box">
-    <img src="images/combi.jpg" class="rounded-md">
-  </div>
-  <div class="step-text">
-    <p class="text-sm text-slate-600">
-      >Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FMCW-GPR System.
-    </p>
+        <div class="text-center">
+          <div class="h-56 flex items-center justify-center">
+            <img src="images/combi.jpg" class="object-contain h-full">
+          </div>
+          <p class="text-sm text-slate-600 mt-3">
+            >Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FMCW-GPR System.
+          </p>
       </div>
 
     </div>
@@ -684,23 +647,40 @@ function closeModal() {
 }
 </script>
 <style>
-.step-section {
-  position: relative;
-  min-height: 160px; /* critical */
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+.step-section{
+  position:relative;
+  border-radius:0.75rem;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.step-bg{
+  position:absolute;
+  inset:0;
+  z-index:-10;
+}
+
+.step-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.step-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(15,23,42,0.75);
 }
 
 .step-card{
   display:flex;
   gap:1.5rem;
-  align-items:flex-start;
+  align-items:center;
 }
 
 .step-card .img-box{
-  flex:0 0 42%;
-  height:260px;
+  flex:0 0 40%;
+  height:240px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -712,21 +692,15 @@ function closeModal() {
   object-fit:contain;
 }
 
-.step-text{
-  flex:1;
-}
+.step-text{ flex:1; }
 
 @media(max-width:768px){
-  .step-card{
-    flex-direction:column;
-  }
-  .step-card .img-box{
-    width:100%;
-    height:240px;
-  }
+  .step-card{ flex-direction:column; }
+  .step-card .img-box{ width:100%; height:220px; }
 }
 </style>
 
+      
 <script>
 let activeDoc = null;
 
