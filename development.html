@@ -192,15 +192,17 @@
 <!-- STEP 2 -->
 <section class="step-section">
   <div class="step-bg">
-    <img src="images/desimulatin.jpg">
+    <img src="images/signalflow.jpg">
     <div class="step-overlay"></div>
   </div>
 
   <div class="relative z-10 p-8 text-white">
-    <h2 class="text-2xl font-bold">2. RF INTEGRATION</h2>
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">2. SIGNAL GENERATION AND TRANSMISSION</h2>
+      <button onclick="togglePanel('step2', this)" class="text-2xl">▼</button>
+    </div>
 
-    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
-
+    <div id="step2" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
       <div class="step-card">
         <div class="img-box">
           <img src="images/rf.jpg">
@@ -230,14 +232,17 @@
 <!-- STEP 3 -->
 <section class="step-section">
   <div class="step-bg">
-    <img src="images/hardw.jpg"">
+    <img src="images/antenna.jpg">
     <div class="step-overlay"></div>
   </div>
 
   <div class="relative z-10 p-8 text-white">
-    <h2 class="text-2xl font-bold">3. HARDWARE STABILIZATION</h2>
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">3. COMPONENTS INTEGRATION</h2>
+      <button onclick="togglePanel('step3', this)" class="text-2xl">▼</button>
+    </div>
 
-    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800">
+    <div id="step3" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
       <div class="step-card">
         <div class="img-box">
           <img src="images/hardware integ.jpg">
@@ -253,16 +258,19 @@
 </section>
 
 <!-- STEP 4 -->
-<section class="step-section">
+section class="step-section">
   <div class="step-bg">
-    <img src="images/step4bg.jpg">
+    <img src="images/frame.jpg">
     <div class="step-overlay"></div>
   </div>
 
   <div class="relative z-10 p-8 text-white">
-    <h2 class="text-2xl font-bold">4. COMPONENT TESTING</h2>
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">4. SYSTEM ASSEMBLY</h2>
+      <button onclick="togglePanel('step4', this)" class="text-2xl">▼</button>
+    </div>
 
-    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800">
+    <div id="step4" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
       <div class="step-card">
         <div class="img-box">
           <img src="images/comptest.jpg">
@@ -289,16 +297,20 @@
 </section>
 
 <!-- STEP 5 -->
-<section class="step-section">
+section class="step-section">
   <div class="step-bg">
-    <img src="softwaredev.jpg">
+    <img src="images/analys.jpg">
     <div class="step-overlay"></div>
   </div>
 
   <div class="relative z-10 p-8 text-white">
-    <h2 class="text-2xl font-bold">5. INTEGRATION OF SIGNAL PROCESSING UNIT</h2>
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">5. INTEGRATION OF SIGNAL PROCESSING UNIT</h2>
+      <button onclick="togglePanel('step5', this)" class="text-2xl">▼</button>
+    </div>
 
-    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
+    <div id="step5" class="panel glass rounded-xl p-6 mt-6 text-slate-800 grid md:grid-cols-2 gap-6">
+
 
       <div class="step-card">
         <div class="img-box"><img src="images/sttft.jpg"></div>
@@ -356,8 +368,10 @@
 
   <div class="relative z-10 p-8 text-white">
     <h2 class="text-2xl font-bold">6. RADAR FRAME CONSTRUCTION</h2>
+<button onclick="togglePanel('step6', this)" class="text-2xl">▼</button>
+    </div>
 
-    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
+    <div id="step6" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
 
       <p class="text-sm text-slate-600">
         With all essential components in place, the researchers proceeded to
@@ -391,8 +405,10 @@
  
   <div class="relative z-10 p-8 text-white">
     <h2 class="text-2xl font-bold">7. UGV INTEGRATION</h2>
+ <button onclick="togglePanel('step7', this)" class="text-2xl">▼</button>
+    </div>
 
-    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800">
+    <div id="step7" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
       <div class="step-card">
         <div class="img-box">
           <img src="images/golung2.jpg">
@@ -417,10 +433,10 @@
 
   <div class="relative z-10 p-8 text-white">
     <h2 class="text-2xl font-bold">8. FIELD TESTING</h2>
+<button onclick="togglePanel('step8', this)" class="text-2xl">▼</button>
+    </div>
 
-    <div class="panel glass rounded-xl p-6 mt-6 text-slate-800">
-      <div class="grid md:grid-cols-2 gap-6">
-
+    <div id="step8" class="panel glass rounded-xl p-6 mt-6 text-slate-800">
         <div class="text-center">
           <div class="h-56 flex items-center justify-center">
             <img src="images/testi.jpg" class="object-contain h-full">
