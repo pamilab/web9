@@ -376,76 +376,72 @@ and continuity of the signals
 
 
 <!-- DEVELOPMENT PHASES – DOCUMENTATION -->
-<section id="devDocs" class="bg-white rounded-xl shadow p-6 mt-10 relative">
+<section class="bg-white rounded-xl shadow p-6 mt-10">
   <h2 class="text-2xl font-bold mb-6 text-slate-800">
     Development Phases (Documentation)
   </h2>
 
   <!-- CLICKABLE BOXES -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-
-    <button onclick="openDoc(event,'doc1')" class="doc-btn">
-      Concept & Planning
-    </button>
-
-    <button onclick="openDoc(event,'doc2')" class="doc-btn">
-      Design
-    </button>
-
-    <button onclick="openDoc(event,'doc3')" class="doc-btn">
-      Hardware Integration
-    </button>
-
-    <button onclick="openDoc(event,'doc4')" class="doc-btn">
-      Software Development
-    </button>
-
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <button onclick="openPopup('popup1')" class="doc-btn">Concept & Planning</button>
+    <button onclick="openPopup('popup2')" class="doc-btn">Design</button>
+    <button onclick="openPopup('popup3')" class="doc-btn">Hardware Integration</button>
+    <button onclick="openPopup('popup4')" class="doc-btn">Software Development</button>
   </div>
+</section>
 
-  <!-- PANEL -->
-  <div id="doc1" class="doc-panel">
-    <h3 class="font-semibold mb-4">Concept & Planning</h3>
-    <div class="doc-grid">
+<!-- POPUP OVERLAY -->
+<div id="popupOverlay" class="popup-overlay" onclick="closePopup(event)">
+
+  <!-- POPUP 1 -->
+  <div id="popup1" class="popup-panel">
+    <h3 class="popup-title">Concept & Planning</h3>
+    <div class="popup-grid">
       <div>
-        <img src="images/img1.jpg" class="doc-img">
-        <p class="doc-caption">System concept</p>
+        <img src="images/img1.jpg" class="popup-img">
+        <p class="popup-caption">System concept</p>
       </div>
       <div>
-        <img src="images/img2.jpg" class="doc-img">
-        <p class="doc-caption">Requirements</p>
+        <img src="images/img2.jpg" class="popup-img">
+        <p class="popup-caption">Requirements analysis</p>
       </div>
     </div>
   </div>
 
-  <div id="doc2" class="doc-panel">
-    <h3 class="font-semibold mb-4">Design</h3>
-    <div class="doc-grid">
+  <!-- POPUP 2 -->
+  <div id="popup2" class="popup-panel">
+    <h3 class="popup-title">Design</h3>
+    <div class="popup-grid">
       <div>
-        <img src="images/img3.jpg" class="doc-img">
-        <p class="doc-caption">Block diagram</p>
+        <img src="images/img3.jpg" class="popup-img">
+        <p class="popup-caption">Block diagram</p>
       </div>
     </div>
   </div>
 
-  <div id="doc3" class="doc-panel">
-    <h3 class="font-semibold mb-4">Hardware Integration</h3>
-    <div class="doc-grid">
+  <!-- POPUP 3 -->
+  <div id="popup3" class="popup-panel">
+    <h3 class="popup-title">Hardware Integration</h3>
+    <div class="popup-grid">
       <div>
-        <img src="images/img4.jpg" class="doc-img">
-        <p class="doc-caption">Assembly</p>
+        <img src="images/img4.jpg" class="popup-img">
+        <p class="popup-caption">Assembly process</p>
       </div>
     </div>
   </div>
 
-  <div id="doc4" class="doc-panel">
-    <h3 class="font-semibold mb-4">Software Development</h3>
-    <div class="doc-grid">
+  <!-- POPUP 4 -->
+  <div id="popup4" class="popup-panel">
+    <h3 class="popup-title">Software Development</h3>
+    <div class="popup-grid">
       <div>
-        <img src="images/img5.jpg" class="doc-img">
-        <p class="doc-caption">Signal processing</p>
+        <img src="images/img5.jpg" class="popup-img">
+        <p class="popup-caption">Signal processing</p>
       </div>
     </div>
   </div>
+
+</div>
 
 </section>
 
@@ -459,38 +455,72 @@ and continuity of the signals
   font-weight:600;
   transition:.3s;
 }
+..doc-btn{
+  background:#bae6fd;
+  padding:1.5rem;
+  border-radius:0.75rem;
+  font-weight:600;
+  transition:.25s;
+}
 .doc-btn:hover{ background:#7dd3fc }
 
-.doc-panel{
+/* OVERLAY */
+.popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
   display:none;
-  background:#f8fafc;
-  border-radius:1rem;
-  padding:1.5rem;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
 }
 
-.doc-panel.active{
+/* POPUP PANEL */
+.popup-panel{
+  background:#fff;
+  border-radius:1.25rem;
+  padding:2rem;
+  width:90%;
+  max-width:900px;
+  max-height:85vh;
+  overflow-y:auto;
+  transform:scale(.85);
+  opacity:0;
+  transition:all .3s ease;
+  display:none;
+}
+
+.popup-panel.active{
   display:block;
+  transform:scale(1);
+  opacity:1;
 }
 
-.doc-grid{
+.popup-title{
+  font-size:1.25rem;
+  font-weight:700;
+  margin-bottom:1.25rem;
+}
+
+/* IMAGE GRID – MAX 4 PER ROW */
+.popup-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
   gap:1.5rem;
 }
 
-.doc-img{
+.popup-img{
   width:100%;
   height:180px;
   object-fit:contain;
 }
 
-.doc-caption{
+.popup-caption{
   text-align:center;
   font-size:.85rem;
   color:#475569;
   margin-top:.5rem;
 }
-
 </style>
 
 <!-- SCRIPT -->
@@ -564,6 +594,23 @@ function togglePanel(id,btn){const panel=document.getElementById(id);document.qu
     }, 200);
   }
 </script>
+<script>
+function openPopup(id){
+  document.getElementById('popupOverlay').style.display = 'flex';
 
+  document.querySelectorAll('.popup-panel')
+    .forEach(p => p.classList.remove('active'));
+
+  document.getElementById(id).classList.add('active');
+}
+
+function closePopup(e){
+  if(e.target.id === 'popupOverlay'){
+    document.getElementById('popupOverlay').style.display = 'none';
+    document.querySelectorAll('.popup-panel')
+      .forEach(p => p.classList.remove('active'));
+  }
+}
+</script>
 </body>
 </html>
