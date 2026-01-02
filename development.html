@@ -240,7 +240,9 @@ and continuity of the signals
 <section class="step-section">
   <div class="step-bg"><img src="images/hardw.jpg"><div class="step-overlay"></div></div>
   <div class="relative z-10 p-8 text-white"><div class="flex justify-between items-center"><h2 class="text-2xl font-bold">3. COMPONENTS INTEGRATION</h2><button onclick="togglePanel('step3',this)" class="text-2xl">▼</button></div>
-    <div id="step3" class="panel glass rounded-xl p-6 mt-6 text-slate-800"><div class="step-card"><div class="img-box"><img src="images/hardware integ.jpg"></div><div class="step-text"><p class="text-sm text-slate-600">The assembled RF components were initially found to be unstable without a proper mounting base. Since these components are fragile and prone to damage during handling and testing, the researchers integrated all RF modules onto an acrylic platform.</p></div></div></div>
+    <div id="step3" class="panel glass rounded-xl p-6 mt-6 text-slate-800"><div class="step-card">
+      <div class="img-box"><img src="images/hardware integ.jpg">
+      </div><div class="step-text"><p class="text-sm text-slate-600">The assembled RF components were initially found to be unstable without a proper mounting base. Since these components are fragile and prone to damage during handling and testing, the researchers integrated all RF modules onto an acrylic platform.</p></div></div></div>
   </div>
 </section>
 
@@ -375,14 +377,94 @@ and continuity of the signals
 
 <!-- DEVELOPMENT PHASES – DOCUMENTATION -->
 <section class="bg-white rounded-xl shadow p-6 mt-10">
-  <h2 class="text-2xl font-bold mb-6 text-slate-800">Development Phases (Documentation)</h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="bg-sky-200 rounded-xl p-6 text-center font-semibold">Concept & Planning</div>
-    <div class="bg-sky-200 rounded-xl p-6 text-center font-semibold">Design</div>
-    <div class="bg-sky-200 rounded-xl p-6 text-center font-semibold">Hardware Integration</div>
-    <div class="bg-sky-200 rounded-xl p-6 text-center font-semibold">Software Development</div>
+  <h2 class="text-2xl font-bold mb-6 text-slate-800">
+    Development Phases (Documentation)
+  </h2>
+
+  <!-- Clickable Boxes -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+
+    <button onclick="toggleDoc('doc1')"
+      class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 text-center font-semibold">
+      Concept & Planning
+    </button>
+
+    <button onclick="toggleDoc('doc2')"
+      class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 text-center font-semibold">
+      Design
+    </button>
+
+    <button onclick="toggleDoc('doc3')"
+      class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 text-center font-semibold">
+      Hardware Integration
+    </button>
+
+    <button onclick="toggleDoc('doc4')"
+      class="bg-sky-200 hover:bg-sky-300 transition rounded-xl p-6 text-center font-semibold">
+      Software Development
+    </button>
+
   </div>
+
+  <!-- EXPANDABLE PANELS -->
+
+ <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+
+  <div class="text-center">
+    <img src="images/img1.jpg" class="w-full h-48 object-contain rounded-lg cursor-zoom-in">
+    <p class="text-sm text-slate-600 mt-2">Description for image 1</p>
+  </div>
+
+  <div class="text-center">
+    <img src="images/img2.jpg" class="w-full h-48 object-contain rounded-lg cursor-zoom-in">
+    <p class="text-sm text-slate-600 mt-2">Description for image 2</p>
+  </div>
+
+  <div class="text-center">
+    <img src="images/img3.jpg" class="w-full h-48 object-contain rounded-lg cursor-zoom-in">
+    <p class="text-sm text-slate-600 mt-2">Description for image 3</p>
+  </div>
+
+  <div class="text-center">
+    <img src="images/img4.jpg" class="w-full h-48 object-contain rounded-lg cursor-zoom-in">
+    <p class="text-sm text-slate-600 mt-2">Description for image 4</p>
+  </div>
+
 </section>
+
+<!-- STYLES -->
+<style>
+.doc-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.3s ease;
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0 1.5rem;
+}
+
+.doc-panel.open {
+  max-height: 1200px;
+  padding: 1.5rem;
+}
+
+.doc-img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  background: linear-gradient(135deg,#1e293b,#334155);
+  border-radius: 0.5rem;
+}
+</style>
+
+<!-- SCRIPT -->
+<script>
+function toggleDoc(id) {
+  document.getElementById(id).classList.toggle("open");
+}
+</script>
+
 
 </main>
 
