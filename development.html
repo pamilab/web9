@@ -110,27 +110,27 @@ img {
 
 <!-- STEP 1 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/conceptplanning.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+  <img src="images/step1bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-    <h2 class="text-2xl font-bold">1. CONCEPT AND PLANNING</h2>
-    <button onclick="togglePanel('step1', this)" class="text-xl transition-transform">▼</button>
-</div>
+  <div class="relative z-10 p-8 text-white">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">1. SYSTEM OVERVIEW</h2>
+      <button onclick="togglePanel('step1', this)" class="text-xl">▼</button>
+    </div>
 
-<div id="step1"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slate-800 rounded-xl p-6 mt-6">
+    <div id="step1"
+      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
 
-<div class="grid lg:grid-cols-3 gap-6">
-
-<div class="img-box">
-    <img src="images/blockdiag.jpg" class="rounded-md">
-    <h4 class="font-semibold">System Block Diagram</h4>
-    <p class="text-sm text-slate-600">
-        Overall FMCW-GPR architecture and signal flow.
-    </p>
-</div>
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/blockdiag.jpg" class="rounded-md">
+        </div>
+        <h4 class="font-semibold">System Block Diagram</h4>
+        <p class="text-sm text-slate-600">
+          Overall FMCW-GPR architecture and signal flow.
+        </p>
+      </div>
 
 <div class="lg:col-span-2 overflow-x-auto">
 <table class="w-full border border-slate-300 text-sm rounded-lg overflow-hidden">
@@ -198,207 +198,268 @@ class="panel max-h-0 overflow-hidden transition-all duration-500 glass text-slat
 
 
 <!-- STEP 2 -->
-<!-- STEP 2 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/desimulatin.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+  <img src="images/step2bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-    <h2 class="text-2xl font-bold">2. DESIGN</h2>
-    <button onclick="togglePanel('step2', this)" class="text-xl transition-transform">▼</button>
-</div>
+  <div class="relative z-10 p-8 text-white">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">2. RF INTEGRATION</h2>
+      <button onclick="togglePanel('step2', this)" class="text-xl">▼</button>
+    </div>
 
-<div id="step2"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid lg:grid-cols-2 gap-6 text-slate-800">
+    <div id="step2"
+      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
 
-<!-- LEFT: SIGNAL VISUAL -->
-<div class="img-box">
-    <img src="images/rf.jpg" class="rounded-md"> 
-  <h4 class="font-semibold">RF Integration</h4>
-    <p class="text-sm text-slate-600">
-RF components were carefully interconnected to
-establish the complete signal path of the radar system. Each component was
-connected according to the designed configuration, ensuring proper alignment
-and continuity of the signals.
-    </p>
-</div>
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/rf.jpg" class="rounded-md">
+        </div>
+        <h4 class="font-semibold">RF Component Assembly</h4>
+        <p class="text-sm text-slate-600">
+          RF components were carefully interconnected to establish the complete signal path of the radar system.
+        </p>
+      </div>
 
-  
-<div class="img-box">
-    <img src="images/rd2.jpg" class="rounded-md"> 
-<h4 class="font-semibold">RF Connection</h4>
-<p class="text-sm text-slate-600">In the initial phase, the RF components were carefully interconnected to establish the complete signal path of the radar system. Each component was connected according to the designed configuration, ensuring proper alignment and continuity of the signals. 
-</p>
-</div>
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/rd2.jpg" class="rounded-md">
+        </div>
+        <h4 class="font-semibold">RF Signal Path Validation</h4>
+        <p class="text-sm text-slate-600">
+          Each RF connection was verified to ensure proper signal continuity and impedance matching.
+        </p>
+      </div>
 
-  
-</div>
-</div>
+    </div>
+  </div>
 </section>
+
    
 <!-- STEP 3 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/hardw.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+  <img src="images/step3bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">3. COMPONENTS INTEGRATION </h2>
-<button onclick="togglePanel('step3', this)" class="text-xl transition-transform">▼</button>
-</div>
+  <div class="relative z-10 p-8 text-white">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">3. HARDWARE STABILIZATION</h2>
+      <button onclick="togglePanel('step3', this)" class="text-xl">▼</button>
+    </div>
 
-<div id="step3"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-<div class="img-box">
-    <img src="images/hardware integ.jpg" class="rounded-md"> 
-<p class="text-sm text-slate-600">The assembled RF components were initially found to be unstable without a proper mounting base. Since these components are fragile and prone to damage during handling and testing, the researchers integrated all RF modules onto an acrylic platform.
-</p>
-</div>
+    <div id="step3"
+      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 text-slate-800">
 
-</div>
-</div>
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/hardware integ.jpg" class="rounded-md">
+        </div>
+        <p class="text-sm text-slate-600">The assembled RF components were initially found to be unstable without a proper mounting base. Since these components are fragile and prone to damage during handling and testing, the researchers integrated all RF modules onto an acrylic platform.
+
+         
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- STEP 4 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/softwaredev.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+  <img src="images/step4bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">4. SYSTEM COMPONENTS AND SIGNAL FLOW</h2>
-<button onclick="togglePanel('step4', this)" class="text-xl transition-transform">▼</button>
-</div>
+  <div class="relative z-10 p-8 text-white">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">4. COMPONENT TESTING</h2>
+      <button onclick="togglePanel('step4', this)" class="text-xl">▼</button>
+    </div>
 
-<div id="step4"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+    <div id="step4"
+      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
 
-<div class="img-box">
-    <img src="images/comptest.jpg" class="rounded-md">
-<h4 class="font-semibold">Component Testing</h4>
-<p class="text-sm text-slate-600">After mounting the components onto the acrylic platform, the researchers
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/comptest.jpg" class="rounded-md">
+        </div>
+        <h4 class="font-semibold">Component Testing</h4>
+        <p class="text-sm text-slate-600">After mounting the components onto the acrylic platform, the researchers
 conducted tests on the parameters and frequency response of each RF
 component. These tests ensured proper operation, verified the continuity of the
 signal path, minimized potential confusion, and reduced the need for additional
 troubleshooting.</p>
-</div>
-<div class="img-box">
-    <img src="images/tesy.png" class="rounded-md">
-</div>
-<div class="img-box">
-    <img src="images/twe.jpg" class="rounded-md">
-</div>
-</div>
+      </div>
+
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/tesy.png" class="rounded-md">
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- STEP 5 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+  <img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">5. INTEGRATION OF SIGNAL PROCESSING UNIT</h2>
-<button onclick="togglePanel('step5', this)" class="text-xl transition-transform">▼</button>
-</div>
+  <div class="relative z-10 p-8 text-white">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">5. INTEGRATION OF SIGNAL PROCESSING UNIT</h2>
+      <button onclick="togglePanel('step5', this)" class="text-xl">▼</button>
+    </div>
 
-  <div id="step5"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-    
-<div class="img-box">
-    <img src="images/sttft.jpg" class="rounded-md">
-<h4 class="font-semibold">STFT Analysis</h4>
-<p class="text-sm text-slate-600">The Short-Time Fourier Transform (STFT) analyzes how a signal’s frequency changes over time. In FMCW radar, it is applied to the beat signal to track time-varying frequencies caused by moving or multiple targets, enabling analysis of target distance and dynamic behavior.</p>
-</div>
-<div class="img-box">
-    <img src="images/cpu.jpg" class="rounded-md">  
-<h4 class="font-semibold">Central Processing Unit</h4>
-<p class="text-sm text-slate-600">An x86-based mini PC was incorporated into the acrylic platform to function as the primary unit for signal processing and data acquisition. This
+    <div id="step5"
+      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
+
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/sttft.jpg" class="rounded-md">
+        </div>
+        <h4 class="font-semibold">STFT Analysis</h4>
+        <p class="text-sm text-slate-600">
+         >The Short-Time Fourier Transform (STFT) analyzes how a signal’s frequency changes over time. In FMCW radar, it is applied to the beat signal to track time-varying frequencies caused by moving or multiple targets, enabling analysis of target distance and dynamic behavior.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/cpu.jpg" class="rounded-md">
+        </div>
+        <h4 class="font-semibold">Central Processing Unit</h4>
+        <p class="text-sm text-slate-600">
+         >An x86-based mini PC was incorporated into the acrylic platform to function as the primary unit for signal processing and data acquisition. This
 integration enabled the system to process the radar signals and record the measurements efficiently.</p>
-</div>
+        </p>
+      </div>
 
-<div class="img-box">
-    <img src="images/hamming.jpg" class="rounded-md">
-<h4 class="font-semibold">Hamming Window</h4>
-<p class="text-sm text-slate-600">The Hamming window is a mathematical function used in FMCW-GPR System. It is applied to the beat signal before performing the 
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/hamming.jpg" class="rounded-md">
+        </div>
+        <h4 class="font-semibold">Hamming Window</h4>
+        <p class="text-sm text-slate-600"
+         >The Hamming window is a mathematical function used in FMCW-GPR System. It is applied to the beat signal before performing the 
     Fourier Transform to reduce spectral leakage, which can distort the frequency analysis of the signal.</p>
-</div>
+        </p>
+      </div>
 
-<div class="img-box">
-    <img src="images/hackrf.jpg" class="rounded-md">
-<h4 class="font-semibold">SDR Digitization</h4>
-<p class="text-sm text-slate-600">The ADC on this SDR is used to digitize the beat frequency only and other functions will not be used. The sampling rate will be maximized and the Nyquist limit will be reached at maximum modulating frequency since it is using sampling.
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/hackrf.jpg" class="rounded-md">
+        </div>
+        <h4 class="font-semibold">SDR Digitization</h4>
+        <p class="text-sm text-slate-600">
+         >The ADC on this SDR is used to digitize the beat frequency only and other functions will not be used. The sampling rate will be maximized and the Nyquist limit will be reached at maximum modulating frequency since it is using sampling.
 The USB will carry 1.28Gbps at 20MSPS sampling rate using complex64 data type which contains 32 bits each of I and Q samples.
 This was chosen because it is the cheapest available digitizer with very high sampling rate, increasing the bandwidth limits, hence range resolution. 
 </p>
-</div>
-</div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- STEP 6 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/LINE21.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+  <img src="images/framebg.jpg" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">6. CONSTRUCTION OF RADAR FRAME AND INITIAL TESTING</h2>
-<button onclick="togglePanel('step6', this)" class="text-xl transition-transform">▼</button>
-</div>
+  <div class="relative z-10 p-8 text-white">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">6. RADAR FRAME CONSTRUCTION</h2>
+      <button onclick="togglePanel('step6', this)" class="text-xl">▼</button>
+    </div>
 
-<div id="step6"
-class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 text-slate-800">
+    <div id="step6"
+      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 text-slate-800 space-y-6">
 
-<div class="space-y-6">
-
-    <p class="text-sm text-slate-600">
+      <p class="text-sm text-slate-600">
         With all essential components in place, the researchers proceeded to
         assemble the main frame of the radar system. This step allowed for initial
         performance testing and the collection of preliminary results, providing insight
-        into the overall system functionality
-    </p>
+        into the overall system functionality.
+      </p>
 
-    <!-- IMAGE CENTER -->
-    <div class="bg-blue-100 rounded-lg p-4 shadow flex justify-center">
+      <div class="bg-blue-100 p-4 rounded-lg flex justify-center">
         <div class="img-box max-w-xl">
-            <img src="images/frame.jpg" class="rounded-md">
+          <img src="images/frame.jpg" class="rounded-md">
         </div>
-    </div>
+      </div>
 
-    <p class="text-sm text-slate-600">
+      <p class="text-sm text-slate-600">
         After reviewing the initial results, the researchers constructed the final
         radar frame to evaluate whether the system would maintain its performance
         when the antenna was oriented according to the planned configuration.
-    </p>
+      </p>
 
-</div>
-</div>
+    </div>
+  </div>
 </section>
+
 
 
 <!-- STEP 7 -->
 <section class="relative rounded-xl overflow-hidden shadow-lg">
-<img src="images/golung.jpg" class="absolute inset-0 w-full h-full object-cover">
-<div class="absolute inset-0 bg-slate-900/75"></div>
+  <img src="images/step7bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-slate-900/75"></div>
 
-<div class="relative z-10 p-8 text-white">
-<div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold">7. UGV INTEGRATION</h2>
-<button onclick="togglePanel('step7', this)" class="text-xl transition-transform">▼</button>
-</div>
+  <div class="relative z-10 p-8 text-white">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">7. UGV INTEGRATION</h2>
+      <button onclick="togglePanel('step7', this)" class="text-xl">▼</button>
+    </div>
 
-<div id="step7"
- class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-800">
-  <img src="images/golung2.jpg" class="w-full object-contain mb-4 rounded-md">
-<p class="text-sm text-slate-600">In this phase, the FMCW-GPR system was integrated with an Unmanned Ground Vehicle (UGV) to enable automated and consistent lateral scanning. The integration ensured stable mounting, controlled movement, and synchronized operation between the radar system and the motorized platform, reducing human-induced measurement variability.</p>
+    <div id="step7"
+      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 text-slate-800">
 
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/golung2.jpg" class="rounded-md">
+        </div>
+        <p class="text-sm text-slate-600">
+         >In this phase, the FMCW-GPR system was integrated with an Unmanned Ground Vehicle (UGV) to enable automated and consistent lateral scanning. The integration ensured stable mounting, controlled movement, and synchronized operation between the radar system and the motorized platform, reducing human-induced measurement variability.</p>
 
-</div>
+      </div>
+
+    </div>
+  </div>
 </section>
+
   
-</div>
-</div>
+  <!-- STEP 8 -->
+<section class="relative rounded-xl overflow-hidden shadow-lg">
+  <img src="images/analys.jpg" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-slate-900/75"></div>
+
+  <div class="relative z-10 p-8 text-white">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-bold">8. FIELD TESTING </h2>
+      <button onclick="togglePanel('step8', this)" class="text-xl">▼</button>
+    </div>
+
+    <div id="step8"
+      class="panel max-h-0 overflow-hidden transition-all duration-500 glass rounded-xl p-6 mt-6 text-slate-800">
+
+      <div class="step-card">
+        <div class="img-box">
+          <img src="images/testi.jpg" class="rounded-md">
+        </div>
+        <p class="text-sm text-slate-600">
+         >Controlled test environment with embedded metallic object.</p>
+      </div>
+<div class="step-card">
+        <div class="img-box">
+          <img src="images/combi.jpg" class="rounded-md">
+        </div>
+        <p class="text-sm text-slate-600">
+         >Depth estimation accuracy at 29 cm and 72 cm using manual measurement and the FMCW-GPR System.</p>
+
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- DEVELOPMENT PHASES – DOCUMENTATION (SMOOTH PANEL) -->
